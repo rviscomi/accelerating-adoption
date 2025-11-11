@@ -41,6 +41,8 @@ UX and DX benefits need to outweigh the costs of migrating old code or supportin
 
 ### Discouraging outdated fallbacks: [IntersectionObserver polyfill](https://www.npmjs.com/package/intersection-observer)
 
+<img width="1464" height="370" alt="image" src="https://github.com/user-attachments/assets/b5a7cdd4-265f-47c0-907a-2bf93b1f532d" />
+
 <img width="792" height="304" alt="image" src="https://github.com/user-attachments/assets/95db068c-7b65-484a-a838-ab68fa223e1b" />
 
 For the majority of websites that don't need to support pre-2019 browsers, there's no reason to continue shipping this polyfill to users. It's a drop-in replacement for the web platform API (v1) which most users' browsers already support.
