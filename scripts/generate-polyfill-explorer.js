@@ -605,7 +605,8 @@ async function main() {
   console.log("Generating HTML...");
   const html = await generateHtml(polyfillMappings);
   
-  const outputPath = path.join(__dirname, "../polyfill-explorer.html");
+  const outputPath = path.join(__dirname, "../docs/index.html");
+  await fs.mkdir(path.dirname(outputPath), { recursive: true });
   await fs.writeFile(outputPath, html);
   
   console.log(`✓ Generated polyfill explorer`);
