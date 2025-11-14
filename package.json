@@ -1,0 +1,11 @@
+{
+  "type": "module",
+  "scripts": {
+    "generate-polyfills": "node scripts/generate-polyfill-mappings.js",
+    "generate-explorer": "node scripts/generate-polyfill-explorer.js"
+  },
+  "dependencies": {
+    "@mdn/browser-compat-data": "^7.1.21",
+    "web-features": "^3.9.1"
+  }
+}

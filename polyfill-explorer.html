@@ -1,0 +1,3944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Features Polyfill Explorer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    
+    header {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      margin: 0 0 10px 0;
+      color: #1a1a1a;
+    }
+    
+    .subtitle {
+      color: #666;
+      font-size: 1.1em;
+      margin: 0;
+    }
+    
+    .stats {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      color: #666;
+    }
+    
+    .filters {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    
+    .filter-label {
+      font-weight: 600;
+      color: #333;
+    }
+    
+    .filter-btn {
+      padding: 8px 16px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      background: white;
+      color: #333;
+      font-size: 0.9em;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .filter-btn:hover {
+      border-color: #0066cc;
+      color: #0066cc;
+    }
+    
+    .filter-btn.active {
+      background: #0066cc;
+      border-color: #0066cc;
+      color: white;
+    }
+    
+    .sort-controls {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    
+    .sort-btn {
+      padding: 8px 16px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      background: white;
+      color: #333;
+      font-size: 0.9em;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .sort-btn:hover {
+      border-color: #0066cc;
+      color: #0066cc;
+    }
+    
+    .sort-btn.active {
+      background: #0066cc;
+      border-color: #0066cc;
+      color: white;
+    }
+    
+    .feature-card {
+      background: white;
+      border-radius: 8px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: box-shadow 0.2s;
+    }
+    
+    .feature-card:hover {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    
+    .feature-header {
+      margin-bottom: 15px;
+    }
+    
+    .feature-name {
+      margin: 0 0 10px 0;
+      color: #1a1a1a;
+      font-size: 1.5em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    
+    .feature-meta {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      font-size: 0.9em;
+      color: #666;
+    }
+    
+    .feature-id {
+      font-family: monospace;
+      background: #f0f0f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    
+    .feature-date {
+      color: #0066cc;
+    }
+    
+    .feature-description {
+      margin: 15px 0;
+      color: #555;
+    }
+    
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.75em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .badge-widely {
+      background: #00aa00;
+      color: white;
+    }
+    
+    .badge-newly {
+      background: #0066cc;
+      color: white;
+    }
+    
+    .badge-limited {
+      background: #ff9900;
+      color: white;
+    }
+    
+    .polyfills-section {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.75em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .badge-widely {
+      background: #00aa00;
+      color: white;
+    }
+    
+    .badge-newly {
+      background: #0066cc;
+      color: white;
+    }
+    
+    .badge-limited {
+      background: #ff9900;
+      color: white;
+    }
+    
+    .badge-none {
+      background: #999;
+      color: white;
+    }
+    
+    .polyfills-section {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+    
+    .polyfills-heading {
+      margin: 0 0 15px 0;
+      font-size: 1.1em;
+      color: #333;
+    }
+    
+    .polyfills-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .polyfill-item {
+      margin-bottom: 15px;
+      padding: 12px;
+      background: #f9f9f9;
+      border-radius: 6px;
+      border-left: 3px solid #0066cc;
+    }
+    
+    .polyfill-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 5px;
+    }
+    
+    .polyfill-link {
+      color: #0066cc;
+      text-decoration: none;
+      font-weight: 500;
+      flex: 1;
+      min-width: 200px;
+    }
+    
+    .polyfill-link:hover {
+      text-decoration: underline;
+    }
+    
+    .polyfill-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 3px;
+      font-size: 0.7em;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    
+    .badge-npm {
+      background: #cc3534;
+      color: white;
+    }
+    
+    .badge-github {
+      background: #24292e;
+      color: white;
+    }
+    
+    .polyfill-meta {
+      font-size: 0.85em;
+      color: #666;
+      margin-top: 5px;
+    }
+    
+    code {
+      background: #f0f0f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+      font-size: 0.9em;
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+      
+      .feature-card {
+        padding: 15px;
+      }
+      
+      .feature-name {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Web Features Polyfill Explorer</h1>
+    <p class="subtitle">Browse web platform features with available polyfills, sorted by Baseline availability date</p>
+    <div class="stats">
+      <span id="feature-count">Showing 82 features with polyfills</span> · 
+      Generated on November 14, 2025
+    </div>
+    <div class="filters">
+      <label class="filter-label">Filter by Baseline status:</label>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="widely">Widely Available</button>
+      <button class="filter-btn" data-filter="newly">Newly Available</button>
+      <button class="filter-btn" data-filter="limited">Limited Availability</button>
+    </div>
+    <div class="sort-controls">
+      <label class="filter-label">Sort by date:</label>
+      <button class="sort-btn" data-sort="desc">Newest First</button>
+      <button class="sort-btn active" data-sort="asc">Oldest First</button>
+    </div>
+  </header>
+  
+  <main>
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Array.isArray()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">array-isarray</span>
+              <span class="feature-date">Baseline: January 29, 2018</span>
+            </div>
+          </div>
+          <p class="feature-description">The Array.isArray() static method checks whether a value is an array.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-array" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Array.isArray` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/array.isarray" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Array.isArray`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>array.isarray</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Iterators and the for...of loop
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">iterators</span>
+              <span class="feature-date">Baseline: January 29, 2018</span>
+            </div>
+          </div>
+          <p class="feature-description">The for...of loop operates on a sequence of values sourced from an iterable object, such as arrays, array-like objects, DOM collections, iterators, generators, and user-defined iterables. All built-in iterators inherit from the Iterator class.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#iterator-helpers" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Iterator` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/es-iterator-helpers" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Iterator` and associated helpers
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>es-iterator-helpers</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Map (initial support)
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">map</span>
+              <span class="feature-date">Baseline: January 29, 2018</span>
+            </div>
+          </div>
+          <p class="feature-description">Map objects hold key-value pairs and remember the original insertion order of the keys.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#map" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill for `Map` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/es-map" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Map`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>es-map</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Math and numbers
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">number</span>
+              <span class="feature-date">Baseline: January 29, 2018</span>
+            </div>
+          </div>
+          <p class="feature-description">The number type (and Number object) represents floating-point numbers, such as 42 or -4.201, while the Math API contains mathematical functions and constants. JavaScript can also represent boundless negative and positive values as Infinity or not-a-number as NaN (as in 0 * Infinity).</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-number" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of modern `Number` behavior (with support binary and octal literals) in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Promise (initial support)
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">promise</span>
+              <span class="feature-date">Baseline: January 29, 2018</span>
+            </div>
+          </div>
+          <p class="feature-description">A promise represents an asynchronous operation which eventually succeeds or fails.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-promise" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Promise` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Regular expressions
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">regexp</span>
+              <span class="feature-date">Baseline: January 29, 2018</span>
+            </div>
+          </div>
+          <p class="feature-description">The RegExp object represents a regular expression, a notation for matching text patterns.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-string-and-regexp" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of many modern `RegExp` features (`dotAll`, `sticky` flags, named capture groups, etc.) in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Set (initial support)
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">set</span>
+              <span class="feature-date">Baseline: January 29, 2018</span>
+            </div>
+          </div>
+          <p class="feature-description">Set objects store unique values of any type.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#set" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Set` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/es-set" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Set`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>es-set</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              setInterval
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">setinterval</span>
+              <span class="feature-date">Baseline: January 29, 2018</span>
+            </div>
+          </div>
+          <p class="feature-description">The setInterval() global function repeatedly executes provided code on a given delay, and the accompanying clearInterval() cancels the interval.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#settimeout-and-setinterval" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `setInterval` which allows passing arguments to the callback in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              setTimeout()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">settimeout</span>
+              <span class="feature-date">Baseline: January 29, 2018</span>
+            </div>
+          </div>
+          <p class="feature-description">The setTimeout() global function executes provided code after a given duration of time, and the accompanying clearTimeout() cancels the timer.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#settimeout-and-setinterval" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `setTimeout` which allows passing arguments to the callback in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              WeakMap
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">weakmap</span>
+              <span class="feature-date">Baseline: January 29, 2018</span>
+            </div>
+          </div>
+          <p class="feature-description">A WeakMap object holds key-value pairs that do not create strong references to its keys, such that value data can be associated with a key without preventing garbage collection of the key.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#weakmap" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `WeakMap` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              String codePointAt() and fromCodePoint()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">string-codepoint</span>
+              <span class="feature-date">Baseline: March 30, 2018</span>
+            </div>
+          </div>
+          <p class="feature-description">The codePointAt() method returns the numeric value of the UTF-16 code point at an index of the string. The fromCodePoint() method returns a string created from one or more code points.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (3)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-string-and-regexp" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `String.fromCodePoint` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/string.prototype.codepointat" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `String.prototype.codePointAt`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>string.prototype.codepointat</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/string.fromcodepoint" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `String.fromCodePoint`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>string.fromcodepoint</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              String includes()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">string-includes</span>
+              <span class="feature-date">Baseline: March 30, 2018</span>
+            </div>
+          </div>
+          <p class="feature-description">The includes() method of strings returns whether a search string appears within the string.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-string-and-regexp" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `String.prototype.includes` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/string.prototype.includes" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `String.prototype.includes`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>string.prototype.includes</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              String raw()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">string-raw</span>
+              <span class="feature-date">Baseline: March 30, 2018</span>
+            </div>
+          </div>
+          <p class="feature-description">The String.raw() static method interpolates template literal substitutions, but ignores escape sequences. It is the tag function for template literals.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-string-and-regexp" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `String.raw` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/string.raw" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `String.raw`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>string.raw</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              String repeat()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">string-repeat</span>
+              <span class="feature-date">Baseline: March 30, 2018</span>
+            </div>
+          </div>
+          <p class="feature-description">The repeat() method of strings returns the original string repeated a number of times.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-string-and-regexp" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `String.prototype.repeat` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/string.prototype.repeat" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `String.prototype.repeat`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>string.prototype.repeat</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              String startsWith() and endsWith()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">string-startsends-with</span>
+              <span class="feature-date">Baseline: March 30, 2018</span>
+            </div>
+          </div>
+          <p class="feature-description">The startsWith() and endsWith() methods of strings returns whether a search string appears at the beginning or end of the provided string.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (3)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-string-and-regexp" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `String.prototype.startsWith` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/string.prototype.endswith" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `String.prototype.endsWith`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>string.prototype.endswith</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/string.prototype.startswith" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `String.prototype.startsWith`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>string.prototype.startswith</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Symbol
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">symbol</span>
+              <span class="feature-date">Baseline: March 30, 2018</span>
+            </div>
+          </div>
+          <p class="feature-description">A Symbol value is a unique, non-enumerable primitive value used for encapsulation or information hiding. For example, a symbol can be a key of an object that can never collide with any other key.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-symbol" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Symbol` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              WeakSet
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">weakset</span>
+              <span class="feature-date">Baseline: March 30, 2018</span>
+            </div>
+          </div>
+          <p class="feature-description">A WeakSet object stores unique values of any type without creating strong references to the values, such that membership in the set does not prevent garbage collection of the value.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#weakset" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `WeakSet` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Array copyWithin()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">array-copywithin</span>
+              <span class="feature-date">Baseline: March 20, 2019</span>
+            </div>
+          </div>
+          <p class="feature-description">The copyWithin() method of arrays and typed arrays shifts or copies items of an array to another index of the array without changing its length.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (3)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-array" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Array.prototype.copyWithin` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/array.prototype.copywithin" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Array.prototype.copyWithin`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>array.prototype.copywithin</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-typed-arrays" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `TypedArray.prototype.copyWithin` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Array fill()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">array-fill</span>
+              <span class="feature-date">Baseline: March 20, 2019</span>
+            </div>
+          </div>
+          <p class="feature-description">The fill() method of arrays and typed arrays sets all or some items of an array to a given a value.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-array" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Array.prototype.fill` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-typed-arrays" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `TypedArray.prototype.fill` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Array find() and findIndex()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">array-find</span>
+              <span class="feature-date">Baseline: March 20, 2019</span>
+            </div>
+          </div>
+          <p class="feature-description">The find() and findIndex() methods of arrays and typed arrays search an array for the first item that satisfies a test function.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-array" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Array.prototype.find` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/array.prototype.find" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Array.prototype.find`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>array.prototype.find</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Array.from()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">array-from</span>
+              <span class="feature-date">Baseline: March 20, 2019</span>
+            </div>
+          </div>
+          <p class="feature-description">The Array.from() and typed array .from() static methods copy items from an iterable or array-like object to make a new array.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (3)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-array" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Array.from` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/array.from" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Array.from`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>array.from</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-typed-arrays" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `TypedArray.from` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Array includes()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">array-includes</span>
+              <span class="feature-date">Baseline: March 20, 2019</span>
+            </div>
+          </div>
+          <p class="feature-description">The includes() method of arrays and typed arrays returns whether a given value appears in the array.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (3)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-array" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Array.prototype.includes` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/array-includes" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Array.prototype.includes`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>array-includes</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-typed-arrays" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `TypedArray.prototype.includes` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Array.of()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">array-of</span>
+              <span class="feature-date">Baseline: March 20, 2019</span>
+            </div>
+          </div>
+          <p class="feature-description">The Array.of() and typed array .of() static methods create new arrays from the values of any number of arguments.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (3)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-array" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Array.of` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/array.of" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Array.of`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>array.of</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-typed-arrays" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `TypedArray.of` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Base64 encoding and decoding
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">base64encodedecode</span>
+              <span class="feature-date">Baseline: March 20, 2019</span>
+            </div>
+          </div>
+          <p class="feature-description">The atob() and btoa() global functions encode and decode strings to and from base 64, respectively.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#base64-utility-methods" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                A polyfill of `btoa` is available in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                A polyfill of `btoa` is available in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Typed array iteration methods
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">typed-array-iteration-methods</span>
+              <span class="feature-date">Baseline: March 20, 2019</span>
+            </div>
+          </div>
+          <p class="feature-description">Typed array iteration methods</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-typed-arrays" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `TypedArray.prototype.some` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Typed array iterators
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">typed-array-iterators</span>
+              <span class="feature-date">Baseline: March 20, 2019</span>
+            </div>
+          </div>
+          <p class="feature-description">Typed arrays are iterable with the for … of statement and enumerable with the methods entries(), keys(), and values().</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-typed-arrays" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `TypedArray.prototype.values` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              String padStart() and padEnd()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">string-pad</span>
+              <span class="feature-date">Baseline: October 5, 2019</span>
+            </div>
+          </div>
+          <p class="feature-description">The padStart() and padEnd() methods of strings return a string lengthened to a minimum number of characters by adding characters to the start or end of the string.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (3)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-string-and-regexp" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `String.prototype.padStart` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/string.prototype.padend" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `String.prototype.padEnd`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>string.prototype.padend</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/string.prototype.padstart" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `String.prototype.padStart`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>string.prototype.padstart</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Promise finally()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">promise-finally</span>
+              <span class="feature-date">Baseline: April 2, 2021</span>
+            </div>
+          </div>
+          <p class="feature-description">The promise finally() method executes a function when the promise settles (resolves or rejects).</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-promise" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Promise.prototype.finally` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/promise.prototype.finally" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Promise.prototype.finally`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>promise.prototype.finally</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Intersection observer
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">intersection-observer</span>
+              <span class="feature-date">Baseline: September 25, 2021</span>
+            </div>
+          </div>
+          <p class="feature-description">The IntersectionObserver API asynchronously observes changes in the intersection of a target element with an ancestor element or with a top-level document&#039;s viewport.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/w3c/IntersectionObserver" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Intersection Observer polyfill
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>w3c/IntersectionObserver</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Intl.PluralRules
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">intl-plural-rules</span>
+              <span class="feature-date">Baseline: March 19, 2022</span>
+            </div>
+          </div>
+          <p class="feature-description">The Intl.PluralRules API creates a locale-aware object that tells you which of the language&#039;s pluralization rules apply based on a given number.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://formatjs.github.io/docs/polyfills/intl-pluralrules/" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Intl.PluralRules` in FormatJS
+              </a>
+              
+            </div>
+            
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Array flat() and flatMap()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">array-flat</span>
+              <span class="feature-date">Baseline: July 15, 2022</span>
+            </div>
+          </div>
+          <p class="feature-description">The flat() and flatMap() methods for arrays creates a new array such that each nested array item is concatenated into it.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (3)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-array" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Array.prototype.flatMap` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/array.prototype.flat" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Array.prototype.flat`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>array.prototype.flat</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/array.prototype.flatmap" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Array.prototype.flatMap`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>array.prototype.flatmap</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              CSS.escape()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">css-escape</span>
+              <span class="feature-date">Baseline: July 15, 2022</span>
+            </div>
+          </div>
+          <p class="feature-description">The CSS.escape() static method escapes a string so that it can be used in a valid CSS selector.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/mathiasbynens/CSS.escape/blob/master/css.escape.js" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                A polyfill for the CSS.escape
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>mathiasbynens/CSS.escape</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              globalThis
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">globalthis</span>
+              <span class="feature-date">Baseline: July 15, 2022</span>
+            </div>
+          </div>
+          <p class="feature-description">The globalThis property accesses the global this value (and hence the global object itself) across environments.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-globalthis" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `globalThis` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/globalthis" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `globalThis`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>globalthis</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Server-sent events
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">server-sent-events</span>
+              <span class="feature-date">Baseline: July 15, 2022</span>
+            </div>
+          </div>
+          <p class="feature-description">The EventSource API creates a connection to a server and listens to a stream of events sent by the server.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (3)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/EventSource/eventsource" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                EventSource polyfill for Node.js
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>EventSource/eventsource</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/remy/polyfills/blob/master/EventSource.js" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Remy Sharp&#039;s EventSource polyfill
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>remy/polyfills</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/Yaffle/EventSource" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Yaffle&#039;s EventSource polyfill
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>Yaffle/EventSource</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Stable array sort
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">stable-array-sort</span>
+              <span class="feature-date">Baseline: July 15, 2022</span>
+            </div>
+          </div>
+          <p class="feature-description">Stable array sort() function</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-array" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Array.prototype.sort` with modern behavior like stable sort in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              String matchAll()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">string-matchall</span>
+              <span class="feature-date">Baseline: July 15, 2022</span>
+            </div>
+          </div>
+          <p class="feature-description">The matchAll() method of strings matches a string against a regular expression and returns an iterator of all results, including capturing groups.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-string-and-regexp" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `String.prototype.matchAll` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/string.prototype.matchall" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `String.prototype.matchAll`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>string.prototype.matchall</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              String trimStart() and trimEnd()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">string-trim-startend</span>
+              <span class="feature-date">Baseline: July 15, 2022</span>
+            </div>
+          </div>
+          <p class="feature-description">The trimStart() and trimEnd() methods of strings return a new string with whitespace removed from the beginning or end of the string.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (3)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-string-and-regexp" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `String.prototype.trimStart` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/string.prototype.trimend" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `String.prototype.trimEnd`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>string.prototype.trimend</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/string.prototype.trimstart" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `String.prototype.trimStart`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>string.prototype.trimstart</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Promise.allSettled()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">promise-allsettled</span>
+              <span class="feature-date">Baseline: January 28, 2023</span>
+            </div>
+          </div>
+          <p class="feature-description">The Promise.allSettled() static method waits for an array of promises to settle (resolve or reject).</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-promise" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Promise.allSettled` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/promise.allsettled" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Promise.allSettled`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>promise.allsettled</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              queueMicrotask()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">queuemicrotask</span>
+              <span class="feature-date">Baseline: January 28, 2023</span>
+            </div>
+          </div>
+          <p class="feature-description">The queueMicrotask() method schedules a function to run after the currently running synchronous JavaScript finishes but before returning to the event loop.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#queuemicrotask" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `queueMicrotask()` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              String replaceAll()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">string-replaceall</span>
+              <span class="feature-date">Baseline: February 27, 2023</span>
+            </div>
+          </div>
+          <p class="feature-description">The replaceAll() method of strings returns a new string where all matches of a pattern (a string or regular expression) have been substituted with a replacement string.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-string-and-regexp" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `String.prototype.replaceAll` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/string.prototype.replaceall" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `String.prototype.replaceAll`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>string.prototype.replaceall</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Intl.Locale
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">intl-locale</span>
+              <span class="feature-date">Baseline: March 16, 2023</span>
+            </div>
+          </div>
+          <p class="feature-description">The Intl.Locale API parses Unicode locale identifiers, with language, region, and script codes, such as zh-Hans-CN or en-GB.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://formatjs.github.io/docs/polyfills/intl-locale/" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Intl.Locale` in FormatJS
+              </a>
+              
+            </div>
+            
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Intl.RelativeTimeFormat
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">intl-relative-time-format</span>
+              <span class="feature-date">Baseline: March 16, 2023</span>
+            </div>
+          </div>
+          <p class="feature-description">The Intl.RelativeTimeFormat API creates a locale-aware formatter that turns an object representing a relative time (such as &#039;1 day ago&#039;) into a localized string.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://formatjs.github.io/docs/polyfills/intl-relativetimeformat/" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Intl.RelativeTimeFormat` in FormatJS
+              </a>
+              
+            </div>
+            
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Promise.any()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">promise-any</span>
+              <span class="feature-date">Baseline: March 16, 2023</span>
+            </div>
+          </div>
+          <p class="feature-description">The Promise.any() static method returns a promise that fulfills as soon as the first of an iterable of promises fulfills, with that promise&#039;s value. Otherwise, it rejects with an AggregateError when all of the promises have rejected.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-promise" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Promise.any` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/promise.any" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Promise.any`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>promise.any</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Array by copy
+              <span class="badge badge-newly">Newly Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">array-by-copy</span>
+              <span class="feature-date">Baseline: July 4, 2023</span>
+            </div>
+          </div>
+          <p class="feature-description">The toReversed(), toSorted(), toSpliced(), and with() methods of arrays and typed arrays return changed copies of arrays. They stand in contrast to methods such as sort() or reverse() that change arrays in place.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (5)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#change-array-by-copy" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Array.prototype.with` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/array.prototype.toreversed" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Array.prototype.toReversed`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>array.prototype.toreversed</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/array.prototype.tosorted" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Array.prototype.toSorted`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>array.prototype.tosorted</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/array.prototype.tospliced" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Array.prototype.toSpliced`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>array.prototype.tospliced</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/array.prototype.with" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Array.prototype.with`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>array.prototype.with</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              String isWellFormed() and toWellFormed()
+              <span class="badge badge-newly">Newly Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">string-wellformed</span>
+              <span class="feature-date">Baseline: October 24, 2023</span>
+            </div>
+          </div>
+          <p class="feature-description">The isWellFormed() method of strings returns a boolean indicating if the string contains any Unicode lone surrogates. The toWellFormed() method returns a new string where all lone surrogates are replaced by the Unicode replacement character.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (3)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#well-formed-unicode-strings" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `String.prototype.toWellFormed` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/string.prototype.iswellformed" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `String.prototype.isWellFormed`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>string.prototype.iswellformed</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/string.prototype.towellformed" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `String.prototype.toWellFormed`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>string.prototype.towellformed</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Intl.DisplayNames
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">intl-display-names</span>
+              <span class="feature-date">Baseline: October 26, 2023</span>
+            </div>
+          </div>
+          <p class="feature-description">The Intl.DisplayNames API provides localized names of language, region, script, and currency codes.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://formatjs.github.io/docs/polyfills/intl-displaynames/" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Intl.DisplayNames` in FormatJS
+              </a>
+              
+            </div>
+            
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Intl.ListFormat
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">intl-list-format</span>
+              <span class="feature-date">Baseline: October 26, 2023</span>
+            </div>
+          </div>
+          <p class="feature-description">The Intl.ListFormat API creates a locale-aware formatter that turns iterable objects into localized strings.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://formatjs.github.io/docs/polyfills/intl-listformat/" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Intl.ListFormat` in FormatJS
+              </a>
+              
+            </div>
+            
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              MediaStream recording
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">mediastream-recording</span>
+              <span class="feature-date">Baseline: October 26, 2023</span>
+            </div>
+          </div>
+          <p class="feature-description">The MediaRecorder API captures data generated by MediaStream or HTMLMediaElement objects for analysis, processing, or saving to disk. Also known as the Media Recording API.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/ai/audio-recorder-polyfill" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                MediaRecorder polyfill for Safari and Edge
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>ai/audio-recorder-polyfill</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              URL.canParse()
+              <span class="badge badge-newly">Newly Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">url-canparse</span>
+              <span class="feature-date">Baseline: December 7, 2023</span>
+            </div>
+          </div>
+          <p class="feature-description">The URL.canParse() static method checks whether a URL can be parsed into a valid URL object. It&#039;s an alternative to calling new URL() in a try … catch statement.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#url-and-urlsearchparams" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                A polyfill of `URL.canParse()` is available in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                A polyfill of `URL.canParse()` is available in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Array.fromAsync()
+              <span class="badge badge-newly">Newly Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">array-fromasync</span>
+              <span class="feature-date">Baseline: January 25, 2024</span>
+            </div>
+          </div>
+          <p class="feature-description">The Array.fromAsync() static method copies items from an async iterable object to make a new array.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#arrayfromasync" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Array.fromAsync` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Array grouping
+              <span class="badge badge-newly">Newly Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">array-group</span>
+              <span class="feature-date">Baseline: March 5, 2024</span>
+            </div>
+          </div>
+          <p class="feature-description">The Object.groupBy() and Map.groupBy() static methods group values of arrays and iterables based on a function that returns a key for each value.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (3)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#array-grouping" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Object.groupBy` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/map.groupby" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Map.groupBy`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>map.groupby</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/object.groupby" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Object.groupBy`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>object.groupby</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Promise.withResolvers()
+              <span class="badge badge-newly">Newly Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">promise-withresolvers</span>
+              <span class="feature-date">Baseline: March 5, 2024</span>
+            </div>
+          </div>
+          <p class="feature-description">The Promise.withResolvers() static method is an alternative to the Promise() constructor that returns both the promise and resolution functions. You can use this to access resolve and reject outside the scope of the executor function.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#promisewithresolvers" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Promise.withResolvers` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/promise.withresolvers" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Promise.withResolvers`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>promise.withresolvers</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Transferable ArrayBuffer
+              <span class="badge badge-newly">Newly Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">transferable-arraybuffer</span>
+              <span class="feature-date">Baseline: March 5, 2024</span>
+            </div>
+          </div>
+          <p class="feature-description">The transfer() and transferToFixedLength() methods of ArrayBuffer move a buffer from one context to another (for example, to a worker).</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (3)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#arraybufferprototypetransfer-and-friends" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `ArrayBuffer.prototype.transferToFixedLength` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/arraybuffer.prototype.transfer" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `ArrayBuffer.prototype.transfer`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>arraybuffer.prototype.transfer</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/arraybuffer.prototype.transfertofixedlength" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `ArrayBuffer.prototype.transferToFixedLength`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>arraybuffer.prototype.transfertofixedlength</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Intl.Segmenter
+              <span class="badge badge-newly">Newly Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">intl-segmenter</span>
+              <span class="feature-date">Baseline: April 16, 2024</span>
+            </div>
+          </div>
+          <p class="feature-description">The Intl.Segmenter API creates a locale-aware text splitter that can separate a string into meaningful graphemes, words, or sentences.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://formatjs.github.io/docs/polyfills/intl-segmenter/" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Intl.Segmenter` in FormatJS
+              </a>
+              
+            </div>
+            
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Set methods
+              <span class="badge badge-newly">Newly Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">set-methods</span>
+              <span class="feature-date">Baseline: June 11, 2024</span>
+            </div>
+          </div>
+          <p class="feature-description">The difference(), intersection(), isDisjointFrom(), isSubsetOf(), isSupersetOf(), symmetricDifference(), and union() methods of the JavaScript Set object performs operations between two sets.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (8)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#new-set-methods" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Set.prototype.union` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/set.prototype.difference" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Set.prototype.difference`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>set.prototype.difference</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/set.prototype.intersection" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Set.prototype.intersection`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>set.prototype.intersection</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/set.prototype.isdisjointfrom" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Set.prototype.isDisjointFrom`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>set.prototype.isdisjointfrom</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/set.prototype.issubsetof" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Set.prototype.isSubsetOf`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>set.prototype.issubsetof</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/set.prototype.issupersetof" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Set.prototype.isSupersetOf`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>set.prototype.issupersetof</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/set.prototype.symmetricdifference" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Set.prototype.symmetricDifference`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>set.prototype.symmetricdifference</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/set.prototype.union" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Set.prototype.union`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>set.prototype.union</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Array at()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">array-at</span>
+              <span class="feature-date">Baseline: September 14, 2024</span>
+            </div>
+          </div>
+          <p class="feature-description">The at() method of arrays and typed arrays returns the item at an index, including negative indices for getting items relative to the end of an array. Also known as the relative indexing method.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#relative-indexing-method" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Array.prototype.at` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/array.prototype.at" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Array.prototype.at`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>array.prototype.at</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Object.hasOwn()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">object-hasown</span>
+              <span class="feature-date">Baseline: September 14, 2024</span>
+            </div>
+          </div>
+          <p class="feature-description">The Object.hasOwn() static method checks whether an object has a given property. It&#039;s a more robust alternative to the Object.prototype.hasOwnProperty() method.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-object" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Object.hasOwn` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/object.hasown" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Object.hasOwn`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>object.hasown</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              String at()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">string-at</span>
+              <span class="feature-date">Baseline: September 14, 2024</span>
+            </div>
+          </div>
+          <p class="feature-description">The at() method of strings returns the character (one UTF-16 code unit) at an index, including negative indices for getting the character relative to the end of the string. Also known as the relative indexing method.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-string-and-regexp" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `String.prototype.at` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/string.prototype.at" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `String.prototype.at`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>string.prototype.at</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              structuredClone()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">structured-clone</span>
+              <span class="feature-date">Baseline: September 14, 2024</span>
+            </div>
+          </div>
+          <p class="feature-description">The structuredClone() global method creates a deep copy of an object. Values that cannot be cloned can instead be transferred, making the original value no longer usable.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (3)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#structuredclone" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                A polyfill of `structuredClone` is available in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                A polyfill of `structuredClone` is available in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/ungap/structured-clone" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Structured clone polyfill
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>ungap/structured-clone</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Promise.try()
+              <span class="badge badge-newly">Newly Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">promise-try</span>
+              <span class="feature-date">Baseline: January 7, 2025</span>
+            </div>
+          </div>
+          <p class="feature-description">The Promise.try() static method returns a promise that takes a callback of any kind (returns or throws, synchronously or asynchronously) and wraps its result in a Promise.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#promisetry" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Promise.try` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/promise.try" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Promise.try`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>promise.try</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Array findLast() and findLastIndex()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">array-findlast</span>
+              <span class="feature-date">Baseline: February 23, 2025</span>
+            </div>
+          </div>
+          <p class="feature-description">The findLast() and findLastIndex() methods of arrays and typed arrays search an array in reverse order for the first item that satisfies a test function.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#array-find-from-last" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Array.prototype.findLast` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/array.prototype.findlast" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Array.prototype.findLast`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>array.prototype.findlast</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Intl.DurationFormat
+              <span class="badge badge-newly">Newly Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">intl-duration-format</span>
+              <span class="feature-date">Baseline: March 4, 2025</span>
+            </div>
+          </div>
+          <p class="feature-description">The Intl.DurationFormat API creates a locale-aware formatter that turns an object representing a duration (such as days, hours, and minutes) into a string.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://formatjs.github.io/docs/polyfills/intl-durationformat/" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Intl.DurationFormat` in FormatJS
+              </a>
+              
+            </div>
+            
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Iterator methods
+              <span class="badge badge-newly">Newly Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">iterator-methods</span>
+              <span class="feature-date">Baseline: March 31, 2025</span>
+            </div>
+          </div>
+          <p class="feature-description">The Iterator object is an abstract base for objects that implement the iterator protocol. It provides methods common to built-in iterators, such as filter(), find(), map(), and reduce(). You can also use the static method Iterator.from() to convert an existing iterable into an Iterator.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#iterator-helpers" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Iterator` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/es-iterator-helpers" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Iterator` and associated helpers
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>es-iterator-helpers</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              RegExp.escape()
+              <span class="badge badge-newly">Newly Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">regexp-escape</span>
+              <span class="feature-date">Baseline: May 1, 2025</span>
+            </div>
+          </div>
+          <p class="feature-description">The RegExp.escape() static method takes a string and replaces any characters that are potentially special characters of a regular expression with equivalent escape sequences. For example, RegExp.escape(&quot;[abc]&quot;) returns &quot;\\[abc\\]&quot;.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#regexp-escaping" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `RegExp.escape` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/regexp.escape" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Reflect.escape`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>regexp.escape</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Uint8Array base64 and hex conversion
+              <span class="badge badge-newly">Newly Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">uint8array-base64-hex</span>
+              <span class="feature-date">Baseline: September 5, 2025</span>
+            </div>
+          </div>
+          <p class="feature-description">The Uint8Array object methods fromBase64(), toBase64(), and setFromBase64() convert to and from base64 strings. The fromHex(), toHex(), and setFromHex() methods convert to and from hex strings.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#uint8array-to--from-base64-and-hex" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Uint8Array.prototype.setFromBase64` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/es-arraybuffer-base64" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Uint8Array.prototype.setFromBase64`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>es-arraybuffer-base64</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              URLPattern
+              <span class="badge badge-newly">Newly Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">urlpattern</span>
+              <span class="feature-date">Baseline: September 15, 2025</span>
+            </div>
+          </div>
+          <p class="feature-description">The URLPattern API creates patterns that can be matched against URLs or URL components.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/kenchris/urlpattern-polyfill" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                A polyfill of `URLPattern` is available on GitHub
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>kenchris/urlpattern-polyfill</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Accessor methods
+              <span class="badge badge-limited">Limited Availability</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">accessor-methods</span>
+              
+            </div>
+          </div>
+          <p class="feature-description">The __defineGetter__() and __defineSetter__() methods of objects bind a function to a property, which is called on setting or reading the property.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-object" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Object.prototype.__lookupSetter__` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              getYear() and setYear()
+              <span class="badge badge-limited">Limited Availability</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">date-get-year-set-year</span>
+              
+            </div>
+          </div>
+          <p class="feature-description">The getYear() and setYear() methods of Date objects get and set the year as an offset to 1900.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-date" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Date.prototype.setYear` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/date.prototype.getyear" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Date.prototype.getYear`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>date.prototype.getyear</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              escape() and unescape()
+              <span class="badge badge-limited">Limited Availability</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">escape-unescape</span>
+              
+            </div>
+          </div>
+          <p class="feature-description">The escape() and unescape() built-in Javascript methods encode and unencode strings using percent encoding, where certain characters are replaced by hexadecimal escape sequences.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-string-and-regexp" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `unescape` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Explicit resource management
+              <span class="badge badge-limited">Limited Availability</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">explicit-resource-management</span>
+              
+            </div>
+          </div>
+          <p class="feature-description">The using and await using declarations and the dispose and asyncDispose symbols manage the lifecycle of resources such as file handles and streams. The DisposableStack and AsyncDisposableStack objects can group, dispose, and coordinate dependencies between multiple disposable resources.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#explicit-resource-management" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `AsyncDisposableStack` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Map getOrInsert()
+              <span class="badge badge-limited">Limited Availability</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">getorinsert</span>
+              
+            </div>
+          </div>
+          <p class="feature-description">The getOrInsert() and getOrInsertComputed() methods of Map objects get a value, setting and getting a default value if needed.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (5)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#map-upsert" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `WeakMap.prototype.getOrInsertComputed` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/map.prototype.getorinsert" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Map.prototype.getOrInsert`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>map.prototype.getorinsert</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/map.prototype.getorinsertcomputed" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Map.prototype.getOrInsertComputed`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>map.prototype.getorinsertcomputed</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/weakmap.prototype.getorinsert" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `WeakMap.prototype.getOrInsert`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>weakmap.prototype.getorinsert</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/weakmap.prototype.getorinsertcomputed" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `WeakMap.prototype.getOrInsertComputed`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>weakmap.prototype.getorinsertcomputed</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              HTML wrapper methods
+              <span class="badge badge-limited">Limited Availability</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">html-wrapper-methods</span>
+              
+            </div>
+          </div>
+          <p class="feature-description">JavaScript built-in methods such as, String.bold() and String.italics(), wrap strings in (often historic) HTML.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (3)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-string-and-regexp" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `String.prototype.sup` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/es-string-html-methods" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `String.prototype.sup`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>es-string-html-methods</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/string.prototype.substr" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `String.prototype.substr`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>string.prototype.substr</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Intersection observer visibility tracking
+              <span class="badge badge-limited">Limited Availability</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">intersection-observer-v2</span>
+              
+            </div>
+          </div>
+          <p class="feature-description">The trackVisibility parameter for the IntersectionObserver constructor enables tracking the visibility of an element, to detect if it may be obscured by other content or visual effects. Also known as IntersectionObserver v2.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/w3c/IntersectionObserver" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Intersection Observer polyfill
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>w3c/IntersectionObserver</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Intl.Locale info
+              <span class="badge badge-limited">Limited Availability</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">intl-locale-info</span>
+              
+            </div>
+          </div>
+          <p class="feature-description">The getter methods of the Intl.Locale API provide supplemental information about a Unicode locale, such as the locale&#039;s calendar (for example, the first day in a week or the weekend start day), writing direction, 12- or 24-hour cycles, and numbering system.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://formatjs.github.io/docs/polyfills/intl-locale/" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Intl.Locale` in FormatJS
+              </a>
+              
+            </div>
+            
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Error.isError()
+              <span class="badge badge-limited">Limited Availability</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">is-error</span>
+              
+            </div>
+          </div>
+          <p class="feature-description">The Error.isError() static method checks whether a value is an Error object.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#erroriserror" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Error.isError` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/error.iserror" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Error.isError`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>error.iserror</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              JSON source text access
+              <span class="badge badge-limited">Limited Availability</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">json-raw</span>
+              
+            </div>
+          </div>
+          <p class="feature-description">To serialize and parse JSON in a lossless way, JSON.stringify() handles rawJSON values and JSON.parse()&#039;s reviver callback takes a source context parameter.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#ecmascript-json" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of modern `JSON.stringify` behavior (symbol, well-formed unicode, raw JSON) in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#jsonparse-source-text-access" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `JSON.rawJSON` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Math.sumPrecise()
+              <span class="badge badge-limited">Limited Availability</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">math-sum-precise</span>
+              
+            </div>
+          </div>
+          <p class="feature-description">The Math.sumPrecise() static method returns the sum of an iterable of numbers. It avoids the precision loss of intermediate partial sums, as found using reduce() or a loop to add together an array of values.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#mathsumprecise" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill of `Math.sumPrecise` in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/math.sumprecise" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                es-shims polyfill of `Math.sumPrecise`
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>math.sumprecise</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Presentation API
+              <span class="badge badge-limited">Limited Availability</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">presentation-api</span>
+              
+            </div>
+          </div>
+          <p class="feature-description">The Presentation API shows or controls content on another display, such as a network-connected TV or projector.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (3)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://mediascape.github.io/presentation-api-polyfill/" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Presentation API polyfill contains a JavaScript polyfill of the Presentation API specification under standardization within the Second Screen Working Group at W3C. The polyfill is mostly intended for exploring how the Presentation API may be implemented on top of different presentation mechanisms.
+              </a>
+              
+            </div>
+            
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://w3c.github.io/presentation-api/" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Presentation API polyfill contains a JavaScript polyfill of the Presentation API specification under standardization within the Second Screen Working Group at W3C. The polyfill is mostly intended for exploring how the Presentation API may be implemented on top of different presentation mechanisms.
+              </a>
+              
+            </div>
+            
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.w3.org/2014/secondscreen/" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Presentation API polyfill contains a JavaScript polyfill of the Presentation API specification under standardization within the Second Screen Working Group at W3C. The polyfill is mostly intended for exploring how the Presentation API may be implemented on top of different presentation mechanisms.
+              </a>
+              
+            </div>
+            
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Serializable errors
+              <span class="badge badge-limited">Limited Availability</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">serializable-errors</span>
+              
+            </div>
+          </div>
+          <p class="feature-description">The DOMException, Error, EvalError, RangeError, ReferenceError, SyntaxError, TypeError, and URIError objects are serializable. You can call structuredClone() on an error object or pass it to a worker using postMessage().</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (3)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js#structuredclone" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                A polyfill of `structuredClone` is available in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/zloirock/core-js" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                A polyfill of `structuredClone` is available in `core-js`
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/ungap/structured-clone" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Structured clone polyfill
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>ungap/structured-clone</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Temporal
+              <span class="badge badge-limited">Limited Availability</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">temporal</span>
+              
+            </div>
+          </div>
+          <p class="feature-description">The Temporal API allows you to work with dates, times, time zones, and durations. It is more powerful than the Date API.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/@js-temporal/polyfill" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Temporal polyfill by proposal champions
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>@js-temporal</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/temporal-polyfill" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Temporal polyfill by FullCalendar
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>temporal-polyfill</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Trusted types
+              <span class="badge badge-limited">Limited Availability</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">trusted-types</span>
+              
+            </div>
+          </div>
+          <p class="feature-description">Trusted types allow you to lock down insecure parts of the DOM API and prevent client-side cross-site scripting (XSS) attacks.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/w3c/trusted-types#polyfill" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Trusted Types polyfill (also available as an npm package)
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>w3c/trusted-types</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/trusted-types" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Trusted Types polyfill (also available as an npm package)
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>trusted-types</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              WebVR
+              <span class="badge badge-limited">Limited Availability</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">webvr</span>
+              
+            </div>
+          </div>
+          <p class="feature-description">The navigator.getVRDisplays() API represents virtual reality (VR) devices, including sensors and head-mounted displays.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/immersive-web/webvr-polyfill" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Web VR polyfill — JavaScript implementation of WebVR.
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>immersive-web/webvr-polyfill</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+  </main>
+
+  <script>
+    // Filter and sort functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const sortButtons = document.querySelectorAll('.sort-btn');
+    const featureCards = document.querySelectorAll('.feature-card');
+    const featureCount = document.getElementById('feature-count');
+    const mainContainer = document.querySelector('main');
+    
+    function updateCount() {
+      const visibleCards = document.querySelectorAll('.feature-card:not([style*="display: none"])');
+      const count = visibleCards.length;
+      featureCount.textContent = `Showing ${count} feature${count !== 1 ? 's' : ''} with polyfills`;
+    }
+    
+    function sortCards(order) {
+      // Get all cards as an array with their baseline dates
+      const cardsArray = Array.from(featureCards).map(card => {
+        // Extract date from the feature-date span
+        const dateSpan = card.querySelector('.feature-date');
+        let sortDate = '9999-12-31'; // Default for features without date
+        
+        if (dateSpan) {
+          const dateText = dateSpan.textContent.replace('Baseline: ', '');
+          sortDate = new Date(dateText).toISOString().split('T')[0];
+        }
+        
+        return { card, sortDate };
+      });
+      
+      // Sort based on order
+      cardsArray.sort((a, b) => {
+        if (order === 'desc') {
+          return b.sortDate.localeCompare(a.sortDate);
+        } else {
+          return a.sortDate.localeCompare(b.sortDate);
+        }
+      });
+      
+      // Reorder the cards in the DOM
+      cardsArray.forEach(({ card }) => {
+        mainContainer.appendChild(card);
+      });
+    }
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+        
+        // Update active button
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        // Filter cards
+        featureCards.forEach(card => {
+          if (filter === 'all') {
+            card.style.display = '';
+          } else {
+            const badge = card.querySelector('.badge');
+            const matchesFilter = 
+              (filter === 'widely' && badge.classList.contains('badge-widely')) ||
+              (filter === 'newly' && badge.classList.contains('badge-newly')) ||
+              (filter === 'limited' && badge.classList.contains('badge-limited'));
+            
+            card.style.display = matchesFilter ? '' : 'none';
+          }
+        });
+        
+        updateCount();
+      });
+    });
+    
+    sortButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const order = button.dataset.sort;
+        
+        // Update active button
+        sortButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        // Sort cards
+        sortCards(order);
+      });
+    });
+  </script>
+</body>
+</html>

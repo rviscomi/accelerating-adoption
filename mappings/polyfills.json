@@ -1,0 +1,1297 @@
+{
+  "accessor-methods": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-object",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Object.prototype.__lookupSetter__` in `core-js`"
+      }
+    ]
+  },
+  "array-at": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#relative-indexing-method",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Array.prototype.at` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/array.prototype.at",
+        "npm": "array.prototype.at",
+        "description": "es-shims polyfill of `Array.prototype.at`"
+      }
+    ]
+  },
+  "array-by-copy": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#change-array-by-copy",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Array.prototype.with` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/array.prototype.toreversed",
+        "npm": "array.prototype.toreversed",
+        "description": "es-shims polyfill of `Array.prototype.toReversed`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/array.prototype.tosorted",
+        "npm": "array.prototype.tosorted",
+        "description": "es-shims polyfill of `Array.prototype.toSorted`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/array.prototype.tospliced",
+        "npm": "array.prototype.tospliced",
+        "description": "es-shims polyfill of `Array.prototype.toSpliced`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/array.prototype.with",
+        "npm": "array.prototype.with",
+        "description": "es-shims polyfill of `Array.prototype.with`"
+      }
+    ]
+  },
+  "array-copywithin": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-array",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Array.prototype.copyWithin` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/array.prototype.copywithin",
+        "npm": "array.prototype.copywithin",
+        "description": "es-shims polyfill of `Array.prototype.copyWithin`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-typed-arrays",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `TypedArray.prototype.copyWithin` in `core-js`"
+      }
+    ]
+  },
+  "array-fill": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-array",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Array.prototype.fill` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-typed-arrays",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `TypedArray.prototype.fill` in `core-js`"
+      }
+    ]
+  },
+  "array-find": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-array",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Array.prototype.find` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/array.prototype.find",
+        "npm": "array.prototype.find",
+        "description": "es-shims polyfill of `Array.prototype.find`"
+      }
+    ]
+  },
+  "array-findlast": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#array-find-from-last",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Array.prototype.findLast` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/array.prototype.findlast",
+        "npm": "array.prototype.findlast",
+        "description": "es-shims polyfill of `Array.prototype.findLast`"
+      }
+    ]
+  },
+  "array-flat": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-array",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Array.prototype.flatMap` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/array.prototype.flat",
+        "npm": "array.prototype.flat",
+        "description": "es-shims polyfill of `Array.prototype.flat`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/array.prototype.flatmap",
+        "npm": "array.prototype.flatmap",
+        "description": "es-shims polyfill of `Array.prototype.flatMap`"
+      }
+    ]
+  },
+  "array-from": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-array",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Array.from` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/array.from",
+        "npm": "array.from",
+        "description": "es-shims polyfill of `Array.from`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-typed-arrays",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `TypedArray.from` in `core-js`"
+      }
+    ]
+  },
+  "array-fromasync": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#arrayfromasync",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Array.fromAsync` in `core-js`"
+      }
+    ]
+  },
+  "array-group": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#array-grouping",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Object.groupBy` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/map.groupby",
+        "npm": "map.groupby",
+        "description": "es-shims polyfill of `Map.groupBy`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/object.groupby",
+        "npm": "object.groupby",
+        "description": "es-shims polyfill of `Object.groupBy`"
+      }
+    ]
+  },
+  "array-includes": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-array",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Array.prototype.includes` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/array-includes",
+        "npm": "array-includes",
+        "description": "es-shims polyfill of `Array.prototype.includes`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-typed-arrays",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `TypedArray.prototype.includes` in `core-js`"
+      }
+    ]
+  },
+  "array-isarray": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-array",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Array.isArray` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/array.isarray",
+        "npm": "array.isarray",
+        "description": "es-shims polyfill of `Array.isArray`"
+      }
+    ]
+  },
+  "array-of": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-array",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Array.of` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/array.of",
+        "npm": "array.of",
+        "description": "es-shims polyfill of `Array.of`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-typed-arrays",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `TypedArray.of` in `core-js`"
+      }
+    ]
+  },
+  "base64encodedecode": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#base64-utility-methods",
+        "github": "zloirock/core-js",
+        "description": "A polyfill of `btoa` is available in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js",
+        "github": "zloirock/core-js",
+        "description": "A polyfill of `btoa` is available in `core-js`"
+      }
+    ]
+  },
+  "css-escape": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/mathiasbynens/CSS.escape/blob/master/css.escape.js",
+        "github": "mathiasbynens/CSS.escape",
+        "description": "A polyfill for the CSS.escape"
+      }
+    ]
+  },
+  "date-get-year-set-year": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-date",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Date.prototype.setYear` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/date.prototype.getyear",
+        "npm": "date.prototype.getyear",
+        "description": "es-shims polyfill of `Date.prototype.getYear`"
+      }
+    ]
+  },
+  "escape-unescape": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `unescape` in `core-js`"
+      }
+    ]
+  },
+  "explicit-resource-management": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#explicit-resource-management",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `AsyncDisposableStack` in `core-js`"
+      }
+    ]
+  },
+  "getorinsert": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#map-upsert",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `WeakMap.prototype.getOrInsertComputed` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/map.prototype.getorinsert",
+        "npm": "map.prototype.getorinsert",
+        "description": "es-shims polyfill of `Map.prototype.getOrInsert`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/map.prototype.getorinsertcomputed",
+        "npm": "map.prototype.getorinsertcomputed",
+        "description": "es-shims polyfill of `Map.prototype.getOrInsertComputed`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/weakmap.prototype.getorinsert",
+        "npm": "weakmap.prototype.getorinsert",
+        "description": "es-shims polyfill of `WeakMap.prototype.getOrInsert`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/weakmap.prototype.getorinsertcomputed",
+        "npm": "weakmap.prototype.getorinsertcomputed",
+        "description": "es-shims polyfill of `WeakMap.prototype.getOrInsertComputed`"
+      }
+    ]
+  },
+  "globalthis": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-globalthis",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `globalThis` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/globalthis",
+        "npm": "globalthis",
+        "description": "es-shims polyfill of `globalThis`"
+      }
+    ]
+  },
+  "html-wrapper-methods": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `String.prototype.sup` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/es-string-html-methods",
+        "npm": "es-string-html-methods",
+        "description": "es-shims polyfill of `String.prototype.sup`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/string.prototype.substr",
+        "npm": "string.prototype.substr",
+        "description": "es-shims polyfill of `String.prototype.substr`"
+      }
+    ]
+  },
+  "intersection-observer": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/w3c/IntersectionObserver",
+        "github": "w3c/IntersectionObserver",
+        "description": "Intersection Observer polyfill"
+      }
+    ]
+  },
+  "intersection-observer-v2": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/w3c/IntersectionObserver",
+        "github": "w3c/IntersectionObserver",
+        "description": "Intersection Observer polyfill"
+      }
+    ]
+  },
+  "intl-display-names": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://formatjs.github.io/docs/polyfills/intl-displaynames/",
+        "description": "Polyfill of `Intl.DisplayNames` in FormatJS"
+      }
+    ]
+  },
+  "intl-duration-format": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://formatjs.github.io/docs/polyfills/intl-durationformat/",
+        "description": "Polyfill of `Intl.DurationFormat` in FormatJS"
+      }
+    ]
+  },
+  "intl-list-format": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://formatjs.github.io/docs/polyfills/intl-listformat/",
+        "description": "Polyfill of `Intl.ListFormat` in FormatJS"
+      }
+    ]
+  },
+  "intl-locale": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://formatjs.github.io/docs/polyfills/intl-locale/",
+        "description": "Polyfill of `Intl.Locale` in FormatJS"
+      }
+    ]
+  },
+  "intl-locale-info": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://formatjs.github.io/docs/polyfills/intl-locale/",
+        "description": "Polyfill of `Intl.Locale` in FormatJS"
+      }
+    ]
+  },
+  "intl-plural-rules": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://formatjs.github.io/docs/polyfills/intl-pluralrules/",
+        "description": "Polyfill of `Intl.PluralRules` in FormatJS"
+      }
+    ]
+  },
+  "intl-relative-time-format": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://formatjs.github.io/docs/polyfills/intl-relativetimeformat/",
+        "description": "Polyfill of `Intl.RelativeTimeFormat` in FormatJS"
+      }
+    ]
+  },
+  "intl-segmenter": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://formatjs.github.io/docs/polyfills/intl-segmenter/",
+        "description": "Polyfill of `Intl.Segmenter` in FormatJS"
+      }
+    ]
+  },
+  "is-error": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#erroriserror",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Error.isError` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/error.iserror",
+        "npm": "error.iserror",
+        "description": "es-shims polyfill of `Error.isError`"
+      }
+    ]
+  },
+  "iterator-methods": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#iterator-helpers",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Iterator` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/es-iterator-helpers",
+        "npm": "es-iterator-helpers",
+        "description": "es-shims polyfill of `Iterator` and associated helpers"
+      }
+    ]
+  },
+  "iterators": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#iterator-helpers",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Iterator` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/es-iterator-helpers",
+        "npm": "es-iterator-helpers",
+        "description": "es-shims polyfill of `Iterator` and associated helpers"
+      }
+    ]
+  },
+  "json-raw": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-json",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of modern `JSON.stringify` behavior (symbol, well-formed unicode, raw JSON) in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#jsonparse-source-text-access",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `JSON.rawJSON` in `core-js`"
+      }
+    ]
+  },
+  "map": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#map",
+        "github": "zloirock/core-js",
+        "description": "Polyfill for `Map` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/es-map",
+        "npm": "es-map",
+        "description": "es-shims polyfill of `Map`"
+      }
+    ]
+  },
+  "math-sum-precise": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#mathsumprecise",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Math.sumPrecise` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/math.sumprecise",
+        "npm": "math.sumprecise",
+        "description": "es-shims polyfill of `Math.sumPrecise`"
+      }
+    ]
+  },
+  "mediastream-recording": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/ai/audio-recorder-polyfill",
+        "github": "ai/audio-recorder-polyfill",
+        "description": "MediaRecorder polyfill for Safari and Edge"
+      }
+    ]
+  },
+  "number": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-number",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of modern `Number` behavior (with support binary and octal literals) in `core-js`"
+      }
+    ]
+  },
+  "object-hasown": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-object",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Object.hasOwn` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/object.hasown",
+        "npm": "object.hasown",
+        "description": "es-shims polyfill of `Object.hasOwn`"
+      }
+    ]
+  },
+  "presentation-api": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://mediascape.github.io/presentation-api-polyfill/",
+        "description": "Presentation API polyfill contains a JavaScript polyfill of the Presentation API specification under standardization within the Second Screen Working Group at W3C. The polyfill is mostly intended for exploring how the Presentation API may be implemented on top of different presentation mechanisms."
+      },
+      {
+        "type": "polyfill",
+        "url": "https://w3c.github.io/presentation-api/",
+        "description": "Presentation API polyfill contains a JavaScript polyfill of the Presentation API specification under standardization within the Second Screen Working Group at W3C. The polyfill is mostly intended for exploring how the Presentation API may be implemented on top of different presentation mechanisms."
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.w3.org/2014/secondscreen/",
+        "description": "Presentation API polyfill contains a JavaScript polyfill of the Presentation API specification under standardization within the Second Screen Working Group at W3C. The polyfill is mostly intended for exploring how the Presentation API may be implemented on top of different presentation mechanisms."
+      }
+    ]
+  },
+  "promise": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-promise",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Promise` in `core-js`"
+      }
+    ]
+  },
+  "promise-allsettled": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-promise",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Promise.allSettled` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/promise.allsettled",
+        "npm": "promise.allsettled",
+        "description": "es-shims polyfill of `Promise.allSettled`"
+      }
+    ]
+  },
+  "promise-any": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-promise",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Promise.any` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/promise.any",
+        "npm": "promise.any",
+        "description": "es-shims polyfill of `Promise.any`"
+      }
+    ]
+  },
+  "promise-finally": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-promise",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Promise.prototype.finally` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/promise.prototype.finally",
+        "npm": "promise.prototype.finally",
+        "description": "es-shims polyfill of `Promise.prototype.finally`"
+      }
+    ]
+  },
+  "promise-try": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#promisetry",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Promise.try` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/promise.try",
+        "npm": "promise.try",
+        "description": "es-shims polyfill of `Promise.try`"
+      }
+    ]
+  },
+  "promise-withresolvers": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#promisewithresolvers",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Promise.withResolvers` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/promise.withresolvers",
+        "npm": "promise.withresolvers",
+        "description": "es-shims polyfill of `Promise.withResolvers`"
+      }
+    ]
+  },
+  "queuemicrotask": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#queuemicrotask",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `queueMicrotask()` in `core-js`"
+      }
+    ]
+  },
+  "regexp": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of many modern `RegExp` features (`dotAll`, `sticky` flags, named capture groups, etc.) in `core-js`"
+      }
+    ]
+  },
+  "regexp-escape": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#regexp-escaping",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `RegExp.escape` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/regexp.escape",
+        "npm": "regexp.escape",
+        "description": "es-shims polyfill of `Reflect.escape`"
+      }
+    ]
+  },
+  "serializable-errors": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#structuredclone",
+        "github": "zloirock/core-js",
+        "description": "A polyfill of `structuredClone` is available in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js",
+        "github": "zloirock/core-js",
+        "description": "A polyfill of `structuredClone` is available in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://github.com/ungap/structured-clone",
+        "github": "ungap/structured-clone",
+        "description": "Structured clone polyfill"
+      }
+    ]
+  },
+  "server-sent-events": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/EventSource/eventsource",
+        "github": "EventSource/eventsource",
+        "description": "EventSource polyfill for Node.js"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://github.com/remy/polyfills/blob/master/EventSource.js",
+        "github": "remy/polyfills",
+        "description": "Remy Sharp's EventSource polyfill"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://github.com/Yaffle/EventSource",
+        "github": "Yaffle/EventSource",
+        "description": "Yaffle's EventSource polyfill"
+      }
+    ]
+  },
+  "set": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#set",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Set` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/es-set",
+        "npm": "es-set",
+        "description": "es-shims polyfill of `Set`"
+      }
+    ]
+  },
+  "set-methods": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#new-set-methods",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Set.prototype.union` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/set.prototype.difference",
+        "npm": "set.prototype.difference",
+        "description": "es-shims polyfill of `Set.prototype.difference`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/set.prototype.intersection",
+        "npm": "set.prototype.intersection",
+        "description": "es-shims polyfill of `Set.prototype.intersection`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/set.prototype.isdisjointfrom",
+        "npm": "set.prototype.isdisjointfrom",
+        "description": "es-shims polyfill of `Set.prototype.isDisjointFrom`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/set.prototype.issubsetof",
+        "npm": "set.prototype.issubsetof",
+        "description": "es-shims polyfill of `Set.prototype.isSubsetOf`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/set.prototype.issupersetof",
+        "npm": "set.prototype.issupersetof",
+        "description": "es-shims polyfill of `Set.prototype.isSupersetOf`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/set.prototype.symmetricdifference",
+        "npm": "set.prototype.symmetricdifference",
+        "description": "es-shims polyfill of `Set.prototype.symmetricDifference`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/set.prototype.union",
+        "npm": "set.prototype.union",
+        "description": "es-shims polyfill of `Set.prototype.union`"
+      }
+    ]
+  },
+  "setinterval": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#settimeout-and-setinterval",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `setInterval` which allows passing arguments to the callback in `core-js`"
+      }
+    ]
+  },
+  "settimeout": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#settimeout-and-setinterval",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `setTimeout` which allows passing arguments to the callback in `core-js`"
+      }
+    ]
+  },
+  "stable-array-sort": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-array",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Array.prototype.sort` with modern behavior like stable sort in `core-js`"
+      }
+    ]
+  },
+  "string-at": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `String.prototype.at` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/string.prototype.at",
+        "npm": "string.prototype.at",
+        "description": "es-shims polyfill of `String.prototype.at`"
+      }
+    ]
+  },
+  "string-codepoint": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `String.fromCodePoint` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/string.prototype.codepointat",
+        "npm": "string.prototype.codepointat",
+        "description": "es-shims polyfill of `String.prototype.codePointAt`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/string.fromcodepoint",
+        "npm": "string.fromcodepoint",
+        "description": "es-shims polyfill of `String.fromCodePoint`"
+      }
+    ]
+  },
+  "string-includes": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `String.prototype.includes` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/string.prototype.includes",
+        "npm": "string.prototype.includes",
+        "description": "es-shims polyfill of `String.prototype.includes`"
+      }
+    ]
+  },
+  "string-matchall": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `String.prototype.matchAll` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/string.prototype.matchall",
+        "npm": "string.prototype.matchall",
+        "description": "es-shims polyfill of `String.prototype.matchAll`"
+      }
+    ]
+  },
+  "string-pad": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `String.prototype.padStart` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/string.prototype.padend",
+        "npm": "string.prototype.padend",
+        "description": "es-shims polyfill of `String.prototype.padEnd`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/string.prototype.padstart",
+        "npm": "string.prototype.padstart",
+        "description": "es-shims polyfill of `String.prototype.padStart`"
+      }
+    ]
+  },
+  "string-raw": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `String.raw` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/string.raw",
+        "npm": "string.raw",
+        "description": "es-shims polyfill of `String.raw`"
+      }
+    ]
+  },
+  "string-repeat": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `String.prototype.repeat` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/string.prototype.repeat",
+        "npm": "string.prototype.repeat",
+        "description": "es-shims polyfill of `String.prototype.repeat`"
+      }
+    ]
+  },
+  "string-replaceall": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `String.prototype.replaceAll` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/string.prototype.replaceall",
+        "npm": "string.prototype.replaceall",
+        "description": "es-shims polyfill of `String.prototype.replaceAll`"
+      }
+    ]
+  },
+  "string-startsends-with": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `String.prototype.startsWith` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/string.prototype.endswith",
+        "npm": "string.prototype.endswith",
+        "description": "es-shims polyfill of `String.prototype.endsWith`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/string.prototype.startswith",
+        "npm": "string.prototype.startswith",
+        "description": "es-shims polyfill of `String.prototype.startsWith`"
+      }
+    ]
+  },
+  "string-trim-startend": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `String.prototype.trimStart` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/string.prototype.trimend",
+        "npm": "string.prototype.trimend",
+        "description": "es-shims polyfill of `String.prototype.trimEnd`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/string.prototype.trimstart",
+        "npm": "string.prototype.trimstart",
+        "description": "es-shims polyfill of `String.prototype.trimStart`"
+      }
+    ]
+  },
+  "string-wellformed": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#well-formed-unicode-strings",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `String.prototype.toWellFormed` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/string.prototype.iswellformed",
+        "npm": "string.prototype.iswellformed",
+        "description": "es-shims polyfill of `String.prototype.isWellFormed`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/string.prototype.towellformed",
+        "npm": "string.prototype.towellformed",
+        "description": "es-shims polyfill of `String.prototype.toWellFormed`"
+      }
+    ]
+  },
+  "structured-clone": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#structuredclone",
+        "github": "zloirock/core-js",
+        "description": "A polyfill of `structuredClone` is available in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js",
+        "github": "zloirock/core-js",
+        "description": "A polyfill of `structuredClone` is available in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://github.com/ungap/structured-clone",
+        "github": "ungap/structured-clone",
+        "description": "Structured clone polyfill"
+      }
+    ]
+  },
+  "symbol": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-symbol",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Symbol` in `core-js`"
+      }
+    ]
+  },
+  "temporal": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/@js-temporal/polyfill",
+        "npm": "@js-temporal",
+        "description": "Temporal polyfill by proposal champions"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/temporal-polyfill",
+        "npm": "temporal-polyfill",
+        "description": "Temporal polyfill by FullCalendar"
+      }
+    ]
+  },
+  "transferable-arraybuffer": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#arraybufferprototypetransfer-and-friends",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `ArrayBuffer.prototype.transferToFixedLength` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/arraybuffer.prototype.transfer",
+        "npm": "arraybuffer.prototype.transfer",
+        "description": "es-shims polyfill of `ArrayBuffer.prototype.transfer`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/arraybuffer.prototype.transfertofixedlength",
+        "npm": "arraybuffer.prototype.transfertofixedlength",
+        "description": "es-shims polyfill of `ArrayBuffer.prototype.transferToFixedLength`"
+      }
+    ]
+  },
+  "trusted-types": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/w3c/trusted-types#polyfill",
+        "github": "w3c/trusted-types",
+        "description": "Trusted Types polyfill (also available as an npm package)"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/trusted-types",
+        "npm": "trusted-types",
+        "description": "Trusted Types polyfill (also available as an npm package)"
+      }
+    ]
+  },
+  "typed-array-iteration-methods": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-typed-arrays",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `TypedArray.prototype.some` in `core-js`"
+      }
+    ]
+  },
+  "typed-array-iterators": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#ecmascript-typed-arrays",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `TypedArray.prototype.values` in `core-js`"
+      }
+    ]
+  },
+  "uint8array-base64-hex": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#uint8array-to--from-base64-and-hex",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `Uint8Array.prototype.setFromBase64` in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/es-arraybuffer-base64",
+        "npm": "es-arraybuffer-base64",
+        "description": "es-shims polyfill of `Uint8Array.prototype.setFromBase64`"
+      }
+    ]
+  },
+  "url-canparse": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#url-and-urlsearchparams",
+        "github": "zloirock/core-js",
+        "description": "A polyfill of `URL.canParse()` is available in `core-js`"
+      },
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js",
+        "github": "zloirock/core-js",
+        "description": "A polyfill of `URL.canParse()` is available in `core-js`"
+      }
+    ]
+  },
+  "urlpattern": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/kenchris/urlpattern-polyfill",
+        "github": "kenchris/urlpattern-polyfill",
+        "description": "A polyfill of `URLPattern` is available on GitHub"
+      }
+    ]
+  },
+  "weakmap": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#weakmap",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `WeakMap` in `core-js`"
+      }
+    ]
+  },
+  "weakset": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/zloirock/core-js#weakset",
+        "github": "zloirock/core-js",
+        "description": "Polyfill of `WeakSet` in `core-js`"
+      }
+    ]
+  },
+  "webvr": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/immersive-web/webvr-polyfill",
+        "github": "immersive-web/webvr-polyfill",
+        "description": "Web VR polyfill — JavaScript implementation of WebVR."
+      }
+    ]
+  }
+}
