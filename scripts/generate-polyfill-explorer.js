@@ -91,6 +91,11 @@ function escapeHtml(text) {
 function generatePolyfillHtml(polyfill, npmStats) {
   const badges = [];
   
+  // Add type badge
+  if (polyfill.type === 'postcss-plugin') {
+    badges.push(`<span class="polyfill-badge badge-postcss" title="PostCSS Plugin">PostCSS</span>`);
+  }
+  
   if (polyfill.npm) {
     badges.push(`<span class="polyfill-badge badge-npm" title="npm package">npm</span>`);
   }
@@ -461,12 +466,17 @@ async function generateHtml(polyfillMappings, npmStats) {
     }
     
     .badge-npm {
-      background: #cc3534;
+      background: #cb3837;
       color: white;
     }
     
     .badge-github {
       background: #24292e;
+      color: white;
+    }
+    
+    .badge-postcss {
+      background: #7b61ff;
       color: white;
     }
     

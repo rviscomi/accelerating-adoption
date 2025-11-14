@@ -14,6 +14,7 @@
 
 import { features } from "web-features";
 import bcd from "@mdn/browser-compat-data" with { type: "json" };
+import cssdb from "cssdb";
 import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -220,6 +221,58 @@ async function generateMappings(mdnDocsMapping) {
     }, {});
 }
 
+// Generate CSS polyfill mappings from cssdb
+function generateCSSDBMappings() {
+  const mappings = {};
+  let mapped = 0;
+  
+  console.log("Discovering polyfills from cssdb...\n");
+  
+  for (const cssFeature of cssdb) {
+    const { id, title, polyfills } = cssFeature;
+    
+    // Skip if no polyfills
+    if (!polyfills || polyfills.length === 0) {
+      continue;
+    }
+    
+    // Check if cssdb feature has a web-feature mapping
+    const webFeatureId = cssFeature['web-feature'];
+    
+    if (webFeatureId && features[webFeatureId]) {
+      const fallbacks = polyfills.map(polyfill => ({
+        type: polyfill.type === 'PostCSS Plugin' ? 'postcss-plugin' : 'polyfill',
+        url: polyfill.link,
+        description: `${polyfill.type} for ${title}`
+      }));
+      
+      // Try to extract npm/github from URL
+      fallbacks.forEach(fallback => {
+        const npmMatch = fallback.url.match(/npmjs\.com\/package\/(@?[^\/\?#]+(?:\/[^\/\?#]+)?)/);
+        if (npmMatch) {
+          fallback.npm = npmMatch[1];
+        }
+        
+        const githubMatch = fallback.url.match(/github\.com\/([^\/]+\/[^\/\?#]+)/);
+        if (githubMatch) {
+          fallback.github = githubMatch[1].replace(/\.git$/, '');
+        }
+      });
+      
+      mappings[webFeatureId] = {
+        fallbacks
+      };
+      
+      mapped++;
+      console.log(`✓ ${webFeatureId}: ${fallbacks.length} CSS polyfill(s)`);
+    }
+  }
+  
+  console.log(`✓ Mapped ${mapped} CSS features from cssdb`);
+  
+  return mappings;
+}
+
 // Main
 async function main() {
   const mdnDocsMapping = await fetchMDNDocsMapping();
@@ -227,6 +280,22 @@ async function main() {
   
   console.log("Discovering polyfills from MDN documentation...\n");
   const mappings = await generateMappings(mdnDocsMapping);
+  
+  // Merge in cssdb polyfills
+  const cssdbMappings = generateCSSDBMappings();
+  for (const [featureId, cssdbData] of Object.entries(cssdbMappings)) {
+    if (mappings[featureId]) {
+      // Append cssdb fallbacks to existing MDN fallbacks
+      mappings[featureId].fallbacks = [
+        ...mappings[featureId].fallbacks,
+        ...cssdbData.fallbacks
+      ];
+      console.log(`  + Merged cssdb into ${featureId}`);
+    } else {
+      // No MDN data, just use cssdb data
+      mappings[featureId] = cssdbData;
+    }
+  }
   
   // Load and merge manual overrides
   const overridesPath = path.join(__dirname, "../mappings/polyfills-overrides.json");

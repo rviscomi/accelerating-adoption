@@ -278,12 +278,17 @@
     }
     
     .badge-npm {
-      background: #cc3534;
+      background: #cb3837;
       color: white;
     }
     
     .badge-github {
       background: #24292e;
+      color: white;
+    }
+    
+    .badge-postcss {
+      background: #7b61ff;
       color: white;
     }
     
@@ -321,7 +326,7 @@
     <h1>Web Features Polyfill Explorer</h1>
     <p class="subtitle">Browse web platform features with available polyfills, sorted by Baseline availability date</p>
     <div class="stats">
-      <span id="feature-count">Showing 82 features with polyfills</span> · 
+      <span id="feature-count">Showing 97 features with polyfills</span> · 
       Generated on November 14, 2025
     </div>
     <div class="filters">
@@ -1476,6 +1481,39 @@
         <div class="feature-card">
           <div class="feature-header">
             <h2 class="feature-name">
+              Custom properties
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">custom-properties</span>
+              <span class="feature-date">Baseline: October 5, 2019</span>
+            </div>
+          </div>
+          <p class="feature-description">Custom properties are CSS properties prefixed with <code>--</code> that set values you can reuse with the <code>var()</code> function. For example, you can set a <code>--key-color</code> property to reuse as <code>border-color: var(--key-color)</code>. Also known as CSS variables.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-properties" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                PostCSS Plugin for Custom Properties
+              </a>
+              <span class="polyfill-badge badge-postcss" title="PostCSS Plugin">PostCSS</span>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>csstools/postcss-plugins</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
               Promise finally()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
@@ -2207,6 +2245,39 @@
         <div class="feature-card">
           <div class="feature-header">
             <h2 class="feature-name">
+              :is()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">is</span>
+              <span class="feature-date">Baseline: July 21, 2023</span>
+            </div>
+          </div>
+          <p class="feature-description">The <code>:is()</code> CSS functional pseudo-class takes a selector list as its argument, and matches any element that can be selected by one of the selectors in that list.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-is-pseudo-class" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                PostCSS Plugin for `:is()` Matches-Any Pseudo-Class
+              </a>
+              <span class="polyfill-badge badge-postcss" title="PostCSS Plugin">PostCSS</span>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>csstools/postcss-plugins</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
               String isWellFormed() and toWellFormed()
               <span class="badge badge-newly">Newly Available</span>
             </h2>
@@ -2389,6 +2460,83 @@
               <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
             </div>
             <div class="polyfill-meta">Repo: <code>zloirock/core-js</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Nesting
+              <span class="badge badge-newly">Newly Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">nesting</span>
+              <span class="feature-date">Baseline: December 11, 2023</span>
+            </div>
+          </div>
+          <p class="feature-description">CSS nesting allows for shorter selectors, easier reading, and more modularity by nesting rules inside others.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                PostCSS Plugin for Nesting Rules
+              </a>
+              <span class="polyfill-badge badge-postcss" title="PostCSS Plugin">PostCSS</span>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>csstools/postcss-plugins</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              :has()
+              <span class="badge badge-newly">Newly Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">has</span>
+              <span class="feature-date">Baseline: December 19, 2023</span>
+            </div>
+          </div>
+          <p class="feature-description">The <code>:has()</code> CSS functional pseudo-class matches an element if any of the selectors passed as parameters would match at least one element.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/csstools/postcss-plugins/tree/main/plugins/css-has-pseudo" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                JavaScript Library for `:has()` Relational Pseudo-Class
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>csstools/postcss-plugins</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/csstools/postcss-plugins/tree/main/plugins/css-has-pseudo" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                PostCSS Plugin for `:has()` Relational Pseudo-Class
+              </a>
+              <span class="polyfill-badge badge-postcss" title="PostCSS Plugin">PostCSS</span>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>csstools/postcss-plugins</code></div>
             
           </li>
         
@@ -2907,6 +3055,116 @@
         <div class="feature-card">
           <div class="feature-header">
             <h2 class="feature-name">
+              Cascade layers
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">cascade-layers</span>
+              <span class="feature-date">Baseline: September 14, 2024</span>
+            </div>
+          </div>
+          <p class="feature-description">The <code>@layer</code> CSS at-rule avoids specificity conflicts by providing priority levels for different groups of CSS rules, such as low-priority styles like resets, and high-priority styles like UI components.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-cascade-layers" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                PostCSS Plugin for CSS Cascade Layers
+              </a>
+              <span class="polyfill-badge badge-postcss" title="PostCSS Plugin">PostCSS</span>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>csstools/postcss-plugins</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              :focus-visible
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">focus-visible</span>
+              <span class="feature-date">Baseline: September 14, 2024</span>
+            </div>
+          </div>
+          <p class="feature-description">The <code>:focus-visible</code> CSS pseudo-class selects elements that match the <code>:focus</code> pseudo-class and meets the browser's criteria for visually emphasizing focused elements.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/WICG/focus-visible" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                JavaScript Library for `:focus-visible` Focus-Indicated Pseudo-Class
+              </a>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>WICG/focus-visible</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-focus-visible" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                PostCSS Plugin for `:focus-visible` Focus-Indicated Pseudo-Class
+              </a>
+              <span class="polyfill-badge badge-postcss" title="PostCSS Plugin">PostCSS</span>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>csstools/postcss-plugins</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Relative colors
+              <span class="badge badge-newly">Newly Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">relative-color</span>
+              <span class="feature-date">Baseline: September 16, 2024</span>
+            </div>
+          </div>
+          <p class="feature-description">The <code>from</code> keyword for color functions (<code>color()</code>, <code>hsl()</code>, <code>oklch()</code>, etc.) creates a new color based on a given color by modifying the values of the input color. Also known as relative color syntax (RCS).</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-relative-color-syntax" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                PostCSS Plugin for Relative Colors
+              </a>
+              <span class="polyfill-badge badge-postcss" title="PostCSS Plugin">PostCSS</span>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>csstools/postcss-plugins</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
               Promise.try()
               <span class="badge badge-newly">Newly Available</span>
             </h2>
@@ -3068,6 +3326,39 @@
         <div class="feature-card">
           <div class="feature-header">
             <h2 class="feature-name">
+              ic unit
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">ic</span>
+              <span class="feature-date">Baseline: April 3, 2025</span>
+            </div>
+          </div>
+          <p class="feature-description">The <code>ic</code> CSS length unit corresponds to the width of CJK ideographic characters.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-ic-unit" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                PostCSS Plugin for `ic` length unit
+              </a>
+              <span class="polyfill-badge badge-postcss" title="PostCSS Plugin">PostCSS</span>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>csstools/postcss-plugins</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
               RegExp.escape()
               <span class="badge badge-newly">Newly Available</span>
             </h2>
@@ -3100,6 +3391,71 @@
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
             <div class="polyfill-meta">Package: <code>regexp.escape</code> · 213,678 downloads/week</div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Small, large, and dynamic viewport units
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">viewport-unit-variants</span>
+              <span class="feature-date">Baseline: June 5, 2025</span>
+            </div>
+          </div>
+          <p class="feature-description">The <code>sv*</code>, <code>lv*</code>, and <code>dv*</code> CSS viewport units are relative to the smallest, largest, and current (dynamic) viewport size. They are used to size elements in relation to the viewport's dimensions.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-logical-viewport-units" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                PostCSS Plugin for Logical Viewport Units
+              </a>
+              <span class="polyfill-badge badge-postcss" title="PostCSS Plugin">PostCSS</span>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>csstools/postcss-plugins</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Container queries
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">container-queries</span>
+              <span class="feature-date">Baseline: August 14, 2025</span>
+            </div>
+          </div>
+          <p class="feature-description">Container size queries with the <code>@container</code> at-rule apply styles to an element based on the dimensions of its container.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/container-query-polyfill" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                JavaScript Library for Container Queries
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>container-query-polyfill</code></div>
             
           </li>
         
@@ -3175,6 +3531,171 @@
               <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
             </div>
             <div class="polyfill-meta">Repo: <code>kenchris/urlpattern-polyfill</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Media query range syntax
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">media-query-range-syntax</span>
+              <span class="feature-date">Baseline: September 27, 2025</span>
+            </div>
+          </div>
+          <p class="feature-description">The range syntax of CSS media queries allows you to use mathematical comparison operators such as <code>&#x3C;</code>, <code>></code>, <code>&#x3C;=</code>, and <code>>=</code> to define a range of values for a media query. For example, <code>(400px &#x3C; width &#x3C; 1000px)</code> returns true if the viewport width is between 400px and 1000px.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-media-minmax" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                PostCSS Plugin for Media Query Ranges
+              </a>
+              <span class="polyfill-badge badge-postcss" title="PostCSS Plugin">PostCSS</span>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>csstools/postcss-plugins</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              color()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">color-function</span>
+              <span class="feature-date">Baseline: November 9, 2025</span>
+            </div>
+          </div>
+          <p class="feature-description">The <code>color()</code> function picks a color from a given color space. Wide gamut color spaces like <code>display-p3</code> allow showing more vibrant and saturated colors than the standard <code>srgb</code> color space.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-color-function" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                PostCSS Plugin for `color()` Function
+              </a>
+              <span class="polyfill-badge badge-postcss" title="PostCSS Plugin">PostCSS</span>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>csstools/postcss-plugins</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              color-mix()
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">color-mix</span>
+              <span class="feature-date">Baseline: November 9, 2025</span>
+            </div>
+          </div>
+          <p class="feature-description">The <code>color-mix()</code> function mixes two colors in a given color space and by a given amount. Commonly, lighter or darker variations of a color are created by mixing with white or black.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-color-mix-function" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                PostCSS Plugin for `color-mix()` Function
+              </a>
+              <span class="polyfill-badge badge-postcss" title="PostCSS Plugin">PostCSS</span>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>csstools/postcss-plugins</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Lab and LCH
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">lab</span>
+              <span class="feature-date">Baseline: November 9, 2025</span>
+            </div>
+          </div>
+          <p class="feature-description">The CIE Lab color space expresses colors in terms of lightness and how red/green and blue/yellow a color is. LCH is a variant of Lab with polar coordinates. These color spaces can be used with the CSS <code>color()</code>, <code>lab()</code>, and <code>lch()</code> functions. Also known as CIELAB and CIELCH.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-lab-function" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                PostCSS Plugin for `lch()` Function
+              </a>
+              <span class="polyfill-badge badge-postcss" title="PostCSS Plugin">PostCSS</span>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>csstools/postcss-plugins</code></div>
+            
+          </li>
+        
+            </ul>
+          </div>
+        </div>
+      
+    
+        <div class="feature-card">
+          <div class="feature-header">
+            <h2 class="feature-name">
+              Oklab and Oklch
+              <span class="badge badge-widely">Widely Available</span>
+            </h2>
+            <div class="feature-meta">
+              <span class="feature-id">oklab</span>
+              <span class="feature-date">Baseline: November 9, 2025</span>
+            </div>
+          </div>
+          <p class="feature-description">The Oklab color space expresses colors in terms of lightness and how red/green and blue/yellow a color is, aiming to match how humans perceive colors. Oklch is a variant of Oklab with polar coordinates. These color spaces can be used with the CSS <code>color()</code>, <code>oklab()</code>, and <code>oklch()</code> functions.</p>
+          <div class="polyfills-section">
+            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <ul class="polyfills-list">
+              
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-oklab-function" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                PostCSS Plugin for `oklab` and `oklch` color functions
+              </a>
+              <span class="polyfill-badge badge-postcss" title="PostCSS Plugin">PostCSS</span>
+              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
+            </div>
+            <div class="polyfill-meta">Repo: <code>csstools/postcss-plugins</code></div>
             
           </li>
         

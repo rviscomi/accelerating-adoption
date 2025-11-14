@@ -1290,6 +1290,168 @@
       }
     ]
   },
+  "cascade-layers": {
+    "fallbacks": [
+      {
+        "type": "postcss-plugin",
+        "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-cascade-layers",
+        "description": "PostCSS Plugin for CSS Cascade Layers",
+        "github": "csstools/postcss-plugins"
+      }
+    ]
+  },
+  "color-function": {
+    "fallbacks": [
+      {
+        "type": "postcss-plugin",
+        "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-color-function",
+        "description": "PostCSS Plugin for `color()` Function",
+        "github": "csstools/postcss-plugins"
+      }
+    ]
+  },
+  "color-mix": {
+    "fallbacks": [
+      {
+        "type": "postcss-plugin",
+        "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-color-mix-function",
+        "description": "PostCSS Plugin for `color-mix()` Function",
+        "github": "csstools/postcss-plugins"
+      }
+    ]
+  },
+  "container-queries": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/container-query-polyfill",
+        "description": "JavaScript Library for Container Queries",
+        "npm": "container-query-polyfill"
+      }
+    ]
+  },
+  "custom-properties": {
+    "fallbacks": [
+      {
+        "type": "postcss-plugin",
+        "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-properties",
+        "description": "PostCSS Plugin for Custom Properties",
+        "github": "csstools/postcss-plugins"
+      }
+    ]
+  },
+  "focus-visible": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/WICG/focus-visible",
+        "description": "JavaScript Library for `:focus-visible` Focus-Indicated Pseudo-Class",
+        "github": "WICG/focus-visible"
+      },
+      {
+        "type": "postcss-plugin",
+        "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-focus-visible",
+        "description": "PostCSS Plugin for `:focus-visible` Focus-Indicated Pseudo-Class",
+        "github": "csstools/postcss-plugins"
+      }
+    ]
+  },
+  "has": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/css-has-pseudo",
+        "description": "JavaScript Library for `:has()` Relational Pseudo-Class",
+        "github": "csstools/postcss-plugins"
+      },
+      {
+        "type": "postcss-plugin",
+        "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/css-has-pseudo",
+        "description": "PostCSS Plugin for `:has()` Relational Pseudo-Class",
+        "github": "csstools/postcss-plugins"
+      }
+    ]
+  },
+  "ic": {
+    "fallbacks": [
+      {
+        "type": "postcss-plugin",
+        "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-ic-unit",
+        "description": "PostCSS Plugin for `ic` length unit",
+        "github": "csstools/postcss-plugins"
+      }
+    ]
+  },
+  "is": {
+    "fallbacks": [
+      {
+        "type": "postcss-plugin",
+        "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-is-pseudo-class",
+        "description": "PostCSS Plugin for `:is()` Matches-Any Pseudo-Class",
+        "github": "csstools/postcss-plugins"
+      }
+    ]
+  },
+  "lab": {
+    "fallbacks": [
+      {
+        "type": "postcss-plugin",
+        "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-lab-function",
+        "description": "PostCSS Plugin for `lch()` Function",
+        "github": "csstools/postcss-plugins"
+      }
+    ]
+  },
+  "viewport-unit-variants": {
+    "fallbacks": [
+      {
+        "type": "postcss-plugin",
+        "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-logical-viewport-units",
+        "description": "PostCSS Plugin for Logical Viewport Units",
+        "github": "csstools/postcss-plugins"
+      }
+    ]
+  },
+  "media-query-range-syntax": {
+    "fallbacks": [
+      {
+        "type": "postcss-plugin",
+        "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-media-minmax",
+        "description": "PostCSS Plugin for Media Query Ranges",
+        "github": "csstools/postcss-plugins"
+      }
+    ]
+  },
+  "nesting": {
+    "fallbacks": [
+      {
+        "type": "postcss-plugin",
+        "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting",
+        "description": "PostCSS Plugin for Nesting Rules",
+        "github": "csstools/postcss-plugins"
+      }
+    ]
+  },
+  "oklab": {
+    "fallbacks": [
+      {
+        "type": "postcss-plugin",
+        "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-oklab-function",
+        "description": "PostCSS Plugin for `oklab` and `oklch` color functions",
+        "github": "csstools/postcss-plugins"
+      }
+    ]
+  },
+  "relative-color": {
+    "fallbacks": [
+      {
+        "type": "postcss-plugin",
+        "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-relative-color-syntax",
+        "description": "PostCSS Plugin for Relative Colors",
+        "github": "csstools/postcss-plugins"
+      }
+    ]
+  },
   "scheduler": {
     "fallbacks": [
       {
