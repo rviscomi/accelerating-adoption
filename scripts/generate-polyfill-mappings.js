@@ -140,7 +140,16 @@ async function findPolyfills(slug) {
 function extractNpmPackage(url) {
   // Match package name after /package/, handling scoped packages like @scope/package
   const match = url.match(/npmjs\.com\/package\/(@?[^\/\?#]+(?:\/[^\/\?#]+)?)/);
-  return match ? match[1] : null;
+  if (match) return match[1];
+  
+  // Special case: FormatJS polyfill links
+  // https://formatjs.github.io/docs/polyfills/intl-locale/ -> @formatjs/intl-locale
+  const formatJsMatch = url.match(/formatjs\.github\.io\/docs\/polyfills\/([\w-]+)/);
+  if (formatJsMatch) {
+    return `@formatjs/${formatJsMatch[1]}`;
+  }
+  
+  return null;
 }
 
 // Extract GitHub repo from URL

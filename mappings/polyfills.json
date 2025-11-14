@@ -420,6 +420,7 @@
       {
         "type": "polyfill",
         "url": "https://formatjs.github.io/docs/polyfills/intl-displaynames/",
+        "npm": "@formatjs/intl-displaynames",
         "description": "Polyfill of `Intl.DisplayNames` in FormatJS"
       }
     ]
@@ -429,6 +430,7 @@
       {
         "type": "polyfill",
         "url": "https://formatjs.github.io/docs/polyfills/intl-durationformat/",
+        "npm": "@formatjs/intl-durationformat",
         "description": "Polyfill of `Intl.DurationFormat` in FormatJS"
       }
     ]
@@ -438,6 +440,7 @@
       {
         "type": "polyfill",
         "url": "https://formatjs.github.io/docs/polyfills/intl-listformat/",
+        "npm": "@formatjs/intl-listformat",
         "description": "Polyfill of `Intl.ListFormat` in FormatJS"
       }
     ]
@@ -447,6 +450,7 @@
       {
         "type": "polyfill",
         "url": "https://formatjs.github.io/docs/polyfills/intl-locale/",
+        "npm": "@formatjs/intl-locale",
         "description": "Polyfill of `Intl.Locale` in FormatJS"
       }
     ]
@@ -456,6 +460,7 @@
       {
         "type": "polyfill",
         "url": "https://formatjs.github.io/docs/polyfills/intl-locale/",
+        "npm": "@formatjs/intl-locale",
         "description": "Polyfill of `Intl.Locale` in FormatJS"
       }
     ]
@@ -465,6 +470,7 @@
       {
         "type": "polyfill",
         "url": "https://formatjs.github.io/docs/polyfills/intl-pluralrules/",
+        "npm": "@formatjs/intl-pluralrules",
         "description": "Polyfill of `Intl.PluralRules` in FormatJS"
       }
     ]
@@ -474,6 +480,7 @@
       {
         "type": "polyfill",
         "url": "https://formatjs.github.io/docs/polyfills/intl-relativetimeformat/",
+        "npm": "@formatjs/intl-relativetimeformat",
         "description": "Polyfill of `Intl.RelativeTimeFormat` in FormatJS"
       }
     ]
@@ -483,6 +490,7 @@
       {
         "type": "polyfill",
         "url": "https://formatjs.github.io/docs/polyfills/intl-segmenter/",
+        "npm": "@formatjs/intl-segmenter",
         "description": "Polyfill of `Intl.Segmenter` in FormatJS"
       }
     ]

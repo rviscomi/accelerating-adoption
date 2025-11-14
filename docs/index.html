@@ -123,6 +123,7 @@
       margin-bottom: 20px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       transition: box-shadow 0.2s;
+      scroll-margin-top: 20px;
     }
     
     .feature-card:hover {
@@ -141,6 +142,12 @@
       align-items: center;
       gap: 10px;
       flex-wrap: wrap;
+    }
+    
+    .baseline-icon {
+      height: 24px;
+      width: auto;
+      vertical-align: middle;
     }
     
     .feature-meta {
@@ -350,15 +357,16 @@
   
   <main>
     
-        <div class="feature-card">
+        <div class="feature-card" id="array-isarray">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Array.isArray()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">array-isarray</span>
-              <span class="feature-date">Baseline: January 29, 2018</span>
+              <span class="feature-date">Baseline since July 29, 2015</span>
             </div>
           </div>
           <p class="feature-description">The <code>Array.isArray()</code> static method checks whether a value is an array.</p>
@@ -393,15 +401,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="iterators">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Iterators and the for...of loop
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">iterators</span>
-              <span class="feature-date">Baseline: January 29, 2018</span>
+              <span class="feature-date">Baseline since July 29, 2015</span>
             </div>
           </div>
           <p class="feature-description">The <code>for...of</code> loop operates on a sequence of values sourced from an iterable object, such as arrays, array-like objects, DOM collections, iterators, generators, and user-defined iterables. All built-in iterators inherit from the <code>Iterator</code> class.</p>
@@ -427,7 +436,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>es-iterator-helpers</code> · 22,868,449 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>es-iterator-helpers</code> · 22,883,498 downloads/week</div>
             
           </li>
         
@@ -436,15 +445,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="map">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Map (initial support)
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">map</span>
-              <span class="feature-date">Baseline: January 29, 2018</span>
+              <span class="feature-date">Baseline since July 29, 2015</span>
             </div>
           </div>
           <p class="feature-description">Map objects hold key-value pairs and remember the original insertion order of the keys.</p>
@@ -470,7 +480,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>es-map</code> · 25,825 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>es-map</code> · 25,366 downloads/week</div>
             
           </li>
         
@@ -479,15 +489,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="number">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Math and numbers
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">number</span>
-              <span class="feature-date">Baseline: January 29, 2018</span>
+              <span class="feature-date">Baseline since July 29, 2015</span>
             </div>
           </div>
           <p class="feature-description">The number type (and <code>Number</code> object) represents floating-point numbers, such as 42 or -4.201, while the <code>Math</code> API contains mathematical functions and constants. JavaScript can also represent boundless negative and positive values as <code>Infinity</code> or not-a-number as <code>NaN</code> (as in <code>0 * Infinity</code>).</p>
@@ -511,15 +522,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="promise">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Promise (initial support)
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">promise</span>
-              <span class="feature-date">Baseline: January 29, 2018</span>
+              <span class="feature-date">Baseline since July 29, 2015</span>
             </div>
           </div>
           <p class="feature-description">A promise represents an asynchronous operation which eventually succeeds or fails.</p>
@@ -543,15 +555,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="regexp">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Regular expressions
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">regexp</span>
-              <span class="feature-date">Baseline: January 29, 2018</span>
+              <span class="feature-date">Baseline since July 29, 2015</span>
             </div>
           </div>
           <p class="feature-description">The <code>RegExp</code> object represents a regular expression, a notation for matching text patterns.</p>
@@ -575,15 +588,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="set">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Set (initial support)
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">set</span>
-              <span class="feature-date">Baseline: January 29, 2018</span>
+              <span class="feature-date">Baseline since July 29, 2015</span>
             </div>
           </div>
           <p class="feature-description">Set objects store unique values of any type.</p>
@@ -609,7 +623,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>es-set</code> · 23,854 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>es-set</code> · 23,549 downloads/week</div>
             
           </li>
         
@@ -618,15 +632,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="setinterval">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               setInterval
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">setinterval</span>
-              <span class="feature-date">Baseline: January 29, 2018</span>
+              <span class="feature-date">Baseline since July 29, 2015</span>
             </div>
           </div>
           <p class="feature-description">The <code>setInterval()</code> global function repeatedly executes provided code on a given delay, and the accompanying <code>clearInterval()</code> cancels the interval.</p>
@@ -650,15 +665,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="settimeout">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               setTimeout()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">settimeout</span>
-              <span class="feature-date">Baseline: January 29, 2018</span>
+              <span class="feature-date">Baseline since July 29, 2015</span>
             </div>
           </div>
           <p class="feature-description">The <code>setTimeout()</code> global function executes provided code after a given duration of time, and the accompanying <code>clearTimeout()</code> cancels the timer.</p>
@@ -682,15 +698,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="weakmap">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               WeakMap
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">weakmap</span>
-              <span class="feature-date">Baseline: January 29, 2018</span>
+              <span class="feature-date">Baseline since July 29, 2015</span>
             </div>
           </div>
           <p class="feature-description">A <code>WeakMap</code> object holds key-value pairs that do not create strong references to its keys, such that value data can be associated with a key without preventing garbage collection of the key.</p>
@@ -714,15 +731,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="string-codepoint">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               String codePointAt() and fromCodePoint()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">string-codepoint</span>
-              <span class="feature-date">Baseline: March 30, 2018</span>
+              <span class="feature-date">Baseline since September 30, 2015</span>
             </div>
           </div>
           <p class="feature-description">The <code>codePointAt()</code> method returns the numeric value of the UTF-16 code point at an index of the string. The <code>fromCodePoint()</code> method returns a string created from one or more code points.</p>
@@ -748,7 +766,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.codepointat</code> · 892,862 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>string.prototype.codepointat</code> · 886,420 downloads/week</div>
             
           </li>
         
@@ -759,7 +777,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.fromcodepoint</code> · 1,201,902 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>string.fromcodepoint</code> · 1,199,303 downloads/week</div>
             
           </li>
         
@@ -768,15 +786,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="string-includes">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               String includes()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">string-includes</span>
-              <span class="feature-date">Baseline: March 30, 2018</span>
+              <span class="feature-date">Baseline since September 30, 2015</span>
             </div>
           </div>
           <p class="feature-description">The <code>includes()</code> method of strings returns whether a search string appears within the string.</p>
@@ -802,7 +821,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.includes</code> · 14,459,501 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>string.prototype.includes</code> · 14,470,828 downloads/week</div>
             
           </li>
         
@@ -811,15 +830,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="string-raw">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               String raw()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">string-raw</span>
-              <span class="feature-date">Baseline: March 30, 2018</span>
+              <span class="feature-date">Baseline since September 30, 2015</span>
             </div>
           </div>
           <p class="feature-description">The <code>String.raw()</code> static method interpolates template literal substitutions, but ignores escape sequences. It is the tag function for template literals.</p>
@@ -854,15 +874,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="string-repeat">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               String repeat()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">string-repeat</span>
-              <span class="feature-date">Baseline: March 30, 2018</span>
+              <span class="feature-date">Baseline since September 30, 2015</span>
             </div>
           </div>
           <p class="feature-description">The <code>repeat()</code> method of strings returns the original string repeated a number of times.</p>
@@ -888,7 +909,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.repeat</code> · 20,272,048 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>string.prototype.repeat</code> · 20,273,315 downloads/week</div>
             
           </li>
         
@@ -897,15 +918,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="string-startsends-with">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               String startsWith() and endsWith()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">string-startsends-with</span>
-              <span class="feature-date">Baseline: March 30, 2018</span>
+              <span class="feature-date">Baseline since September 30, 2015</span>
             </div>
           </div>
           <p class="feature-description">The <code>startsWith()</code> and <code>endsWith()</code> methods of strings returns whether a search string appears at the beginning or end of the provided string.</p>
@@ -931,7 +953,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.endswith</code> · 30,352 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>string.prototype.endswith</code> · 29,030 downloads/week</div>
             
           </li>
         
@@ -942,7 +964,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.startswith</code> · 74,832 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>string.prototype.startswith</code> · 73,040 downloads/week</div>
             
           </li>
         
@@ -951,15 +973,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="symbol">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Symbol
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">symbol</span>
-              <span class="feature-date">Baseline: March 30, 2018</span>
+              <span class="feature-date">Baseline since September 30, 2015</span>
             </div>
           </div>
           <p class="feature-description">A <code>Symbol</code> value is a unique, non-enumerable primitive value used for encapsulation or information hiding. For example, a symbol can be a key of an object that can never collide with any other key.</p>
@@ -983,15 +1006,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="weakset">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               WeakSet
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">weakset</span>
-              <span class="feature-date">Baseline: March 30, 2018</span>
+              <span class="feature-date">Baseline since September 30, 2015</span>
             </div>
           </div>
           <p class="feature-description">A <code>WeakSet</code> object stores unique values of any type without creating strong references to the values, such that membership in the set does not prevent garbage collection of the value.</p>
@@ -1015,15 +1039,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="array-copywithin">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Array copyWithin()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">array-copywithin</span>
-              <span class="feature-date">Baseline: March 20, 2019</span>
+              <span class="feature-date">Baseline since September 20, 2016</span>
             </div>
           </div>
           <p class="feature-description">The <code>copyWithin()</code> method of arrays and typed arrays shifts or copies items of an array to another index of the array without changing its length.</p>
@@ -1069,15 +1094,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="array-fill">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Array fill()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">array-fill</span>
-              <span class="feature-date">Baseline: March 20, 2019</span>
+              <span class="feature-date">Baseline since September 20, 2016</span>
             </div>
           </div>
           <p class="feature-description">The <code>fill()</code> method of arrays and typed arrays sets all or some items of an array to a given a value.</p>
@@ -1112,15 +1138,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="array-find">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Array find() and findIndex()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">array-find</span>
-              <span class="feature-date">Baseline: March 20, 2019</span>
+              <span class="feature-date">Baseline since September 20, 2016</span>
             </div>
           </div>
           <p class="feature-description">The <code>find()</code> and <code>findIndex()</code> methods of arrays and typed arrays search an array for the first item that satisfies a test function.</p>
@@ -1146,7 +1173,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.prototype.find</code> · 1,619,193 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>array.prototype.find</code> · 1,596,886 downloads/week</div>
             
           </li>
         
@@ -1155,15 +1182,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="array-from">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Array.from()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">array-from</span>
-              <span class="feature-date">Baseline: March 20, 2019</span>
+              <span class="feature-date">Baseline since September 20, 2016</span>
             </div>
           </div>
           <p class="feature-description">The <code>Array.from()</code> and typed array <code>.from()</code> static methods copy items from an iterable or array-like object to make a new array.</p>
@@ -1189,7 +1217,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.from</code> · 5,462 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>array.from</code> · 5,406 downloads/week</div>
             
           </li>
         
@@ -1209,15 +1237,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="array-includes">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Array includes()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">array-includes</span>
-              <span class="feature-date">Baseline: March 20, 2019</span>
+              <span class="feature-date">Baseline since September 20, 2016</span>
             </div>
           </div>
           <p class="feature-description">The <code>includes()</code> method of arrays and typed arrays returns whether a given value appears in the array.</p>
@@ -1243,7 +1272,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array-includes</code> · 37,882,719 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>array-includes</code> · 37,840,126 downloads/week</div>
             
           </li>
         
@@ -1263,15 +1292,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="array-of">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Array.of()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">array-of</span>
-              <span class="feature-date">Baseline: March 20, 2019</span>
+              <span class="feature-date">Baseline since September 20, 2016</span>
             </div>
           </div>
           <p class="feature-description">The <code>Array.of()</code> and typed array <code>.of()</code> static methods create new arrays from the values of any number of arguments.</p>
@@ -1297,7 +1327,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.of</code> · 183 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>array.of</code> · 255 downloads/week</div>
             
           </li>
         
@@ -1317,15 +1347,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="base64encodedecode">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Base64 encoding and decoding
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">base64encodedecode</span>
-              <span class="feature-date">Baseline: March 20, 2019</span>
+              <span class="feature-date">Baseline since September 20, 2016</span>
             </div>
           </div>
           <p class="feature-description">The <code>atob()</code> and <code>btoa()</code> global functions encode and decode strings to and from base 64, respectively.</p>
@@ -1360,15 +1391,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="typed-array-iteration-methods">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Typed array iteration methods
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">typed-array-iteration-methods</span>
-              <span class="feature-date">Baseline: March 20, 2019</span>
+              <span class="feature-date">Baseline since September 20, 2016</span>
             </div>
           </div>
           <p class="feature-description">Typed array iteration methods</p>
@@ -1392,15 +1424,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="typed-array-iterators">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Typed array iterators
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">typed-array-iterators</span>
-              <span class="feature-date">Baseline: March 20, 2019</span>
+              <span class="feature-date">Baseline since September 20, 2016</span>
             </div>
           </div>
           <p class="feature-description">Typed arrays are iterable with the <code>for … of</code> statement and enumerable with the methods <code>entries()</code>, <code>keys()</code>, and <code>values()</code>.</p>
@@ -1424,15 +1457,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="string-pad">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               String padStart() and padEnd()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">string-pad</span>
-              <span class="feature-date">Baseline: October 5, 2019</span>
+              <span class="feature-date">Baseline since April 5, 2017</span>
             </div>
           </div>
           <p class="feature-description">The <code>padStart()</code> and <code>padEnd()</code> methods of strings return a string lengthened to a minimum number of characters by adding characters to the start or end of the string.</p>
@@ -1458,7 +1492,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.padend</code> · 4,821,531 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>string.prototype.padend</code> · 4,818,890 downloads/week</div>
             
           </li>
         
@@ -1469,7 +1503,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.padstart</code> · 1,240,268 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>string.prototype.padstart</code> · 1,229,841 downloads/week</div>
             
           </li>
         
@@ -1478,15 +1512,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="custom-properties">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Custom properties
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">custom-properties</span>
-              <span class="feature-date">Baseline: October 5, 2019</span>
+              <span class="feature-date">Baseline since April 5, 2017</span>
             </div>
           </div>
           <p class="feature-description">Custom properties are CSS properties prefixed with <code>--</code> that set values you can reuse with the <code>var()</code> function. For example, you can set a <code>--key-color</code> property to reuse as <code>border-color: var(--key-color)</code>. Also known as CSS variables.</p>
@@ -1511,15 +1546,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="promise-finally">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Promise finally()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">promise-finally</span>
-              <span class="feature-date">Baseline: April 2, 2021</span>
+              <span class="feature-date">Baseline since October 2, 2018</span>
             </div>
           </div>
           <p class="feature-description">The promise <code>finally()</code> method executes a function when the promise settles (resolves or rejects).</p>
@@ -1545,7 +1581,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>promise.prototype.finally</code> · 1,201,152 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>promise.prototype.finally</code> · 1,199,754 downloads/week</div>
             
           </li>
         
@@ -1554,15 +1590,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="intersection-observer">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Intersection observer
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">intersection-observer</span>
-              <span class="feature-date">Baseline: September 25, 2021</span>
+              <span class="feature-date">Baseline since March 25, 2019</span>
             </div>
           </div>
           <p class="feature-description">The <code>IntersectionObserver</code> API asynchronously observes changes in the intersection of a target element with an ancestor element or with a top-level document's viewport.</p>
@@ -1588,7 +1625,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>intersection-observer</code> · 2,136,290 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>intersection-observer</code> · 2,157,266 downloads/week</div>
             
           </li>
         
@@ -1597,15 +1634,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="intl-plural-rules">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Intl.PluralRules
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">intl-plural-rules</span>
-              <span class="feature-date">Baseline: March 19, 2022</span>
+              <span class="feature-date">Baseline since September 19, 2019</span>
             </div>
           </div>
           <p class="feature-description">The <code>Intl.PluralRules</code> API creates a locale-aware object that tells you which of the language's pluralization rules apply based on a given number.</p>
@@ -1618,9 +1656,9 @@
               <a href="https://formatjs.github.io/docs/polyfills/intl-pluralrules/" target="_blank" rel="noopener noreferrer" class="polyfill-link">
                 Polyfill of `Intl.PluralRules` in FormatJS
               </a>
-              
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            
+            <div class="polyfill-meta">Package: <code>@formatjs/intl-pluralrules</code> · 490,083 downloads/week</div>
             
           </li>
         
@@ -1629,15 +1667,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="array-flat">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Array flat() and flatMap()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">array-flat</span>
-              <span class="feature-date">Baseline: July 15, 2022</span>
+              <span class="feature-date">Baseline since January 15, 2020</span>
             </div>
           </div>
           <p class="feature-description">The <code>flat()</code> and <code>flatMap()</code> methods for arrays creates a new array such that each nested array item is concatenated into it.</p>
@@ -1663,7 +1702,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.prototype.flat</code> · 35,855,949 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>array.prototype.flat</code> · 35,769,942 downloads/week</div>
             
           </li>
         
@@ -1674,7 +1713,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.prototype.flatmap</code> · 34,688,140 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>array.prototype.flatmap</code> · 34,664,545 downloads/week</div>
             
           </li>
         
@@ -1683,15 +1722,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="css-escape">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               CSS.escape()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">css-escape</span>
-              <span class="feature-date">Baseline: July 15, 2022</span>
+              <span class="feature-date">Baseline since January 15, 2020</span>
             </div>
           </div>
           <p class="feature-description">The <code>CSS.escape()</code> static method escapes a string so that it can be used in a valid CSS selector.</p>
@@ -1715,15 +1755,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="globalthis">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               globalThis
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">globalthis</span>
-              <span class="feature-date">Baseline: July 15, 2022</span>
+              <span class="feature-date">Baseline since January 15, 2020</span>
             </div>
           </div>
           <p class="feature-description">The <code>globalThis</code> property accesses the global <code>this</code> value (and hence the global object itself) across environments.</p>
@@ -1749,7 +1790,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>globalthis</code> · 41,179,086 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>globalthis</code> · 41,125,456 downloads/week</div>
             
           </li>
         
@@ -1758,15 +1799,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="server-sent-events">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Server-sent events
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">server-sent-events</span>
-              <span class="feature-date">Baseline: July 15, 2022</span>
+              <span class="feature-date">Baseline since January 15, 2020</span>
             </div>
           </div>
           <p class="feature-description">The <code>EventSource</code> API creates a connection to a server and listens to a stream of events sent by the server.</p>
@@ -1812,15 +1854,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="stable-array-sort">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Stable array sort
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">stable-array-sort</span>
-              <span class="feature-date">Baseline: July 15, 2022</span>
+              <span class="feature-date">Baseline since January 15, 2020</span>
             </div>
           </div>
           <p class="feature-description">Stable array sort() function</p>
@@ -1844,15 +1887,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="string-matchall">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               String matchAll()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">string-matchall</span>
-              <span class="feature-date">Baseline: July 15, 2022</span>
+              <span class="feature-date">Baseline since January 15, 2020</span>
             </div>
           </div>
           <p class="feature-description">The <code>matchAll()</code> method of strings matches a string against a regular expression and returns an iterator of all results, including capturing groups.</p>
@@ -1878,7 +1922,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.matchall</code> · 27,638,500 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>string.prototype.matchall</code> · 27,626,064 downloads/week</div>
             
           </li>
         
@@ -1887,15 +1931,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="string-trim-startend">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               String trimStart() and trimEnd()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">string-trim-startend</span>
-              <span class="feature-date">Baseline: July 15, 2022</span>
+              <span class="feature-date">Baseline since January 15, 2020</span>
             </div>
           </div>
           <p class="feature-description">The <code>trimStart()</code> and <code>trimEnd()</code> methods of strings return a new string with whitespace removed from the beginning or end of the string.</p>
@@ -1921,7 +1966,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.trimend</code> · 45,377,800 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>string.prototype.trimend</code> · 45,314,589 downloads/week</div>
             
           </li>
         
@@ -1932,7 +1977,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.trimstart</code> · 44,334,893 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>string.prototype.trimstart</code> · 44,260,218 downloads/week</div>
             
           </li>
         
@@ -1941,15 +1986,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="promise-allsettled">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Promise.allSettled()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">promise-allsettled</span>
-              <span class="feature-date">Baseline: January 28, 2023</span>
+              <span class="feature-date">Baseline since July 28, 2020</span>
             </div>
           </div>
           <p class="feature-description">The <code>Promise.allSettled()</code> static method waits for an array of promises to settle (resolve or reject).</p>
@@ -1975,7 +2021,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>promise.allsettled</code> · 1,825,246 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>promise.allsettled</code> · 1,828,211 downloads/week</div>
             
           </li>
         
@@ -1984,15 +2030,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="queuemicrotask">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               queueMicrotask()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">queuemicrotask</span>
-              <span class="feature-date">Baseline: January 28, 2023</span>
+              <span class="feature-date">Baseline since July 28, 2020</span>
             </div>
           </div>
           <p class="feature-description">The <code>queueMicrotask()</code> method schedules a function to run after the currently running synchronous JavaScript finishes but before returning to the event loop.</p>
@@ -2016,15 +2063,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="string-replaceall">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               String replaceAll()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">string-replaceall</span>
-              <span class="feature-date">Baseline: February 27, 2023</span>
+              <span class="feature-date">Baseline since August 27, 2020</span>
             </div>
           </div>
           <p class="feature-description">The <code>replaceAll()</code> method of strings returns a new string where all matches of a pattern (a string or regular expression) have been substituted with a replacement string.</p>
@@ -2050,7 +2098,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.replaceall</code> · 140,791 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>string.prototype.replaceall</code> · 139,053 downloads/week</div>
             
           </li>
         
@@ -2059,15 +2107,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="intl-locale">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Intl.Locale
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">intl-locale</span>
-              <span class="feature-date">Baseline: March 16, 2023</span>
+              <span class="feature-date">Baseline since September 16, 2020</span>
             </div>
           </div>
           <p class="feature-description">The <code>Intl.Locale</code> API parses Unicode locale identifiers, with language, region, and script codes, such as <code>zh-Hans-CN</code> or <code>en-GB</code>.</p>
@@ -2080,9 +2129,9 @@
               <a href="https://formatjs.github.io/docs/polyfills/intl-locale/" target="_blank" rel="noopener noreferrer" class="polyfill-link">
                 Polyfill of `Intl.Locale` in FormatJS
               </a>
-              
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            
+            <div class="polyfill-meta">Package: <code>@formatjs/intl-locale</code> · 494,976 downloads/week</div>
             
           </li>
         
@@ -2091,15 +2140,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="intl-relative-time-format">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Intl.RelativeTimeFormat
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">intl-relative-time-format</span>
-              <span class="feature-date">Baseline: March 16, 2023</span>
+              <span class="feature-date">Baseline since September 16, 2020</span>
             </div>
           </div>
           <p class="feature-description">The <code>Intl.RelativeTimeFormat</code> API creates a locale-aware formatter that turns an object representing a relative time (such as '1 day ago') into a localized string.</p>
@@ -2112,9 +2162,9 @@
               <a href="https://formatjs.github.io/docs/polyfills/intl-relativetimeformat/" target="_blank" rel="noopener noreferrer" class="polyfill-link">
                 Polyfill of `Intl.RelativeTimeFormat` in FormatJS
               </a>
-              
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            
+            <div class="polyfill-meta">Package: <code>@formatjs/intl-relativetimeformat</code> · 439,946 downloads/week</div>
             
           </li>
         
@@ -2123,15 +2173,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="promise-any">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Promise.any()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">promise-any</span>
-              <span class="feature-date">Baseline: March 16, 2023</span>
+              <span class="feature-date">Baseline since September 16, 2020</span>
             </div>
           </div>
           <p class="feature-description">The <code>Promise.any()</code> static method returns a promise that fulfills as soon as the first of an iterable of promises fulfills, with that promise's value. Otherwise, it rejects with an <code>AggregateError</code> when all of the promises have rejected.</p>
@@ -2157,7 +2208,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>promise.any</code> · 131,249 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>promise.any</code> · 129,383 downloads/week</div>
             
           </li>
         
@@ -2166,15 +2217,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="array-by-copy">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-newly-icon.png" alt="Newly Available" class="baseline-icon" />
               Array by copy
               <span class="badge badge-newly">Newly Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">array-by-copy</span>
-              <span class="feature-date">Baseline: July 4, 2023</span>
+              <span class="feature-date">Baseline since July 4, 2023</span>
             </div>
           </div>
           <p class="feature-description">The <code>toReversed()</code>, <code>toSorted()</code>, <code>toSpliced()</code>, and <code>with()</code> methods of arrays and typed arrays return changed copies of arrays. They stand in contrast to methods such as <code>sort()</code> or <code>reverse()</code> that change arrays in place.</p>
@@ -2200,7 +2252,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.prototype.toreversed</code> · 1,318,434 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>array.prototype.toreversed</code> · 1,346,714 downloads/week</div>
             
           </li>
         
@@ -2211,7 +2263,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.prototype.tosorted</code> · 23,616,856 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>array.prototype.tosorted</code> · 23,625,915 downloads/week</div>
             
           </li>
         
@@ -2222,7 +2274,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.prototype.tospliced</code> · 4,505 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>array.prototype.tospliced</code> · 4,565 downloads/week</div>
             
           </li>
         
@@ -2233,7 +2285,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.prototype.with</code> · 305 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>array.prototype.with</code> · 273 downloads/week</div>
             
           </li>
         
@@ -2242,15 +2294,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="is">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               :is()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">is</span>
-              <span class="feature-date">Baseline: July 21, 2023</span>
+              <span class="feature-date">Baseline since January 21, 2021</span>
             </div>
           </div>
           <p class="feature-description">The <code>:is()</code> CSS functional pseudo-class takes a selector list as its argument, and matches any element that can be selected by one of the selectors in that list.</p>
@@ -2275,15 +2328,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="string-wellformed">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-newly-icon.png" alt="Newly Available" class="baseline-icon" />
               String isWellFormed() and toWellFormed()
               <span class="badge badge-newly">Newly Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">string-wellformed</span>
-              <span class="feature-date">Baseline: October 24, 2023</span>
+              <span class="feature-date">Baseline since October 24, 2023</span>
             </div>
           </div>
           <p class="feature-description">The <code>isWellFormed()</code> method of strings returns a boolean indicating if the string contains any Unicode lone surrogates. The <code>toWellFormed()</code> method returns a new string where all lone surrogates are replaced by the Unicode replacement character.</p>
@@ -2309,7 +2363,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.iswellformed</code> · 202 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>string.prototype.iswellformed</code> · 158 downloads/week</div>
             
           </li>
         
@@ -2320,7 +2374,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.towellformed</code> · 2,427 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>string.prototype.towellformed</code> · 2,462 downloads/week</div>
             
           </li>
         
@@ -2329,15 +2383,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="intl-display-names">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Intl.DisplayNames
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">intl-display-names</span>
-              <span class="feature-date">Baseline: October 26, 2023</span>
+              <span class="feature-date">Baseline since April 26, 2021</span>
             </div>
           </div>
           <p class="feature-description">The <code>Intl.DisplayNames</code> API provides localized names of language, region, script, and currency codes.</p>
@@ -2350,9 +2405,9 @@
               <a href="https://formatjs.github.io/docs/polyfills/intl-displaynames/" target="_blank" rel="noopener noreferrer" class="polyfill-link">
                 Polyfill of `Intl.DisplayNames` in FormatJS
               </a>
-              
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            
+            <div class="polyfill-meta">Package: <code>@formatjs/intl-displaynames</code> · 1,435,438 downloads/week</div>
             
           </li>
         
@@ -2361,15 +2416,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="intl-list-format">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Intl.ListFormat
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">intl-list-format</span>
-              <span class="feature-date">Baseline: October 26, 2023</span>
+              <span class="feature-date">Baseline since April 26, 2021</span>
             </div>
           </div>
           <p class="feature-description">The <code>Intl.ListFormat</code> API creates a locale-aware formatter that turns iterable objects into localized strings.</p>
@@ -2382,9 +2438,9 @@
               <a href="https://formatjs.github.io/docs/polyfills/intl-listformat/" target="_blank" rel="noopener noreferrer" class="polyfill-link">
                 Polyfill of `Intl.ListFormat` in FormatJS
               </a>
-              
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            
+            <div class="polyfill-meta">Package: <code>@formatjs/intl-listformat</code> · 1,485,705 downloads/week</div>
             
           </li>
         
@@ -2393,15 +2449,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="mediastream-recording">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               MediaStream recording
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">mediastream-recording</span>
-              <span class="feature-date">Baseline: October 26, 2023</span>
+              <span class="feature-date">Baseline since April 26, 2021</span>
             </div>
           </div>
           <p class="feature-description">The <code>MediaRecorder</code> API captures data generated by <code>MediaStream</code> or <code>HTMLMediaElement</code> objects for analysis, processing, or saving to disk. Also known as the Media Recording API.</p>
@@ -2425,15 +2482,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="url-canparse">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-newly-icon.png" alt="Newly Available" class="baseline-icon" />
               URL.canParse()
               <span class="badge badge-newly">Newly Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">url-canparse</span>
-              <span class="feature-date">Baseline: December 7, 2023</span>
+              <span class="feature-date">Baseline since December 7, 2023</span>
             </div>
           </div>
           <p class="feature-description">The <code>URL.canParse()</code> static method checks whether a URL can be parsed into a valid <code>URL</code> object. It's an alternative to calling <code>new URL()</code> in a <code>try … catch</code> statement.</p>
@@ -2468,15 +2526,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="nesting">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-newly-icon.png" alt="Newly Available" class="baseline-icon" />
               Nesting
               <span class="badge badge-newly">Newly Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">nesting</span>
-              <span class="feature-date">Baseline: December 11, 2023</span>
+              <span class="feature-date">Baseline since December 11, 2023</span>
             </div>
           </div>
           <p class="feature-description">CSS nesting allows for shorter selectors, easier reading, and more modularity by nesting rules inside others.</p>
@@ -2501,15 +2560,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="has">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-newly-icon.png" alt="Newly Available" class="baseline-icon" />
               :has()
               <span class="badge badge-newly">Newly Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">has</span>
-              <span class="feature-date">Baseline: December 19, 2023</span>
+              <span class="feature-date">Baseline since December 19, 2023</span>
             </div>
           </div>
           <p class="feature-description">The <code>:has()</code> CSS functional pseudo-class matches an element if any of the selectors passed as parameters would match at least one element.</p>
@@ -2545,15 +2605,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="array-fromasync">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-newly-icon.png" alt="Newly Available" class="baseline-icon" />
               Array.fromAsync()
               <span class="badge badge-newly">Newly Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">array-fromasync</span>
-              <span class="feature-date">Baseline: January 25, 2024</span>
+              <span class="feature-date">Baseline since January 25, 2024</span>
             </div>
           </div>
           <p class="feature-description">The <code>Array.fromAsync()</code> static method copies items from an async iterable object to make a new array.</p>
@@ -2577,15 +2638,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="array-group">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-newly-icon.png" alt="Newly Available" class="baseline-icon" />
               Array grouping
               <span class="badge badge-newly">Newly Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">array-group</span>
-              <span class="feature-date">Baseline: March 5, 2024</span>
+              <span class="feature-date">Baseline since March 5, 2024</span>
             </div>
           </div>
           <p class="feature-description">The <code>Object.groupBy()</code> and <code>Map.groupBy()</code> static methods group values of arrays and iterables based on a function that returns a key for each value.</p>
@@ -2611,7 +2673,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>map.groupby</code> · 1,581 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>map.groupby</code> · 1,385 downloads/week</div>
             
           </li>
         
@@ -2622,7 +2684,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>object.groupby</code> · 25,268,347 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>object.groupby</code> · 25,279,358 downloads/week</div>
             
           </li>
         
@@ -2631,15 +2693,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="promise-withresolvers">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-newly-icon.png" alt="Newly Available" class="baseline-icon" />
               Promise.withResolvers()
               <span class="badge badge-newly">Newly Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">promise-withresolvers</span>
-              <span class="feature-date">Baseline: March 5, 2024</span>
+              <span class="feature-date">Baseline since March 5, 2024</span>
             </div>
           </div>
           <p class="feature-description">The <code>Promise.withResolvers()</code> static method is an alternative to the <code>Promise()</code> constructor that returns both the promise and resolution functions. You can use this to access <code>resolve</code> and <code>reject</code> outside the scope of the executor function.</p>
@@ -2665,7 +2728,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>promise.withresolvers</code> · 6,612 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>promise.withresolvers</code> · 6,321 downloads/week</div>
             
           </li>
         
@@ -2674,15 +2737,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="transferable-arraybuffer">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-newly-icon.png" alt="Newly Available" class="baseline-icon" />
               Transferable ArrayBuffer
               <span class="badge badge-newly">Newly Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">transferable-arraybuffer</span>
-              <span class="feature-date">Baseline: March 5, 2024</span>
+              <span class="feature-date">Baseline since March 5, 2024</span>
             </div>
           </div>
           <p class="feature-description">The <code>transfer()</code> and <code>transferToFixedLength()</code> methods of <code>ArrayBuffer</code> move a buffer from one context to another (for example, to a worker).</p>
@@ -2708,7 +2772,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>arraybuffer.prototype.transfer</code> · 3 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>arraybuffer.prototype.transfer</code> · 1 downloads/week</div>
             
           </li>
         
@@ -2719,7 +2783,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>arraybuffer.prototype.transfertofixedlength</code> · 5 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>arraybuffer.prototype.transfertofixedlength</code> · 3 downloads/week</div>
             
           </li>
         
@@ -2728,15 +2792,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="intl-segmenter">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-newly-icon.png" alt="Newly Available" class="baseline-icon" />
               Intl.Segmenter
               <span class="badge badge-newly">Newly Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">intl-segmenter</span>
-              <span class="feature-date">Baseline: April 16, 2024</span>
+              <span class="feature-date">Baseline since April 16, 2024</span>
             </div>
           </div>
           <p class="feature-description">The <code>Intl.Segmenter</code> API creates a locale-aware text splitter that can separate a string into meaningful graphemes, words, or sentences.</p>
@@ -2749,9 +2814,9 @@
               <a href="https://formatjs.github.io/docs/polyfills/intl-segmenter/" target="_blank" rel="noopener noreferrer" class="polyfill-link">
                 Polyfill of `Intl.Segmenter` in FormatJS
               </a>
-              
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            
+            <div class="polyfill-meta">Package: <code>@formatjs/intl-segmenter</code> · 23,788 downloads/week</div>
             
           </li>
         
@@ -2760,15 +2825,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="set-methods">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-newly-icon.png" alt="Newly Available" class="baseline-icon" />
               Set methods
               <span class="badge badge-newly">Newly Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">set-methods</span>
-              <span class="feature-date">Baseline: June 11, 2024</span>
+              <span class="feature-date">Baseline since June 11, 2024</span>
             </div>
           </div>
           <p class="feature-description">The <code>difference()</code>, <code>intersection()</code>, <code>isDisjointFrom()</code>, <code>isSubsetOf()</code>, <code>isSupersetOf()</code>, <code>symmetricDifference()</code>, and <code>union()</code> methods of the JavaScript <code>Set</code> object performs operations between two sets.</p>
@@ -2794,7 +2860,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>set.prototype.difference</code> · 18,026 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>set.prototype.difference</code> · 17,445 downloads/week</div>
             
           </li>
         
@@ -2805,7 +2871,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>set.prototype.intersection</code> · 7,552 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>set.prototype.intersection</code> · 7,520 downloads/week</div>
             
           </li>
         
@@ -2816,7 +2882,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>set.prototype.isdisjointfrom</code> · 934 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>set.prototype.isdisjointfrom</code> · 560 downloads/week</div>
             
           </li>
         
@@ -2827,7 +2893,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>set.prototype.issubsetof</code> · 1,282 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>set.prototype.issubsetof</code> · 929 downloads/week</div>
             
           </li>
         
@@ -2838,7 +2904,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>set.prototype.issupersetof</code> · 1,036 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>set.prototype.issupersetof</code> · 650 downloads/week</div>
             
           </li>
         
@@ -2849,7 +2915,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>set.prototype.symmetricdifference</code> · 4,694 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>set.prototype.symmetricdifference</code> · 4,182 downloads/week</div>
             
           </li>
         
@@ -2860,7 +2926,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>set.prototype.union</code> · 6,270 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>set.prototype.union</code> · 6,093 downloads/week</div>
             
           </li>
         
@@ -2869,15 +2935,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="array-at">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Array at()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">array-at</span>
-              <span class="feature-date">Baseline: September 14, 2024</span>
+              <span class="feature-date">Baseline since March 14, 2022</span>
             </div>
           </div>
           <p class="feature-description">The <code>at()</code> method of arrays and typed arrays returns the item at an index, including negative indices for getting items relative to the end of an array. Also known as the relative indexing method.</p>
@@ -2903,7 +2970,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.prototype.at</code> · 59,522 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>array.prototype.at</code> · 59,088 downloads/week</div>
             
           </li>
         
@@ -2912,15 +2979,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="object-hasown">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Object.hasOwn()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">object-hasown</span>
-              <span class="feature-date">Baseline: September 14, 2024</span>
+              <span class="feature-date">Baseline since March 14, 2022</span>
             </div>
           </div>
           <p class="feature-description">The <code>Object.hasOwn()</code> static method checks whether an object has a given property. It's a more robust alternative to the <code>Object.prototype.hasOwnProperty()</code> method.</p>
@@ -2946,7 +3014,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>object.hasown</code> · 5,839,714 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>object.hasown</code> · 5,850,772 downloads/week</div>
             
           </li>
         
@@ -2955,15 +3023,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="string-at">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               String at()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">string-at</span>
-              <span class="feature-date">Baseline: September 14, 2024</span>
+              <span class="feature-date">Baseline since March 14, 2022</span>
             </div>
           </div>
           <p class="feature-description">The <code>at()</code> method of strings returns the character (one UTF-16 code unit) at an index, including negative indices for getting the character relative to the end of the string. Also known as the relative indexing method.</p>
@@ -2989,7 +3058,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.at</code> · 8,410 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>string.prototype.at</code> · 8,219 downloads/week</div>
             
           </li>
         
@@ -2998,15 +3067,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="structured-clone">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               structuredClone()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">structured-clone</span>
-              <span class="feature-date">Baseline: September 14, 2024</span>
+              <span class="feature-date">Baseline since March 14, 2022</span>
             </div>
           </div>
           <p class="feature-description">The <code>structuredClone()</code> global method creates a deep copy of an object. Values that cannot be cloned can instead be transferred, making the original value no longer usable.</p>
@@ -3052,15 +3122,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="cascade-layers">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Cascade layers
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">cascade-layers</span>
-              <span class="feature-date">Baseline: September 14, 2024</span>
+              <span class="feature-date">Baseline since March 14, 2022</span>
             </div>
           </div>
           <p class="feature-description">The <code>@layer</code> CSS at-rule avoids specificity conflicts by providing priority levels for different groups of CSS rules, such as low-priority styles like resets, and high-priority styles like UI components.</p>
@@ -3085,15 +3156,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="focus-visible">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               :focus-visible
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">focus-visible</span>
-              <span class="feature-date">Baseline: September 14, 2024</span>
+              <span class="feature-date">Baseline since March 14, 2022</span>
             </div>
           </div>
           <p class="feature-description">The <code>:focus-visible</code> CSS pseudo-class selects elements that match the <code>:focus</code> pseudo-class and meets the browser's criteria for visually emphasizing focused elements.</p>
@@ -3129,15 +3201,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="relative-color">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-newly-icon.png" alt="Newly Available" class="baseline-icon" />
               Relative colors
               <span class="badge badge-newly">Newly Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">relative-color</span>
-              <span class="feature-date">Baseline: September 16, 2024</span>
+              <span class="feature-date">Baseline since September 16, 2024</span>
             </div>
           </div>
           <p class="feature-description">The <code>from</code> keyword for color functions (<code>color()</code>, <code>hsl()</code>, <code>oklch()</code>, etc.) creates a new color based on a given color by modifying the values of the input color. Also known as relative color syntax (RCS).</p>
@@ -3162,15 +3235,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="promise-try">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-newly-icon.png" alt="Newly Available" class="baseline-icon" />
               Promise.try()
               <span class="badge badge-newly">Newly Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">promise-try</span>
-              <span class="feature-date">Baseline: January 7, 2025</span>
+              <span class="feature-date">Baseline since January 7, 2025</span>
             </div>
           </div>
           <p class="feature-description">The <code>Promise.try()</code> static method returns a promise that takes a callback of any kind (returns or throws, synchronously or asynchronously) and wraps its result in a <code>Promise</code>.</p>
@@ -3196,7 +3270,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>promise.try</code> · 219 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>promise.try</code> · 209 downloads/week</div>
             
           </li>
         
@@ -3205,15 +3279,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="array-findlast">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Array findLast() and findLastIndex()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">array-findlast</span>
-              <span class="feature-date">Baseline: February 23, 2025</span>
+              <span class="feature-date">Baseline since August 23, 2022</span>
             </div>
           </div>
           <p class="feature-description">The <code>findLast()</code> and <code>findLastIndex()</code> methods of arrays and typed arrays search an array in reverse order for the first item that satisfies a test function.</p>
@@ -3239,7 +3314,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.prototype.findlast</code> · 20,878,364 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>array.prototype.findlast</code> · 20,895,396 downloads/week</div>
             
           </li>
         
@@ -3248,15 +3323,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="intl-duration-format">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-newly-icon.png" alt="Newly Available" class="baseline-icon" />
               Intl.DurationFormat
               <span class="badge badge-newly">Newly Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">intl-duration-format</span>
-              <span class="feature-date">Baseline: March 4, 2025</span>
+              <span class="feature-date">Baseline since March 4, 2025</span>
             </div>
           </div>
           <p class="feature-description">The <code>Intl.DurationFormat</code> API creates a locale-aware formatter that turns an object representing a duration (such as days, hours, and minutes) into a string.</p>
@@ -3269,9 +3345,9 @@
               <a href="https://formatjs.github.io/docs/polyfills/intl-durationformat/" target="_blank" rel="noopener noreferrer" class="polyfill-link">
                 Polyfill of `Intl.DurationFormat` in FormatJS
               </a>
-              
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            
+            <div class="polyfill-meta">Package: <code>@formatjs/intl-durationformat</code> · 135,559 downloads/week</div>
             
           </li>
         
@@ -3280,15 +3356,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="iterator-methods">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-newly-icon.png" alt="Newly Available" class="baseline-icon" />
               Iterator methods
               <span class="badge badge-newly">Newly Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">iterator-methods</span>
-              <span class="feature-date">Baseline: March 31, 2025</span>
+              <span class="feature-date">Baseline since March 31, 2025</span>
             </div>
           </div>
           <p class="feature-description">The <code>Iterator</code> object is an abstract base for objects that implement the iterator protocol. It provides methods common to built-in iterators, such as <code>filter()</code>, <code>find()</code>, <code>map()</code>, and <code>reduce()</code>. You can also use the static method <code>Iterator.from()</code> to convert an existing iterable into an <code>Iterator</code>.</p>
@@ -3314,7 +3391,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>es-iterator-helpers</code> · 22,868,449 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>es-iterator-helpers</code> · 22,883,498 downloads/week</div>
             
           </li>
         
@@ -3323,15 +3400,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="ic">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               ic unit
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">ic</span>
-              <span class="feature-date">Baseline: April 3, 2025</span>
+              <span class="feature-date">Baseline since October 3, 2022</span>
             </div>
           </div>
           <p class="feature-description">The <code>ic</code> CSS length unit corresponds to the width of CJK ideographic characters.</p>
@@ -3356,15 +3434,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="regexp-escape">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-newly-icon.png" alt="Newly Available" class="baseline-icon" />
               RegExp.escape()
               <span class="badge badge-newly">Newly Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">regexp-escape</span>
-              <span class="feature-date">Baseline: May 1, 2025</span>
+              <span class="feature-date">Baseline since May 1, 2025</span>
             </div>
           </div>
           <p class="feature-description">The <code>RegExp.escape()</code> static method takes a string and replaces any characters that are potentially special characters of a regular expression with equivalent escape sequences. For example, <code>RegExp.escape("[abc]")</code> returns <code>"\\[abc\\]"</code>.</p>
@@ -3390,7 +3469,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>regexp.escape</code> · 213,678 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>regexp.escape</code> · 220,721 downloads/week</div>
             
           </li>
         
@@ -3399,15 +3478,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="viewport-unit-variants">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Small, large, and dynamic viewport units
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">viewport-unit-variants</span>
-              <span class="feature-date">Baseline: June 5, 2025</span>
+              <span class="feature-date">Baseline since December 5, 2022</span>
             </div>
           </div>
           <p class="feature-description">The <code>sv*</code>, <code>lv*</code>, and <code>dv*</code> CSS viewport units are relative to the smallest, largest, and current (dynamic) viewport size. They are used to size elements in relation to the viewport's dimensions.</p>
@@ -3432,15 +3512,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="container-queries">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Container queries
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">container-queries</span>
-              <span class="feature-date">Baseline: August 14, 2025</span>
+              <span class="feature-date">Baseline since February 14, 2023</span>
             </div>
           </div>
           <p class="feature-description">Container size queries with the <code>@container</code> at-rule apply styles to an element based on the dimensions of its container.</p>
@@ -3455,7 +3536,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>container-query-polyfill</code></div>
+            <div class="polyfill-meta">Package: <code>container-query-polyfill</code> · 87,347 downloads/week</div>
             
           </li>
         
@@ -3464,15 +3545,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="uint8array-base64-hex">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-newly-icon.png" alt="Newly Available" class="baseline-icon" />
               Uint8Array base64 and hex conversion
               <span class="badge badge-newly">Newly Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">uint8array-base64-hex</span>
-              <span class="feature-date">Baseline: September 5, 2025</span>
+              <span class="feature-date">Baseline since September 5, 2025</span>
             </div>
           </div>
           <p class="feature-description">The <code>Uint8Array</code> object methods <code>fromBase64()</code>, <code>toBase64()</code>, and <code>setFromBase64()</code> convert to and from base64 strings. The <code>fromHex()</code>, <code>toHex()</code>, and <code>setFromHex()</code> methods convert to and from hex strings.</p>
@@ -3498,7 +3580,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>es-arraybuffer-base64</code> · 932 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>es-arraybuffer-base64</code> · 1,077 downloads/week</div>
             
           </li>
         
@@ -3507,15 +3589,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="urlpattern">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-newly-icon.png" alt="Newly Available" class="baseline-icon" />
               URLPattern
               <span class="badge badge-newly">Newly Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">urlpattern</span>
-              <span class="feature-date">Baseline: September 15, 2025</span>
+              <span class="feature-date">Baseline since September 15, 2025</span>
             </div>
           </div>
           <p class="feature-description">The <code>URLPattern</code> API creates patterns that can be matched against URLs or URL components.</p>
@@ -3539,15 +3622,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="media-query-range-syntax">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Media query range syntax
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">media-query-range-syntax</span>
-              <span class="feature-date">Baseline: September 27, 2025</span>
+              <span class="feature-date">Baseline since March 27, 2023</span>
             </div>
           </div>
           <p class="feature-description">The range syntax of CSS media queries allows you to use mathematical comparison operators such as <code>&#x3C;</code>, <code>></code>, <code>&#x3C;=</code>, and <code>>=</code> to define a range of values for a media query. For example, <code>(400px &#x3C; width &#x3C; 1000px)</code> returns true if the viewport width is between 400px and 1000px.</p>
@@ -3572,15 +3656,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="color-function">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               color()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">color-function</span>
-              <span class="feature-date">Baseline: November 9, 2025</span>
+              <span class="feature-date">Baseline since May 9, 2023</span>
             </div>
           </div>
           <p class="feature-description">The <code>color()</code> function picks a color from a given color space. Wide gamut color spaces like <code>display-p3</code> allow showing more vibrant and saturated colors than the standard <code>srgb</code> color space.</p>
@@ -3605,15 +3690,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="color-mix">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               color-mix()
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">color-mix</span>
-              <span class="feature-date">Baseline: November 9, 2025</span>
+              <span class="feature-date">Baseline since May 9, 2023</span>
             </div>
           </div>
           <p class="feature-description">The <code>color-mix()</code> function mixes two colors in a given color space and by a given amount. Commonly, lighter or darker variations of a color are created by mixing with white or black.</p>
@@ -3638,15 +3724,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="lab">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Lab and LCH
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">lab</span>
-              <span class="feature-date">Baseline: November 9, 2025</span>
+              <span class="feature-date">Baseline since May 9, 2023</span>
             </div>
           </div>
           <p class="feature-description">The CIE Lab color space expresses colors in terms of lightness and how red/green and blue/yellow a color is. LCH is a variant of Lab with polar coordinates. These color spaces can be used with the CSS <code>color()</code>, <code>lab()</code>, and <code>lch()</code> functions. Also known as CIELAB and CIELCH.</p>
@@ -3671,15 +3758,16 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="oklab">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-widely-icon.png" alt="Widely Available" class="baseline-icon" />
               Oklab and Oklch
               <span class="badge badge-widely">Widely Available</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">oklab</span>
-              <span class="feature-date">Baseline: November 9, 2025</span>
+              <span class="feature-date">Baseline since May 9, 2023</span>
             </div>
           </div>
           <p class="feature-description">The Oklab color space expresses colors in terms of lightness and how red/green and blue/yellow a color is, aiming to match how humans perceive colors. Oklch is a variant of Oklab with polar coordinates. These color spaces can be used with the CSS <code>color()</code>, <code>oklab()</code>, and <code>oklch()</code> functions.</p>
@@ -3704,9 +3792,10 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="accessor-methods">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-limited-icon.png" alt="Limited Availability" class="baseline-icon" />
               Accessor methods
               <span class="badge badge-limited">Limited Availability</span>
             </h2>
@@ -3736,9 +3825,10 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="date-get-year-set-year">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-limited-icon.png" alt="Limited Availability" class="baseline-icon" />
               getYear() and setYear()
               <span class="badge badge-limited">Limited Availability</span>
             </h2>
@@ -3779,9 +3869,10 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="escape-unescape">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-limited-icon.png" alt="Limited Availability" class="baseline-icon" />
               escape() and unescape()
               <span class="badge badge-limited">Limited Availability</span>
             </h2>
@@ -3811,9 +3902,10 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="explicit-resource-management">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-limited-icon.png" alt="Limited Availability" class="baseline-icon" />
               Explicit resource management
               <span class="badge badge-limited">Limited Availability</span>
             </h2>
@@ -3843,9 +3935,10 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="getorinsert">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-limited-icon.png" alt="Limited Availability" class="baseline-icon" />
               Map getOrInsert()
               <span class="badge badge-limited">Limited Availability</span>
             </h2>
@@ -3877,7 +3970,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>map.prototype.getorinsert</code> · 1 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>map.prototype.getorinsert</code> · 2 downloads/week</div>
             
           </li>
         
@@ -3919,9 +4012,10 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="html-wrapper-methods">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-limited-icon.png" alt="Limited Availability" class="baseline-icon" />
               HTML wrapper methods
               <span class="badge badge-limited">Limited Availability</span>
             </h2>
@@ -3953,7 +4047,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>es-string-html-methods</code> · 384 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>es-string-html-methods</code> · 406 downloads/week</div>
             
           </li>
         
@@ -3964,7 +4058,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.substr</code> · 10 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>string.prototype.substr</code> · 14 downloads/week</div>
             
           </li>
         
@@ -3973,9 +4067,10 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="intl-locale-info">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-limited-icon.png" alt="Limited Availability" class="baseline-icon" />
               Intl.Locale info
               <span class="badge badge-limited">Limited Availability</span>
             </h2>
@@ -3994,9 +4089,9 @@
               <a href="https://formatjs.github.io/docs/polyfills/intl-locale/" target="_blank" rel="noopener noreferrer" class="polyfill-link">
                 Polyfill of `Intl.Locale` in FormatJS
               </a>
-              
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            
+            <div class="polyfill-meta">Package: <code>@formatjs/intl-locale</code> · 494,976 downloads/week</div>
             
           </li>
         
@@ -4005,9 +4100,10 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="is-error">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-limited-icon.png" alt="Limited Availability" class="baseline-icon" />
               Error.isError()
               <span class="badge badge-limited">Limited Availability</span>
             </h2>
@@ -4039,7 +4135,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>error.iserror</code> · 143 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>error.iserror</code> · 142 downloads/week</div>
             
           </li>
         
@@ -4048,9 +4144,10 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="json-raw">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-limited-icon.png" alt="Limited Availability" class="baseline-icon" />
               JSON source text access
               <span class="badge badge-limited">Limited Availability</span>
             </h2>
@@ -4091,9 +4188,10 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="math-sum-precise">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-limited-icon.png" alt="Limited Availability" class="baseline-icon" />
               Math.sumPrecise()
               <span class="badge badge-limited">Limited Availability</span>
             </h2>
@@ -4134,9 +4232,10 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="presentation-api">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-limited-icon.png" alt="Limited Availability" class="baseline-icon" />
               Presentation API
               <span class="badge badge-limited">Limited Availability</span>
             </h2>
@@ -4188,9 +4287,10 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="serializable-errors">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-limited-icon.png" alt="Limited Availability" class="baseline-icon" />
               Serializable errors
               <span class="badge badge-limited">Limited Availability</span>
             </h2>
@@ -4242,9 +4342,10 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="temporal">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-limited-icon.png" alt="Limited Availability" class="baseline-icon" />
               Temporal
               <span class="badge badge-limited">Limited Availability</span>
             </h2>
@@ -4265,7 +4366,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>@js-temporal/polyfill</code> · 348,985 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>@js-temporal/polyfill</code> · 359,748 downloads/week</div>
             
           </li>
         
@@ -4276,7 +4377,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>temporal-polyfill</code> · 581,614 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>temporal-polyfill</code> · 587,075 downloads/week</div>
             
           </li>
         
@@ -4285,9 +4386,10 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="trusted-types">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-limited-icon.png" alt="Limited Availability" class="baseline-icon" />
               Trusted types
               <span class="badge badge-limited">Limited Availability</span>
             </h2>
@@ -4319,7 +4421,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>trusted-types</code> · 15,316 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>trusted-types</code> · 16,940 downloads/week</div>
             
           </li>
         
@@ -4328,9 +4430,10 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="webvr">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-limited-icon.png" alt="Limited Availability" class="baseline-icon" />
               WebVR
               <span class="badge badge-limited">Limited Availability</span>
             </h2>
@@ -4360,9 +4463,10 @@
         </div>
       
     
-        <div class="feature-card">
+        <div class="feature-card" id="scheduler">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="img/baseline-limited-icon.png" alt="Limited Availability" class="baseline-icon" />
               Scheduler API
               <span class="badge badge-limited">Limited Availability</span>
             </h2>
@@ -4383,7 +4487,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>scheduler-polyfill</code> · 10,804 downloads/week</div>
+            <div class="polyfill-meta">Package: <code>scheduler-polyfill</code> · 10,617 downloads/week</div>
             
           </li>
         

@@ -43,13 +43,25 @@ function getBaselineBadge(feature) {
   }
   
   if (feature.status.baseline === "high") {
-    return { class: "badge-widely", text: "Widely Available" };
+    return { 
+      class: "badge-widely", 
+      text: "Widely Available",
+      icon: "img/baseline-widely-icon.png"
+    };
   }
   if (feature.status.baseline === "low") {
-    return { class: "badge-newly", text: "Newly Available" };
+    return { 
+      class: "badge-newly", 
+      text: "Newly Available",
+      icon: "img/baseline-newly-icon.png"
+    };
   }
   if (feature.status.baseline === false) {
-    return { class: "badge-limited", text: "Limited Availability" };
+    return { 
+      class: "badge-limited", 
+      text: "Limited Availability",
+      icon: "img/baseline-limited-icon.png"
+    };
   }
   
   throw new Error(`Unknown baseline status: ${feature.status.baseline}`);
@@ -57,11 +69,11 @@ function getBaselineBadge(feature) {
 
 // Format baseline date
 function formatBaselineDate(feature) {
-  if (!feature.status?.baseline_high_date && !feature.status?.baseline_low_date) {
+  if (!feature.status?.baseline_low_date) {
     return null;
   }
   
-  const date = feature.status.baseline_high_date || feature.status.baseline_low_date;
+  const date = feature.status.baseline_low_date;
   return new Date(date).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
@@ -141,15 +153,16 @@ function generateFeatureCardHtml(featureId, feature, polyfillData, npmStats) {
     .join("");
   
   return `
-        <div class="feature-card">
+        <div class="feature-card" id="${escapeHtml(featureId)}">
           <div class="feature-header">
             <h2 class="feature-name">
+              <img src="${badge.icon}" alt="${badge.text}" class="baseline-icon" />
               ${escapeHtml(feature.name)}
               <span class="badge ${badge.class}">${badge.text}</span>
             </h2>
             <div class="feature-meta">
               <span class="feature-id">${escapeHtml(featureId)}</span>
-              ${baselineDate ? `<span class="feature-date">Baseline: ${baselineDate}</span>` : ""}
+              ${baselineDate ? `<span class="feature-date">Baseline since ${baselineDate}</span>` : ""}
             </div>
           </div>
           ${description ? `<p class="feature-description">${description}</p>` : ""}
@@ -311,6 +324,7 @@ async function generateHtml(polyfillMappings, npmStats) {
       margin-bottom: 20px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       transition: box-shadow 0.2s;
+      scroll-margin-top: 20px;
     }
     
     .feature-card:hover {
@@ -329,6 +343,12 @@ async function generateHtml(polyfillMappings, npmStats) {
       align-items: center;
       gap: 10px;
       flex-wrap: wrap;
+    }
+    
+    .baseline-icon {
+      height: 24px;
+      width: auto;
+      vertical-align: middle;
     }
     
     .feature-meta {
