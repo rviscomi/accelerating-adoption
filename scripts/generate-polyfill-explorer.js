@@ -24,6 +24,18 @@ async function loadPolyfillMappings() {
   return JSON.parse(content);
 }
 
+// Load npm stats
+async function loadNpmStats() {
+  try {
+    const statsPath = path.join(__dirname, "../mappings/npm-stats.json");
+    const content = await fs.readFile(statsPath, "utf-8");
+    return JSON.parse(content);
+  } catch (error) {
+    console.warn("Warning: npm-stats.json not found. Run 'npm run generate-npm-stats' first.");
+    return {};
+  }
+}
+
 // Get baseline status badge
 function getBaselineBadge(feature) {
   if (!feature.status || feature.status.baseline === undefined) {
@@ -76,7 +88,7 @@ function escapeHtml(text) {
 }
 
 // Generate polyfill item HTML
-function generatePolyfillHtml(polyfill) {
+function generatePolyfillHtml(polyfill, npmStats) {
   const badges = [];
   
   if (polyfill.npm) {
@@ -89,6 +101,9 @@ function generatePolyfillHtml(polyfill) {
   const meta = [];
   if (polyfill.npm) {
     meta.push(`Package: <code>${escapeHtml(polyfill.npm)}</code>`);
+    if (npmStats[polyfill.npm] !== undefined) {
+      meta.push(`${npmStats[polyfill.npm].toLocaleString()} downloads/week`);
+    }
   }
   if (polyfill.github) {
     meta.push(`Repo: <code>${escapeHtml(polyfill.github)}</code>`);
@@ -111,12 +126,13 @@ function generatePolyfillHtml(polyfill) {
 }
 
 // Generate feature card HTML
-function generateFeatureCardHtml(featureId, feature, polyfillData) {
+function generateFeatureCardHtml(featureId, feature, polyfillData, npmStats) {
   const badge = getBaselineBadge(feature);
   const baselineDate = formatBaselineDate(feature);
+  const description = feature.description_html || feature.description;
   
   const polyfillsHtml = polyfillData.fallbacks
-    .map(p => generatePolyfillHtml(p))
+    .map(p => generatePolyfillHtml(p, npmStats))
     .join("");
   
   return `
@@ -131,7 +147,7 @@ function generateFeatureCardHtml(featureId, feature, polyfillData) {
               ${baselineDate ? `<span class="feature-date">Baseline: ${baselineDate}</span>` : ""}
             </div>
           </div>
-          ${feature.description ? `<p class="feature-description">${escapeHtml(feature.description)}</p>` : ""}
+          ${description ? `<p class="feature-description">${description}</p>` : ""}
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (${polyfillData.fallbacks.length})</h3>
             <ul class="polyfills-list">
@@ -143,7 +159,7 @@ function generateFeatureCardHtml(featureId, feature, polyfillData) {
 }
 
 // Generate HTML
-async function generateHtml(polyfillMappings) {
+async function generateHtml(polyfillMappings, npmStats) {
   // Get features with polyfills and sort by baseline date (oldest first by default)
   const featuresWithPolyfills = Object.entries(polyfillMappings)
     .filter(([featureId]) => features[featureId])
@@ -156,7 +172,7 @@ async function generateHtml(polyfillMappings) {
     .sort((a, b) => a.sortDate.localeCompare(b.sortDate));
   
   const featureCards = featuresWithPolyfills
-    .map(({ id, feature, polyfillData }) => generateFeatureCardHtml(id, feature, polyfillData))
+    .map(({ id, feature, polyfillData }) => generateFeatureCardHtml(id, feature, polyfillData, npmStats))
     .join("\n    ");
   
   const today = new Date().toLocaleDateString("en-US", {
@@ -499,9 +515,14 @@ async function generateHtml(polyfillMappings) {
       <button class="filter-btn" data-filter="limited">Limited Availability</button>
     </div>
     <div class="sort-controls">
-      <label class="filter-label">Sort by date:</label>
-      <button class="sort-btn" data-sort="desc">Newest First</button>
-      <button class="sort-btn active" data-sort="asc">Oldest First</button>
+      <label class="filter-label">Sort by Baseline date:</label>
+      <button class="sort-btn" data-sort="date-desc">Newest First</button>
+      <button class="sort-btn active" data-sort="date-asc">Oldest First</button>
+    </div>
+    <div class="sort-controls">
+      <label class="filter-label">Sort by npm downloads:</label>
+      <button class="sort-btn" data-sort="npm-desc">Most Downloads</button>
+      <button class="sort-btn" data-sort="npm-asc">Least Downloads</button>
     </div>
   </header>
   
@@ -524,26 +545,51 @@ async function generateHtml(polyfillMappings) {
     }
     
     function sortCards(order) {
-      // Get all cards as an array with their baseline dates
+      // Get all cards as an array with their data
       const cardsArray = Array.from(featureCards).map(card => {
-        // Extract date from the feature-date span
-        const dateSpan = card.querySelector('.feature-date');
-        let sortDate = '9999-12-31'; // Default for features without date
+        let sortValue;
         
-        if (dateSpan) {
-          const dateText = dateSpan.textContent.replace('Baseline: ', '');
-          sortDate = new Date(dateText).toISOString().split('T')[0];
+        if (order.startsWith('date-')) {
+          // Extract date from the feature-date span
+          const dateSpan = card.querySelector('.feature-date');
+          sortValue = '9999-12-31'; // Default for features without date
+          
+          if (dateSpan) {
+            const dateText = dateSpan.textContent.replace('Baseline: ', '');
+            sortValue = new Date(dateText).toISOString().split('T')[0];
+          }
+        } else if (order.startsWith('npm-')) {
+          // Extract max downloads from npm packages in polyfill items
+          const metaElements = card.querySelectorAll('.polyfill-meta');
+          let maxDownloads = 0;
+          
+          metaElements.forEach(meta => {
+            const text = meta.textContent;
+            const match = text.match(/([\\d,]+)\\s+downloads\\/week/);
+            if (match) {
+              const downloads = parseInt(match[1].replace(/,/g, ''), 10);
+              maxDownloads = Math.max(maxDownloads, downloads);
+            }
+          });
+          
+          sortValue = maxDownloads;
         }
         
-        return { card, sortDate };
+        return { card, sortValue };
       });
       
       // Sort based on order
       cardsArray.sort((a, b) => {
-        if (order === 'desc') {
-          return b.sortDate.localeCompare(a.sortDate);
+        if (order.endsWith('-desc')) {
+          if (typeof a.sortValue === 'number') {
+            return b.sortValue - a.sortValue;
+          }
+          return b.sortValue.localeCompare(a.sortValue);
         } else {
-          return a.sortDate.localeCompare(b.sortDate);
+          if (typeof a.sortValue === 'number') {
+            return a.sortValue - b.sortValue;
+          }
+          return a.sortValue.localeCompare(b.sortValue);
         }
       });
       
@@ -602,8 +648,11 @@ async function main() {
   console.log("Loading polyfill mappings...");
   const polyfillMappings = await loadPolyfillMappings();
   
+  console.log("Loading npm stats...");
+  const npmStats = await loadNpmStats();
+  
   console.log("Generating HTML...");
-  const html = await generateHtml(polyfillMappings);
+  const html = await generateHtml(polyfillMappings, npmStats);
   
   const outputPath = path.join(__dirname, "../docs/index.html");
   await fs.mkdir(path.dirname(outputPath), { recursive: true });

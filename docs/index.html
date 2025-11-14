@@ -321,7 +321,7 @@
     <h1>Web Features Polyfill Explorer</h1>
     <p class="subtitle">Browse web platform features with available polyfills, sorted by Baseline availability date</p>
     <div class="stats">
-      <span id="feature-count">Showing 82 features with polyfills</span> · 
+      <span id="feature-count">Showing 81 features with polyfills</span> · 
       Generated on November 14, 2025
     </div>
     <div class="filters">
@@ -332,9 +332,14 @@
       <button class="filter-btn" data-filter="limited">Limited Availability</button>
     </div>
     <div class="sort-controls">
-      <label class="filter-label">Sort by date:</label>
-      <button class="sort-btn" data-sort="desc">Newest First</button>
-      <button class="sort-btn active" data-sort="asc">Oldest First</button>
+      <label class="filter-label">Sort by Baseline date:</label>
+      <button class="sort-btn" data-sort="date-desc">Newest First</button>
+      <button class="sort-btn active" data-sort="date-asc">Oldest First</button>
+    </div>
+    <div class="sort-controls">
+      <label class="filter-label">Sort by npm downloads:</label>
+      <button class="sort-btn" data-sort="npm-desc">Most Downloads</button>
+      <button class="sort-btn" data-sort="npm-asc">Least Downloads</button>
     </div>
   </header>
   
@@ -351,7 +356,7 @@
               <span class="feature-date">Baseline: January 29, 2018</span>
             </div>
           </div>
-          <p class="feature-description">The Array.isArray() static method checks whether a value is an array.</p>
+          <p class="feature-description">The <code>Array.isArray()</code> static method checks whether a value is an array.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -374,7 +379,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.isarray</code></div>
+            <div class="polyfill-meta">Package: <code>array.isarray</code> · 1 downloads/week</div>
             
           </li>
         
@@ -394,7 +399,7 @@
               <span class="feature-date">Baseline: January 29, 2018</span>
             </div>
           </div>
-          <p class="feature-description">The for...of loop operates on a sequence of values sourced from an iterable object, such as arrays, array-like objects, DOM collections, iterators, generators, and user-defined iterables. All built-in iterators inherit from the Iterator class.</p>
+          <p class="feature-description">The <code>for...of</code> loop operates on a sequence of values sourced from an iterable object, such as arrays, array-like objects, DOM collections, iterators, generators, and user-defined iterables. All built-in iterators inherit from the <code>Iterator</code> class.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -417,7 +422,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>es-iterator-helpers</code></div>
+            <div class="polyfill-meta">Package: <code>es-iterator-helpers</code> · 22,868,449 downloads/week</div>
             
           </li>
         
@@ -460,7 +465,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>es-map</code></div>
+            <div class="polyfill-meta">Package: <code>es-map</code> · 25,825 downloads/week</div>
             
           </li>
         
@@ -480,7 +485,7 @@
               <span class="feature-date">Baseline: January 29, 2018</span>
             </div>
           </div>
-          <p class="feature-description">The number type (and Number object) represents floating-point numbers, such as 42 or -4.201, while the Math API contains mathematical functions and constants. JavaScript can also represent boundless negative and positive values as Infinity or not-a-number as NaN (as in 0 * Infinity).</p>
+          <p class="feature-description">The number type (and <code>Number</code> object) represents floating-point numbers, such as 42 or -4.201, while the <code>Math</code> API contains mathematical functions and constants. JavaScript can also represent boundless negative and positive values as <code>Infinity</code> or not-a-number as <code>NaN</code> (as in <code>0 * Infinity</code>).</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -544,7 +549,7 @@
               <span class="feature-date">Baseline: January 29, 2018</span>
             </div>
           </div>
-          <p class="feature-description">The RegExp object represents a regular expression, a notation for matching text patterns.</p>
+          <p class="feature-description">The <code>RegExp</code> object represents a regular expression, a notation for matching text patterns.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -599,7 +604,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>es-set</code></div>
+            <div class="polyfill-meta">Package: <code>es-set</code> · 23,854 downloads/week</div>
             
           </li>
         
@@ -619,7 +624,7 @@
               <span class="feature-date">Baseline: January 29, 2018</span>
             </div>
           </div>
-          <p class="feature-description">The setInterval() global function repeatedly executes provided code on a given delay, and the accompanying clearInterval() cancels the interval.</p>
+          <p class="feature-description">The <code>setInterval()</code> global function repeatedly executes provided code on a given delay, and the accompanying <code>clearInterval()</code> cancels the interval.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -651,7 +656,7 @@
               <span class="feature-date">Baseline: January 29, 2018</span>
             </div>
           </div>
-          <p class="feature-description">The setTimeout() global function executes provided code after a given duration of time, and the accompanying clearTimeout() cancels the timer.</p>
+          <p class="feature-description">The <code>setTimeout()</code> global function executes provided code after a given duration of time, and the accompanying <code>clearTimeout()</code> cancels the timer.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -683,7 +688,7 @@
               <span class="feature-date">Baseline: January 29, 2018</span>
             </div>
           </div>
-          <p class="feature-description">A WeakMap object holds key-value pairs that do not create strong references to its keys, such that value data can be associated with a key without preventing garbage collection of the key.</p>
+          <p class="feature-description">A <code>WeakMap</code> object holds key-value pairs that do not create strong references to its keys, such that value data can be associated with a key without preventing garbage collection of the key.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -715,7 +720,7 @@
               <span class="feature-date">Baseline: March 30, 2018</span>
             </div>
           </div>
-          <p class="feature-description">The codePointAt() method returns the numeric value of the UTF-16 code point at an index of the string. The fromCodePoint() method returns a string created from one or more code points.</p>
+          <p class="feature-description">The <code>codePointAt()</code> method returns the numeric value of the UTF-16 code point at an index of the string. The <code>fromCodePoint()</code> method returns a string created from one or more code points.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (3)</h3>
             <ul class="polyfills-list">
@@ -738,7 +743,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.codepointat</code></div>
+            <div class="polyfill-meta">Package: <code>string.prototype.codepointat</code> · 892,862 downloads/week</div>
             
           </li>
         
@@ -769,7 +774,7 @@
               <span class="feature-date">Baseline: March 30, 2018</span>
             </div>
           </div>
-          <p class="feature-description">The includes() method of strings returns whether a search string appears within the string.</p>
+          <p class="feature-description">The <code>includes()</code> method of strings returns whether a search string appears within the string.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -792,7 +797,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.includes</code></div>
+            <div class="polyfill-meta">Package: <code>string.prototype.includes</code> · 14,459,501 downloads/week</div>
             
           </li>
         
@@ -812,7 +817,7 @@
               <span class="feature-date">Baseline: March 30, 2018</span>
             </div>
           </div>
-          <p class="feature-description">The String.raw() static method interpolates template literal substitutions, but ignores escape sequences. It is the tag function for template literals.</p>
+          <p class="feature-description">The <code>String.raw()</code> static method interpolates template literal substitutions, but ignores escape sequences. It is the tag function for template literals.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -835,7 +840,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.raw</code></div>
+            <div class="polyfill-meta">Package: <code>string.raw</code> · 5 downloads/week</div>
             
           </li>
         
@@ -855,7 +860,7 @@
               <span class="feature-date">Baseline: March 30, 2018</span>
             </div>
           </div>
-          <p class="feature-description">The repeat() method of strings returns the original string repeated a number of times.</p>
+          <p class="feature-description">The <code>repeat()</code> method of strings returns the original string repeated a number of times.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -878,7 +883,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.repeat</code></div>
+            <div class="polyfill-meta">Package: <code>string.prototype.repeat</code> · 20,272,048 downloads/week</div>
             
           </li>
         
@@ -898,7 +903,7 @@
               <span class="feature-date">Baseline: March 30, 2018</span>
             </div>
           </div>
-          <p class="feature-description">The startsWith() and endsWith() methods of strings returns whether a search string appears at the beginning or end of the provided string.</p>
+          <p class="feature-description">The <code>startsWith()</code> and <code>endsWith()</code> methods of strings returns whether a search string appears at the beginning or end of the provided string.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (3)</h3>
             <ul class="polyfills-list">
@@ -921,7 +926,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.endswith</code></div>
+            <div class="polyfill-meta">Package: <code>string.prototype.endswith</code> · 30,352 downloads/week</div>
             
           </li>
         
@@ -932,7 +937,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.startswith</code></div>
+            <div class="polyfill-meta">Package: <code>string.prototype.startswith</code> · 74,832 downloads/week</div>
             
           </li>
         
@@ -952,7 +957,7 @@
               <span class="feature-date">Baseline: March 30, 2018</span>
             </div>
           </div>
-          <p class="feature-description">A Symbol value is a unique, non-enumerable primitive value used for encapsulation or information hiding. For example, a symbol can be a key of an object that can never collide with any other key.</p>
+          <p class="feature-description">A <code>Symbol</code> value is a unique, non-enumerable primitive value used for encapsulation or information hiding. For example, a symbol can be a key of an object that can never collide with any other key.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -984,7 +989,7 @@
               <span class="feature-date">Baseline: March 30, 2018</span>
             </div>
           </div>
-          <p class="feature-description">A WeakSet object stores unique values of any type without creating strong references to the values, such that membership in the set does not prevent garbage collection of the value.</p>
+          <p class="feature-description">A <code>WeakSet</code> object stores unique values of any type without creating strong references to the values, such that membership in the set does not prevent garbage collection of the value.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -1016,7 +1021,7 @@
               <span class="feature-date">Baseline: March 20, 2019</span>
             </div>
           </div>
-          <p class="feature-description">The copyWithin() method of arrays and typed arrays shifts or copies items of an array to another index of the array without changing its length.</p>
+          <p class="feature-description">The <code>copyWithin()</code> method of arrays and typed arrays shifts or copies items of an array to another index of the array without changing its length.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (3)</h3>
             <ul class="polyfills-list">
@@ -1039,7 +1044,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.prototype.copywithin</code></div>
+            <div class="polyfill-meta">Package: <code>array.prototype.copywithin</code> · 1 downloads/week</div>
             
           </li>
         
@@ -1070,7 +1075,7 @@
               <span class="feature-date">Baseline: March 20, 2019</span>
             </div>
           </div>
-          <p class="feature-description">The fill() method of arrays and typed arrays sets all or some items of an array to a given a value.</p>
+          <p class="feature-description">The <code>fill()</code> method of arrays and typed arrays sets all or some items of an array to a given a value.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -1113,7 +1118,7 @@
               <span class="feature-date">Baseline: March 20, 2019</span>
             </div>
           </div>
-          <p class="feature-description">The find() and findIndex() methods of arrays and typed arrays search an array for the first item that satisfies a test function.</p>
+          <p class="feature-description">The <code>find()</code> and <code>findIndex()</code> methods of arrays and typed arrays search an array for the first item that satisfies a test function.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -1136,7 +1141,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.prototype.find</code></div>
+            <div class="polyfill-meta">Package: <code>array.prototype.find</code> · 1,619,193 downloads/week</div>
             
           </li>
         
@@ -1156,7 +1161,7 @@
               <span class="feature-date">Baseline: March 20, 2019</span>
             </div>
           </div>
-          <p class="feature-description">The Array.from() and typed array .from() static methods copy items from an iterable or array-like object to make a new array.</p>
+          <p class="feature-description">The <code>Array.from()</code> and typed array <code>.from()</code> static methods copy items from an iterable or array-like object to make a new array.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (3)</h3>
             <ul class="polyfills-list">
@@ -1179,7 +1184,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.from</code></div>
+            <div class="polyfill-meta">Package: <code>array.from</code> · 5,462 downloads/week</div>
             
           </li>
         
@@ -1210,7 +1215,7 @@
               <span class="feature-date">Baseline: March 20, 2019</span>
             </div>
           </div>
-          <p class="feature-description">The includes() method of arrays and typed arrays returns whether a given value appears in the array.</p>
+          <p class="feature-description">The <code>includes()</code> method of arrays and typed arrays returns whether a given value appears in the array.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (3)</h3>
             <ul class="polyfills-list">
@@ -1233,7 +1238,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array-includes</code></div>
+            <div class="polyfill-meta">Package: <code>array-includes</code> · 37,882,719 downloads/week</div>
             
           </li>
         
@@ -1264,7 +1269,7 @@
               <span class="feature-date">Baseline: March 20, 2019</span>
             </div>
           </div>
-          <p class="feature-description">The Array.of() and typed array .of() static methods create new arrays from the values of any number of arguments.</p>
+          <p class="feature-description">The <code>Array.of()</code> and typed array <code>.of()</code> static methods create new arrays from the values of any number of arguments.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (3)</h3>
             <ul class="polyfills-list">
@@ -1287,7 +1292,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.of</code></div>
+            <div class="polyfill-meta">Package: <code>array.of</code> · 183 downloads/week</div>
             
           </li>
         
@@ -1318,7 +1323,7 @@
               <span class="feature-date">Baseline: March 20, 2019</span>
             </div>
           </div>
-          <p class="feature-description">The atob() and btoa() global functions encode and decode strings to and from base 64, respectively.</p>
+          <p class="feature-description">The <code>atob()</code> and <code>btoa()</code> global functions encode and decode strings to and from base 64, respectively.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -1393,7 +1398,7 @@
               <span class="feature-date">Baseline: March 20, 2019</span>
             </div>
           </div>
-          <p class="feature-description">Typed arrays are iterable with the for … of statement and enumerable with the methods entries(), keys(), and values().</p>
+          <p class="feature-description">Typed arrays are iterable with the <code>for … of</code> statement and enumerable with the methods <code>entries()</code>, <code>keys()</code>, and <code>values()</code>.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -1425,7 +1430,7 @@
               <span class="feature-date">Baseline: October 5, 2019</span>
             </div>
           </div>
-          <p class="feature-description">The padStart() and padEnd() methods of strings return a string lengthened to a minimum number of characters by adding characters to the start or end of the string.</p>
+          <p class="feature-description">The <code>padStart()</code> and <code>padEnd()</code> methods of strings return a string lengthened to a minimum number of characters by adding characters to the start or end of the string.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (3)</h3>
             <ul class="polyfills-list">
@@ -1448,7 +1453,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.padend</code></div>
+            <div class="polyfill-meta">Package: <code>string.prototype.padend</code> · 4,821,531 downloads/week</div>
             
           </li>
         
@@ -1459,7 +1464,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.padstart</code></div>
+            <div class="polyfill-meta">Package: <code>string.prototype.padstart</code> · 1,240,268 downloads/week</div>
             
           </li>
         
@@ -1479,7 +1484,7 @@
               <span class="feature-date">Baseline: April 2, 2021</span>
             </div>
           </div>
-          <p class="feature-description">The promise finally() method executes a function when the promise settles (resolves or rejects).</p>
+          <p class="feature-description">The promise <code>finally()</code> method executes a function when the promise settles (resolves or rejects).</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -1502,7 +1507,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>promise.prototype.finally</code></div>
+            <div class="polyfill-meta">Package: <code>promise.prototype.finally</code> · 1,201,152 downloads/week</div>
             
           </li>
         
@@ -1522,9 +1527,9 @@
               <span class="feature-date">Baseline: September 25, 2021</span>
             </div>
           </div>
-          <p class="feature-description">The IntersectionObserver API asynchronously observes changes in the intersection of a target element with an ancestor element or with a top-level document&#039;s viewport.</p>
+          <p class="feature-description">The <code>IntersectionObserver</code> API asynchronously observes changes in the intersection of a target element with an ancestor element or with a top-level document's viewport.</p>
           <div class="polyfills-section">
-            <h3 class="polyfills-heading">Polyfills (1)</h3>
+            <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
               
           <li class="polyfill-item">
@@ -1535,6 +1540,17 @@
               <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
             </div>
             <div class="polyfill-meta">Repo: <code>w3c/IntersectionObserver</code></div>
+            
+          </li>
+        
+          <li class="polyfill-item">
+            <div class="polyfill-header">
+              <a href="https://www.npmjs.com/package/intersection-observer" target="_blank" rel="noopener noreferrer" class="polyfill-link">
+                Polyfill for IntersectionObserver API
+              </a>
+              <span class="polyfill-badge badge-npm" title="npm package">npm</span>
+            </div>
+            <div class="polyfill-meta">Package: <code>intersection-observer</code> · 2,136,290 downloads/week</div>
             
           </li>
         
@@ -1554,7 +1570,7 @@
               <span class="feature-date">Baseline: March 19, 2022</span>
             </div>
           </div>
-          <p class="feature-description">The Intl.PluralRules API creates a locale-aware object that tells you which of the language&#039;s pluralization rules apply based on a given number.</p>
+          <p class="feature-description">The <code>Intl.PluralRules</code> API creates a locale-aware object that tells you which of the language's pluralization rules apply based on a given number.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -1586,7 +1602,7 @@
               <span class="feature-date">Baseline: July 15, 2022</span>
             </div>
           </div>
-          <p class="feature-description">The flat() and flatMap() methods for arrays creates a new array such that each nested array item is concatenated into it.</p>
+          <p class="feature-description">The <code>flat()</code> and <code>flatMap()</code> methods for arrays creates a new array such that each nested array item is concatenated into it.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (3)</h3>
             <ul class="polyfills-list">
@@ -1609,7 +1625,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.prototype.flat</code></div>
+            <div class="polyfill-meta">Package: <code>array.prototype.flat</code> · 35,855,949 downloads/week</div>
             
           </li>
         
@@ -1620,7 +1636,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.prototype.flatmap</code></div>
+            <div class="polyfill-meta">Package: <code>array.prototype.flatmap</code> · 34,688,140 downloads/week</div>
             
           </li>
         
@@ -1640,7 +1656,7 @@
               <span class="feature-date">Baseline: July 15, 2022</span>
             </div>
           </div>
-          <p class="feature-description">The CSS.escape() static method escapes a string so that it can be used in a valid CSS selector.</p>
+          <p class="feature-description">The <code>CSS.escape()</code> static method escapes a string so that it can be used in a valid CSS selector.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -1672,7 +1688,7 @@
               <span class="feature-date">Baseline: July 15, 2022</span>
             </div>
           </div>
-          <p class="feature-description">The globalThis property accesses the global this value (and hence the global object itself) across environments.</p>
+          <p class="feature-description">The <code>globalThis</code> property accesses the global <code>this</code> value (and hence the global object itself) across environments.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -1695,7 +1711,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>globalthis</code></div>
+            <div class="polyfill-meta">Package: <code>globalthis</code> · 41,179,086 downloads/week</div>
             
           </li>
         
@@ -1715,7 +1731,7 @@
               <span class="feature-date">Baseline: July 15, 2022</span>
             </div>
           </div>
-          <p class="feature-description">The EventSource API creates a connection to a server and listens to a stream of events sent by the server.</p>
+          <p class="feature-description">The <code>EventSource</code> API creates a connection to a server and listens to a stream of events sent by the server.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (3)</h3>
             <ul class="polyfills-list">
@@ -1801,7 +1817,7 @@
               <span class="feature-date">Baseline: July 15, 2022</span>
             </div>
           </div>
-          <p class="feature-description">The matchAll() method of strings matches a string against a regular expression and returns an iterator of all results, including capturing groups.</p>
+          <p class="feature-description">The <code>matchAll()</code> method of strings matches a string against a regular expression and returns an iterator of all results, including capturing groups.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -1824,7 +1840,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.matchall</code></div>
+            <div class="polyfill-meta">Package: <code>string.prototype.matchall</code> · 27,638,500 downloads/week</div>
             
           </li>
         
@@ -1844,7 +1860,7 @@
               <span class="feature-date">Baseline: July 15, 2022</span>
             </div>
           </div>
-          <p class="feature-description">The trimStart() and trimEnd() methods of strings return a new string with whitespace removed from the beginning or end of the string.</p>
+          <p class="feature-description">The <code>trimStart()</code> and <code>trimEnd()</code> methods of strings return a new string with whitespace removed from the beginning or end of the string.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (3)</h3>
             <ul class="polyfills-list">
@@ -1867,7 +1883,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.trimend</code></div>
+            <div class="polyfill-meta">Package: <code>string.prototype.trimend</code> · 45,377,800 downloads/week</div>
             
           </li>
         
@@ -1878,7 +1894,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.trimstart</code></div>
+            <div class="polyfill-meta">Package: <code>string.prototype.trimstart</code> · 44,334,893 downloads/week</div>
             
           </li>
         
@@ -1898,7 +1914,7 @@
               <span class="feature-date">Baseline: January 28, 2023</span>
             </div>
           </div>
-          <p class="feature-description">The Promise.allSettled() static method waits for an array of promises to settle (resolve or reject).</p>
+          <p class="feature-description">The <code>Promise.allSettled()</code> static method waits for an array of promises to settle (resolve or reject).</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -1921,7 +1937,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>promise.allsettled</code></div>
+            <div class="polyfill-meta">Package: <code>promise.allsettled</code> · 1,825,246 downloads/week</div>
             
           </li>
         
@@ -1941,7 +1957,7 @@
               <span class="feature-date">Baseline: January 28, 2023</span>
             </div>
           </div>
-          <p class="feature-description">The queueMicrotask() method schedules a function to run after the currently running synchronous JavaScript finishes but before returning to the event loop.</p>
+          <p class="feature-description">The <code>queueMicrotask()</code> method schedules a function to run after the currently running synchronous JavaScript finishes but before returning to the event loop.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -1973,7 +1989,7 @@
               <span class="feature-date">Baseline: February 27, 2023</span>
             </div>
           </div>
-          <p class="feature-description">The replaceAll() method of strings returns a new string where all matches of a pattern (a string or regular expression) have been substituted with a replacement string.</p>
+          <p class="feature-description">The <code>replaceAll()</code> method of strings returns a new string where all matches of a pattern (a string or regular expression) have been substituted with a replacement string.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -1996,7 +2012,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.replaceall</code></div>
+            <div class="polyfill-meta">Package: <code>string.prototype.replaceall</code> · 140,791 downloads/week</div>
             
           </li>
         
@@ -2016,7 +2032,7 @@
               <span class="feature-date">Baseline: March 16, 2023</span>
             </div>
           </div>
-          <p class="feature-description">The Intl.Locale API parses Unicode locale identifiers, with language, region, and script codes, such as zh-Hans-CN or en-GB.</p>
+          <p class="feature-description">The <code>Intl.Locale</code> API parses Unicode locale identifiers, with language, region, and script codes, such as <code>zh-Hans-CN</code> or <code>en-GB</code>.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -2048,7 +2064,7 @@
               <span class="feature-date">Baseline: March 16, 2023</span>
             </div>
           </div>
-          <p class="feature-description">The Intl.RelativeTimeFormat API creates a locale-aware formatter that turns an object representing a relative time (such as &#039;1 day ago&#039;) into a localized string.</p>
+          <p class="feature-description">The <code>Intl.RelativeTimeFormat</code> API creates a locale-aware formatter that turns an object representing a relative time (such as '1 day ago') into a localized string.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -2080,7 +2096,7 @@
               <span class="feature-date">Baseline: March 16, 2023</span>
             </div>
           </div>
-          <p class="feature-description">The Promise.any() static method returns a promise that fulfills as soon as the first of an iterable of promises fulfills, with that promise&#039;s value. Otherwise, it rejects with an AggregateError when all of the promises have rejected.</p>
+          <p class="feature-description">The <code>Promise.any()</code> static method returns a promise that fulfills as soon as the first of an iterable of promises fulfills, with that promise's value. Otherwise, it rejects with an <code>AggregateError</code> when all of the promises have rejected.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -2103,7 +2119,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>promise.any</code></div>
+            <div class="polyfill-meta">Package: <code>promise.any</code> · 131,249 downloads/week</div>
             
           </li>
         
@@ -2123,7 +2139,7 @@
               <span class="feature-date">Baseline: July 4, 2023</span>
             </div>
           </div>
-          <p class="feature-description">The toReversed(), toSorted(), toSpliced(), and with() methods of arrays and typed arrays return changed copies of arrays. They stand in contrast to methods such as sort() or reverse() that change arrays in place.</p>
+          <p class="feature-description">The <code>toReversed()</code>, <code>toSorted()</code>, <code>toSpliced()</code>, and <code>with()</code> methods of arrays and typed arrays return changed copies of arrays. They stand in contrast to methods such as <code>sort()</code> or <code>reverse()</code> that change arrays in place.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (5)</h3>
             <ul class="polyfills-list">
@@ -2146,7 +2162,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.prototype.toreversed</code></div>
+            <div class="polyfill-meta">Package: <code>array.prototype.toreversed</code> · 1,318,434 downloads/week</div>
             
           </li>
         
@@ -2157,7 +2173,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.prototype.tosorted</code></div>
+            <div class="polyfill-meta">Package: <code>array.prototype.tosorted</code> · 23,616,856 downloads/week</div>
             
           </li>
         
@@ -2168,7 +2184,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.prototype.tospliced</code></div>
+            <div class="polyfill-meta">Package: <code>array.prototype.tospliced</code> · 4,505 downloads/week</div>
             
           </li>
         
@@ -2179,7 +2195,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.prototype.with</code></div>
+            <div class="polyfill-meta">Package: <code>array.prototype.with</code> · 305 downloads/week</div>
             
           </li>
         
@@ -2199,7 +2215,7 @@
               <span class="feature-date">Baseline: October 24, 2023</span>
             </div>
           </div>
-          <p class="feature-description">The isWellFormed() method of strings returns a boolean indicating if the string contains any Unicode lone surrogates. The toWellFormed() method returns a new string where all lone surrogates are replaced by the Unicode replacement character.</p>
+          <p class="feature-description">The <code>isWellFormed()</code> method of strings returns a boolean indicating if the string contains any Unicode lone surrogates. The <code>toWellFormed()</code> method returns a new string where all lone surrogates are replaced by the Unicode replacement character.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (3)</h3>
             <ul class="polyfills-list">
@@ -2222,7 +2238,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.iswellformed</code></div>
+            <div class="polyfill-meta">Package: <code>string.prototype.iswellformed</code> · 202 downloads/week</div>
             
           </li>
         
@@ -2233,7 +2249,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.towellformed</code></div>
+            <div class="polyfill-meta">Package: <code>string.prototype.towellformed</code> · 2,427 downloads/week</div>
             
           </li>
         
@@ -2253,7 +2269,7 @@
               <span class="feature-date">Baseline: October 26, 2023</span>
             </div>
           </div>
-          <p class="feature-description">The Intl.DisplayNames API provides localized names of language, region, script, and currency codes.</p>
+          <p class="feature-description">The <code>Intl.DisplayNames</code> API provides localized names of language, region, script, and currency codes.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -2285,7 +2301,7 @@
               <span class="feature-date">Baseline: October 26, 2023</span>
             </div>
           </div>
-          <p class="feature-description">The Intl.ListFormat API creates a locale-aware formatter that turns iterable objects into localized strings.</p>
+          <p class="feature-description">The <code>Intl.ListFormat</code> API creates a locale-aware formatter that turns iterable objects into localized strings.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -2317,7 +2333,7 @@
               <span class="feature-date">Baseline: October 26, 2023</span>
             </div>
           </div>
-          <p class="feature-description">The MediaRecorder API captures data generated by MediaStream or HTMLMediaElement objects for analysis, processing, or saving to disk. Also known as the Media Recording API.</p>
+          <p class="feature-description">The <code>MediaRecorder</code> API captures data generated by <code>MediaStream</code> or <code>HTMLMediaElement</code> objects for analysis, processing, or saving to disk. Also known as the Media Recording API.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -2349,7 +2365,7 @@
               <span class="feature-date">Baseline: December 7, 2023</span>
             </div>
           </div>
-          <p class="feature-description">The URL.canParse() static method checks whether a URL can be parsed into a valid URL object. It&#039;s an alternative to calling new URL() in a try … catch statement.</p>
+          <p class="feature-description">The <code>URL.canParse()</code> static method checks whether a URL can be parsed into a valid <code>URL</code> object. It's an alternative to calling <code>new URL()</code> in a <code>try … catch</code> statement.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -2392,7 +2408,7 @@
               <span class="feature-date">Baseline: January 25, 2024</span>
             </div>
           </div>
-          <p class="feature-description">The Array.fromAsync() static method copies items from an async iterable object to make a new array.</p>
+          <p class="feature-description">The <code>Array.fromAsync()</code> static method copies items from an async iterable object to make a new array.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -2424,7 +2440,7 @@
               <span class="feature-date">Baseline: March 5, 2024</span>
             </div>
           </div>
-          <p class="feature-description">The Object.groupBy() and Map.groupBy() static methods group values of arrays and iterables based on a function that returns a key for each value.</p>
+          <p class="feature-description">The <code>Object.groupBy()</code> and <code>Map.groupBy()</code> static methods group values of arrays and iterables based on a function that returns a key for each value.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (3)</h3>
             <ul class="polyfills-list">
@@ -2447,7 +2463,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>map.groupby</code></div>
+            <div class="polyfill-meta">Package: <code>map.groupby</code> · 1,581 downloads/week</div>
             
           </li>
         
@@ -2458,7 +2474,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>object.groupby</code></div>
+            <div class="polyfill-meta">Package: <code>object.groupby</code> · 25,268,347 downloads/week</div>
             
           </li>
         
@@ -2478,7 +2494,7 @@
               <span class="feature-date">Baseline: March 5, 2024</span>
             </div>
           </div>
-          <p class="feature-description">The Promise.withResolvers() static method is an alternative to the Promise() constructor that returns both the promise and resolution functions. You can use this to access resolve and reject outside the scope of the executor function.</p>
+          <p class="feature-description">The <code>Promise.withResolvers()</code> static method is an alternative to the <code>Promise()</code> constructor that returns both the promise and resolution functions. You can use this to access <code>resolve</code> and <code>reject</code> outside the scope of the executor function.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -2501,7 +2517,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>promise.withresolvers</code></div>
+            <div class="polyfill-meta">Package: <code>promise.withresolvers</code> · 6,612 downloads/week</div>
             
           </li>
         
@@ -2521,7 +2537,7 @@
               <span class="feature-date">Baseline: March 5, 2024</span>
             </div>
           </div>
-          <p class="feature-description">The transfer() and transferToFixedLength() methods of ArrayBuffer move a buffer from one context to another (for example, to a worker).</p>
+          <p class="feature-description">The <code>transfer()</code> and <code>transferToFixedLength()</code> methods of <code>ArrayBuffer</code> move a buffer from one context to another (for example, to a worker).</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (3)</h3>
             <ul class="polyfills-list">
@@ -2544,7 +2560,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>arraybuffer.prototype.transfer</code></div>
+            <div class="polyfill-meta">Package: <code>arraybuffer.prototype.transfer</code> · 3 downloads/week</div>
             
           </li>
         
@@ -2555,7 +2571,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>arraybuffer.prototype.transfertofixedlength</code></div>
+            <div class="polyfill-meta">Package: <code>arraybuffer.prototype.transfertofixedlength</code> · 5 downloads/week</div>
             
           </li>
         
@@ -2575,7 +2591,7 @@
               <span class="feature-date">Baseline: April 16, 2024</span>
             </div>
           </div>
-          <p class="feature-description">The Intl.Segmenter API creates a locale-aware text splitter that can separate a string into meaningful graphemes, words, or sentences.</p>
+          <p class="feature-description">The <code>Intl.Segmenter</code> API creates a locale-aware text splitter that can separate a string into meaningful graphemes, words, or sentences.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -2607,7 +2623,7 @@
               <span class="feature-date">Baseline: June 11, 2024</span>
             </div>
           </div>
-          <p class="feature-description">The difference(), intersection(), isDisjointFrom(), isSubsetOf(), isSupersetOf(), symmetricDifference(), and union() methods of the JavaScript Set object performs operations between two sets.</p>
+          <p class="feature-description">The <code>difference()</code>, <code>intersection()</code>, <code>isDisjointFrom()</code>, <code>isSubsetOf()</code>, <code>isSupersetOf()</code>, <code>symmetricDifference()</code>, and <code>union()</code> methods of the JavaScript <code>Set</code> object performs operations between two sets.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (8)</h3>
             <ul class="polyfills-list">
@@ -2630,7 +2646,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>set.prototype.difference</code></div>
+            <div class="polyfill-meta">Package: <code>set.prototype.difference</code> · 18,026 downloads/week</div>
             
           </li>
         
@@ -2641,7 +2657,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>set.prototype.intersection</code></div>
+            <div class="polyfill-meta">Package: <code>set.prototype.intersection</code> · 7,552 downloads/week</div>
             
           </li>
         
@@ -2716,7 +2732,7 @@
               <span class="feature-date">Baseline: September 14, 2024</span>
             </div>
           </div>
-          <p class="feature-description">The at() method of arrays and typed arrays returns the item at an index, including negative indices for getting items relative to the end of an array. Also known as the relative indexing method.</p>
+          <p class="feature-description">The <code>at()</code> method of arrays and typed arrays returns the item at an index, including negative indices for getting items relative to the end of an array. Also known as the relative indexing method.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -2739,7 +2755,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.prototype.at</code></div>
+            <div class="polyfill-meta">Package: <code>array.prototype.at</code> · 59,522 downloads/week</div>
             
           </li>
         
@@ -2759,7 +2775,7 @@
               <span class="feature-date">Baseline: September 14, 2024</span>
             </div>
           </div>
-          <p class="feature-description">The Object.hasOwn() static method checks whether an object has a given property. It&#039;s a more robust alternative to the Object.prototype.hasOwnProperty() method.</p>
+          <p class="feature-description">The <code>Object.hasOwn()</code> static method checks whether an object has a given property. It's a more robust alternative to the <code>Object.prototype.hasOwnProperty()</code> method.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -2782,7 +2798,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>object.hasown</code></div>
+            <div class="polyfill-meta">Package: <code>object.hasown</code> · 5,839,714 downloads/week</div>
             
           </li>
         
@@ -2802,7 +2818,7 @@
               <span class="feature-date">Baseline: September 14, 2024</span>
             </div>
           </div>
-          <p class="feature-description">The at() method of strings returns the character (one UTF-16 code unit) at an index, including negative indices for getting the character relative to the end of the string. Also known as the relative indexing method.</p>
+          <p class="feature-description">The <code>at()</code> method of strings returns the character (one UTF-16 code unit) at an index, including negative indices for getting the character relative to the end of the string. Also known as the relative indexing method.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -2845,7 +2861,7 @@
               <span class="feature-date">Baseline: September 14, 2024</span>
             </div>
           </div>
-          <p class="feature-description">The structuredClone() global method creates a deep copy of an object. Values that cannot be cloned can instead be transferred, making the original value no longer usable.</p>
+          <p class="feature-description">The <code>structuredClone()</code> global method creates a deep copy of an object. Values that cannot be cloned can instead be transferred, making the original value no longer usable.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (3)</h3>
             <ul class="polyfills-list">
@@ -2899,7 +2915,7 @@
               <span class="feature-date">Baseline: January 7, 2025</span>
             </div>
           </div>
-          <p class="feature-description">The Promise.try() static method returns a promise that takes a callback of any kind (returns or throws, synchronously or asynchronously) and wraps its result in a Promise.</p>
+          <p class="feature-description">The <code>Promise.try()</code> static method returns a promise that takes a callback of any kind (returns or throws, synchronously or asynchronously) and wraps its result in a <code>Promise</code>.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -2922,7 +2938,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>promise.try</code></div>
+            <div class="polyfill-meta">Package: <code>promise.try</code> · 219 downloads/week</div>
             
           </li>
         
@@ -2942,7 +2958,7 @@
               <span class="feature-date">Baseline: February 23, 2025</span>
             </div>
           </div>
-          <p class="feature-description">The findLast() and findLastIndex() methods of arrays and typed arrays search an array in reverse order for the first item that satisfies a test function.</p>
+          <p class="feature-description">The <code>findLast()</code> and <code>findLastIndex()</code> methods of arrays and typed arrays search an array in reverse order for the first item that satisfies a test function.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -2965,7 +2981,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>array.prototype.findlast</code></div>
+            <div class="polyfill-meta">Package: <code>array.prototype.findlast</code> · 20,878,364 downloads/week</div>
             
           </li>
         
@@ -2985,7 +3001,7 @@
               <span class="feature-date">Baseline: March 4, 2025</span>
             </div>
           </div>
-          <p class="feature-description">The Intl.DurationFormat API creates a locale-aware formatter that turns an object representing a duration (such as days, hours, and minutes) into a string.</p>
+          <p class="feature-description">The <code>Intl.DurationFormat</code> API creates a locale-aware formatter that turns an object representing a duration (such as days, hours, and minutes) into a string.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -3017,7 +3033,7 @@
               <span class="feature-date">Baseline: March 31, 2025</span>
             </div>
           </div>
-          <p class="feature-description">The Iterator object is an abstract base for objects that implement the iterator protocol. It provides methods common to built-in iterators, such as filter(), find(), map(), and reduce(). You can also use the static method Iterator.from() to convert an existing iterable into an Iterator.</p>
+          <p class="feature-description">The <code>Iterator</code> object is an abstract base for objects that implement the iterator protocol. It provides methods common to built-in iterators, such as <code>filter()</code>, <code>find()</code>, <code>map()</code>, and <code>reduce()</code>. You can also use the static method <code>Iterator.from()</code> to convert an existing iterable into an <code>Iterator</code>.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -3040,7 +3056,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>es-iterator-helpers</code></div>
+            <div class="polyfill-meta">Package: <code>es-iterator-helpers</code> · 22,868,449 downloads/week</div>
             
           </li>
         
@@ -3060,7 +3076,7 @@
               <span class="feature-date">Baseline: May 1, 2025</span>
             </div>
           </div>
-          <p class="feature-description">The RegExp.escape() static method takes a string and replaces any characters that are potentially special characters of a regular expression with equivalent escape sequences. For example, RegExp.escape(&quot;[abc]&quot;) returns &quot;\\[abc\\]&quot;.</p>
+          <p class="feature-description">The <code>RegExp.escape()</code> static method takes a string and replaces any characters that are potentially special characters of a regular expression with equivalent escape sequences. For example, <code>RegExp.escape("[abc]")</code> returns <code>"\\[abc\\]"</code>.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -3083,7 +3099,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>regexp.escape</code></div>
+            <div class="polyfill-meta">Package: <code>regexp.escape</code> · 213,678 downloads/week</div>
             
           </li>
         
@@ -3103,7 +3119,7 @@
               <span class="feature-date">Baseline: September 5, 2025</span>
             </div>
           </div>
-          <p class="feature-description">The Uint8Array object methods fromBase64(), toBase64(), and setFromBase64() convert to and from base64 strings. The fromHex(), toHex(), and setFromHex() methods convert to and from hex strings.</p>
+          <p class="feature-description">The <code>Uint8Array</code> object methods <code>fromBase64()</code>, <code>toBase64()</code>, and <code>setFromBase64()</code> convert to and from base64 strings. The <code>fromHex()</code>, <code>toHex()</code>, and <code>setFromHex()</code> methods convert to and from hex strings.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -3126,7 +3142,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>es-arraybuffer-base64</code></div>
+            <div class="polyfill-meta">Package: <code>es-arraybuffer-base64</code> · 932 downloads/week</div>
             
           </li>
         
@@ -3146,7 +3162,7 @@
               <span class="feature-date">Baseline: September 15, 2025</span>
             </div>
           </div>
-          <p class="feature-description">The URLPattern API creates patterns that can be matched against URLs or URL components.</p>
+          <p class="feature-description">The <code>URLPattern</code> API creates patterns that can be matched against URLs or URL components.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -3178,7 +3194,7 @@
               
             </div>
           </div>
-          <p class="feature-description">The __defineGetter__() and __defineSetter__() methods of objects bind a function to a property, which is called on setting or reading the property.</p>
+          <p class="feature-description">The <code>__defineGetter__()</code> and <code>__defineSetter__()</code> methods of objects bind a function to a property, which is called on setting or reading the property.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -3210,7 +3226,7 @@
               
             </div>
           </div>
-          <p class="feature-description">The getYear() and setYear() methods of Date objects get and set the year as an offset to 1900.</p>
+          <p class="feature-description">The <code>getYear()</code> and <code>setYear()</code> methods of <code>Date</code> objects get and set the year as an offset to 1900.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -3233,7 +3249,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>date.prototype.getyear</code></div>
+            <div class="polyfill-meta">Package: <code>date.prototype.getyear</code> · 3 downloads/week</div>
             
           </li>
         
@@ -3253,7 +3269,7 @@
               
             </div>
           </div>
-          <p class="feature-description">The escape() and unescape() built-in Javascript methods encode and unencode strings using percent encoding, where certain characters are replaced by hexadecimal escape sequences.</p>
+          <p class="feature-description">The <code>escape()</code> and <code>unescape()</code> built-in Javascript methods encode and unencode strings using percent encoding, where certain characters are replaced by hexadecimal escape sequences.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -3285,7 +3301,7 @@
               
             </div>
           </div>
-          <p class="feature-description">The using and await using declarations and the dispose and asyncDispose symbols manage the lifecycle of resources such as file handles and streams. The DisposableStack and AsyncDisposableStack objects can group, dispose, and coordinate dependencies between multiple disposable resources.</p>
+          <p class="feature-description">The <code>using</code> and <code>await using</code> declarations and the <code>dispose</code> and <code>asyncDispose</code> symbols manage the lifecycle of resources such as file handles and streams. The <code>DisposableStack</code> and <code>AsyncDisposableStack</code> objects can group, dispose, and coordinate dependencies between multiple disposable resources.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -3317,7 +3333,7 @@
               
             </div>
           </div>
-          <p class="feature-description">The getOrInsert() and getOrInsertComputed() methods of Map objects get a value, setting and getting a default value if needed.</p>
+          <p class="feature-description">The <code>getOrInsert()</code> and <code>getOrInsertComputed()</code> methods of <code>Map</code> objects get a value, setting and getting a default value if needed.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (5)</h3>
             <ul class="polyfills-list">
@@ -3340,7 +3356,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>map.prototype.getorinsert</code></div>
+            <div class="polyfill-meta">Package: <code>map.prototype.getorinsert</code> · 1 downloads/week</div>
             
           </li>
         
@@ -3351,7 +3367,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>map.prototype.getorinsertcomputed</code></div>
+            <div class="polyfill-meta">Package: <code>map.prototype.getorinsertcomputed</code> · 0 downloads/week</div>
             
           </li>
         
@@ -3362,7 +3378,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>weakmap.prototype.getorinsert</code></div>
+            <div class="polyfill-meta">Package: <code>weakmap.prototype.getorinsert</code> · 2 downloads/week</div>
             
           </li>
         
@@ -3373,7 +3389,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>weakmap.prototype.getorinsertcomputed</code></div>
+            <div class="polyfill-meta">Package: <code>weakmap.prototype.getorinsertcomputed</code> · 2 downloads/week</div>
             
           </li>
         
@@ -3393,7 +3409,7 @@
               
             </div>
           </div>
-          <p class="feature-description">JavaScript built-in methods such as, String.bold() and String.italics(), wrap strings in (often historic) HTML.</p>
+          <p class="feature-description">JavaScript built-in methods such as, <code>String.bold()</code> and <code>String.italics()</code>, wrap strings in (often historic) HTML.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (3)</h3>
             <ul class="polyfills-list">
@@ -3416,7 +3432,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>es-string-html-methods</code></div>
+            <div class="polyfill-meta">Package: <code>es-string-html-methods</code> · 384 downloads/week</div>
             
           </li>
         
@@ -3427,39 +3443,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>string.prototype.substr</code></div>
-            
-          </li>
-        
-            </ul>
-          </div>
-        </div>
-      
-    
-        <div class="feature-card">
-          <div class="feature-header">
-            <h2 class="feature-name">
-              Intersection observer visibility tracking
-              <span class="badge badge-limited">Limited Availability</span>
-            </h2>
-            <div class="feature-meta">
-              <span class="feature-id">intersection-observer-v2</span>
-              
-            </div>
-          </div>
-          <p class="feature-description">The trackVisibility parameter for the IntersectionObserver constructor enables tracking the visibility of an element, to detect if it may be obscured by other content or visual effects. Also known as IntersectionObserver v2.</p>
-          <div class="polyfills-section">
-            <h3 class="polyfills-heading">Polyfills (1)</h3>
-            <ul class="polyfills-list">
-              
-          <li class="polyfill-item">
-            <div class="polyfill-header">
-              <a href="https://github.com/w3c/IntersectionObserver" target="_blank" rel="noopener noreferrer" class="polyfill-link">
-                Intersection Observer polyfill
-              </a>
-              <span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>
-            </div>
-            <div class="polyfill-meta">Repo: <code>w3c/IntersectionObserver</code></div>
+            <div class="polyfill-meta">Package: <code>string.prototype.substr</code> · 10 downloads/week</div>
             
           </li>
         
@@ -3479,7 +3463,7 @@
               
             </div>
           </div>
-          <p class="feature-description">The getter methods of the Intl.Locale API provide supplemental information about a Unicode locale, such as the locale&#039;s calendar (for example, the first day in a week or the weekend start day), writing direction, 12- or 24-hour cycles, and numbering system.</p>
+          <p class="feature-description">The getter methods of the <code>Intl.Locale</code> API provide supplemental information about a Unicode locale, such as the locale's calendar (for example, the first day in a week or the weekend start day), writing direction, 12- or 24-hour cycles, and numbering system.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -3511,7 +3495,7 @@
               
             </div>
           </div>
-          <p class="feature-description">The Error.isError() static method checks whether a value is an Error object.</p>
+          <p class="feature-description">The <code>Error.isError()</code> static method checks whether a value is an <code>Error</code> object.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -3534,7 +3518,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>error.iserror</code></div>
+            <div class="polyfill-meta">Package: <code>error.iserror</code> · 143 downloads/week</div>
             
           </li>
         
@@ -3554,7 +3538,7 @@
               
             </div>
           </div>
-          <p class="feature-description">To serialize and parse JSON in a lossless way, JSON.stringify() handles rawJSON values and JSON.parse()&#039;s reviver callback takes a source context parameter.</p>
+          <p class="feature-description">To serialize and parse JSON in a lossless way, <code>JSON.stringify()</code> handles <code>rawJSON</code> values and <code>JSON.parse()</code>'s reviver callback takes a source context parameter.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -3597,7 +3581,7 @@
               
             </div>
           </div>
-          <p class="feature-description">The Math.sumPrecise() static method returns the sum of an iterable of numbers. It avoids the precision loss of intermediate partial sums, as found using reduce() or a loop to add together an array of values.</p>
+          <p class="feature-description">The <code>Math.sumPrecise()</code> static method returns the sum of an iterable of numbers. It avoids the precision loss of intermediate partial sums, as found using <code>reduce()</code> or a loop to add together an array of values.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -3620,7 +3604,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>math.sumprecise</code></div>
+            <div class="polyfill-meta">Package: <code>math.sumprecise</code> · 0 downloads/week</div>
             
           </li>
         
@@ -3694,7 +3678,7 @@
               
             </div>
           </div>
-          <p class="feature-description">The DOMException, Error, EvalError, RangeError, ReferenceError, SyntaxError, TypeError, and URIError objects are serializable. You can call structuredClone() on an error object or pass it to a worker using postMessage().</p>
+          <p class="feature-description">The <code>DOMException</code>, <code>Error</code>, <code>EvalError</code>, <code>RangeError</code>, <code>ReferenceError</code>, <code>SyntaxError</code>, <code>TypeError</code>, and <code>URIError</code> objects are serializable. You can call <code>structuredClone()</code> on an error object or pass it to a worker using <code>postMessage()</code>.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (3)</h3>
             <ul class="polyfills-list">
@@ -3748,7 +3732,7 @@
               
             </div>
           </div>
-          <p class="feature-description">The Temporal API allows you to work with dates, times, time zones, and durations. It is more powerful than the Date API.</p>
+          <p class="feature-description">The <code>Temporal</code> API allows you to work with dates, times, time zones, and durations. It is more powerful than the <code>Date</code> API.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (2)</h3>
             <ul class="polyfills-list">
@@ -3760,7 +3744,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>@js-temporal</code></div>
+            <div class="polyfill-meta">Package: <code>@js-temporal/polyfill</code> · 348,985 downloads/week</div>
             
           </li>
         
@@ -3771,7 +3755,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>temporal-polyfill</code></div>
+            <div class="polyfill-meta">Package: <code>temporal-polyfill</code> · 581,614 downloads/week</div>
             
           </li>
         
@@ -3814,7 +3798,7 @@
               </a>
               <span class="polyfill-badge badge-npm" title="npm package">npm</span>
             </div>
-            <div class="polyfill-meta">Package: <code>trusted-types</code></div>
+            <div class="polyfill-meta">Package: <code>trusted-types</code> · 15,316 downloads/week</div>
             
           </li>
         
@@ -3834,7 +3818,7 @@
               
             </div>
           </div>
-          <p class="feature-description">The navigator.getVRDisplays() API represents virtual reality (VR) devices, including sensors and head-mounted displays.</p>
+          <p class="feature-description">The <code>navigator.getVRDisplays()</code> API represents virtual reality (VR) devices, including sensors and head-mounted displays.</p>
           <div class="polyfills-section">
             <h3 class="polyfills-heading">Polyfills (1)</h3>
             <ul class="polyfills-list">
@@ -3871,26 +3855,51 @@
     }
     
     function sortCards(order) {
-      // Get all cards as an array with their baseline dates
+      // Get all cards as an array with their data
       const cardsArray = Array.from(featureCards).map(card => {
-        // Extract date from the feature-date span
-        const dateSpan = card.querySelector('.feature-date');
-        let sortDate = '9999-12-31'; // Default for features without date
+        let sortValue;
         
-        if (dateSpan) {
-          const dateText = dateSpan.textContent.replace('Baseline: ', '');
-          sortDate = new Date(dateText).toISOString().split('T')[0];
+        if (order.startsWith('date-')) {
+          // Extract date from the feature-date span
+          const dateSpan = card.querySelector('.feature-date');
+          sortValue = '9999-12-31'; // Default for features without date
+          
+          if (dateSpan) {
+            const dateText = dateSpan.textContent.replace('Baseline: ', '');
+            sortValue = new Date(dateText).toISOString().split('T')[0];
+          }
+        } else if (order.startsWith('npm-')) {
+          // Extract max downloads from npm packages in polyfill items
+          const metaElements = card.querySelectorAll('.polyfill-meta');
+          let maxDownloads = 0;
+          
+          metaElements.forEach(meta => {
+            const text = meta.textContent;
+            const match = text.match(/([\d,]+)\s+downloads\/week/);
+            if (match) {
+              const downloads = parseInt(match[1].replace(/,/g, ''), 10);
+              maxDownloads = Math.max(maxDownloads, downloads);
+            }
+          });
+          
+          sortValue = maxDownloads;
         }
         
-        return { card, sortDate };
+        return { card, sortValue };
       });
       
       // Sort based on order
       cardsArray.sort((a, b) => {
-        if (order === 'desc') {
-          return b.sortDate.localeCompare(a.sortDate);
+        if (order.endsWith('-desc')) {
+          if (typeof a.sortValue === 'number') {
+            return b.sortValue - a.sortValue;
+          }
+          return b.sortValue.localeCompare(a.sortValue);
         } else {
-          return a.sortDate.localeCompare(b.sortDate);
+          if (typeof a.sortValue === 'number') {
+            return a.sortValue - b.sortValue;
+          }
+          return a.sortValue.localeCompare(b.sortValue);
         }
       });
       

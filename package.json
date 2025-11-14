@@ -2,6 +2,7 @@
   "type": "module",
   "scripts": {
     "generate-polyfills": "node scripts/generate-polyfill-mappings.js",
+    "generate-npm-stats": "node scripts/generate-npm-stats.js",
     "generate-explorer": "node scripts/generate-polyfill-explorer.js"
   },
   "dependencies": {

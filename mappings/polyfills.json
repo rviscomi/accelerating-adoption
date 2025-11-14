@@ -406,16 +406,12 @@
         "url": "https://github.com/w3c/IntersectionObserver",
         "github": "w3c/IntersectionObserver",
         "description": "Intersection Observer polyfill"
-      }
-    ]
-  },
-  "intersection-observer-v2": {
-    "fallbacks": [
+      },
       {
         "type": "polyfill",
-        "url": "https://github.com/w3c/IntersectionObserver",
-        "github": "w3c/IntersectionObserver",
-        "description": "Intersection Observer polyfill"
+        "url": "https://www.npmjs.com/package/intersection-observer",
+        "npm": "intersection-observer",
+        "description": "Polyfill for IntersectionObserver API"
       }
     ]
   },
@@ -1153,7 +1149,7 @@
       {
         "type": "polyfill",
         "url": "https://www.npmjs.com/package/@js-temporal/polyfill",
-        "npm": "@js-temporal",
+        "npm": "@js-temporal/polyfill",
         "description": "Temporal polyfill by proposal champions"
       },
       {

@@ -137,7 +137,8 @@ async function findPolyfills(slug) {
 
 // Extract npm package from URL
 function extractNpmPackage(url) {
-  const match = url.match(/npmjs\.com\/package\/([^\/\?#]+)/);
+  // Match package name after /package/, handling scoped packages like @scope/package
+  const match = url.match(/npmjs\.com\/package\/(@?[^\/\?#]+(?:\/[^\/\?#]+)?)/);
   return match ? match[1] : null;
 }
 
@@ -226,6 +227,48 @@ async function main() {
   
   console.log("Discovering polyfills from MDN documentation...\n");
   const mappings = await generateMappings(mdnDocsMapping);
+  
+  // Load and merge manual overrides
+  const overridesPath = path.join(__dirname, "../mappings/polyfills-overrides.json");
+  let overrides = {};
+  try {
+    const overridesContent = await fs.readFile(overridesPath, "utf-8");
+    const parsed = JSON.parse(overridesContent);
+    // Filter out metadata keys starting with _
+    overrides = Object.fromEntries(
+      Object.entries(parsed).filter(([key]) => !key.startsWith("_"))
+    );
+    console.log(`\n✓ Loaded ${Object.keys(overrides).length} manual overrides`);
+  } catch (error) {
+    console.log("\n✓ No manual overrides found (this is fine)");
+  }
+  
+  // Merge overrides into mappings
+  for (const [featureId, override] of Object.entries(overrides)) {
+    if (override.exclude) {
+      delete mappings[featureId];
+      console.log(`  - Excluded: ${featureId}`);
+    } else if (override.fallbacks !== undefined) {
+      if (override.replace) {
+        // Replace mode: completely override auto-generated data
+        mappings[featureId] = { fallbacks: override.fallbacks };
+        console.log(`  ↻ Replaced: ${featureId} (${override.fallbacks.length} fallback(s))`);
+      } else {
+        // Augment mode (default): append to existing fallbacks
+        if (mappings[featureId]) {
+          mappings[featureId].fallbacks = [
+            ...mappings[featureId].fallbacks,
+            ...override.fallbacks
+          ];
+          console.log(`  + Augmented: ${featureId} (added ${override.fallbacks.length} fallback(s))`);
+        } else {
+          // No existing entry, create new one
+          mappings[featureId] = { fallbacks: override.fallbacks };
+          console.log(`  + Added: ${featureId}`);
+        }
+      }
+    }
+  }
   
   const outputPath = path.join(__dirname, "../mappings/polyfills.json");
   await fs.mkdir(path.dirname(outputPath), { recursive: true });

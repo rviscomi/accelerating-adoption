@@ -1,0 +1,23 @@
+{
+  "_comment": "This file allows manual overrides for polyfill mappings",
+  "_instructions": "See OVERRIDES-README.md for full documentation",
+  "_example_augment": "By default, fallbacks are appended to auto-discovered ones",
+  "_example_replace": "Set 'replace: true' to completely override auto-generated data",
+  "_example_exclude": "Set 'exclude: true' to remove a feature entirely",
+  
+  "intersection-observer": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/intersection-observer",
+        "npm": "intersection-observer",
+        "description": "Polyfill for IntersectionObserver API"
+      }
+    ]
+  },
+  
+  "intersection-observer-v2": {
+    "_comment": "There are no known polyfills for Intersection Observer v2",
+    "exclude": true
+  }
+}
