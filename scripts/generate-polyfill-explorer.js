@@ -111,8 +111,8 @@ function generatePolyfillHtml(polyfill, npmStats) {
   if (polyfill.npm) {
     badges.push(`<span class="polyfill-badge badge-npm" title="npm package">npm</span>`);
   }
-  if (polyfill.github) {
-    badges.push(`<span class="polyfill-badge badge-github" title="GitHub repository">GitHub</span>`);
+  if (polyfill.repository) {
+    badges.push(`<span class="polyfill-badge badge-github" title="Repository">GitHub</span>`);
   }
   
   const meta = [];
@@ -122,8 +122,8 @@ function generatePolyfillHtml(polyfill, npmStats) {
       meta.push(`${npmStats[polyfill.npm].toLocaleString()} downloads/week`);
     }
   }
-  if (polyfill.github) {
-    meta.push(`Repo: <code>${escapeHtml(polyfill.github)}</code>`);
+  if (polyfill.repository) {
+    meta.push(`Repo: <code>${escapeHtml(polyfill.repository)}</code>`);
   }
   
   const description = polyfill.description || polyfill.url;

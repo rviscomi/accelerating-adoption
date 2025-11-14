@@ -4,7 +4,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-object",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Object.prototype.__lookupSetter__` in `core-js`"
       }
     ]
@@ -14,7 +14,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#relative-indexing-method",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Array.prototype.at` in `core-js`"
       },
       {
@@ -30,7 +30,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#change-array-by-copy",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Array.prototype.with` in `core-js`"
       },
       {
@@ -64,7 +64,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-array",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Array.prototype.copyWithin` in `core-js`"
       },
       {
@@ -76,7 +76,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-typed-arrays",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `TypedArray.prototype.copyWithin` in `core-js`"
       }
     ]
@@ -86,13 +86,13 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-array",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Array.prototype.fill` in `core-js`"
       },
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-typed-arrays",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `TypedArray.prototype.fill` in `core-js`"
       }
     ]
@@ -102,7 +102,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-array",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Array.prototype.find` in `core-js`"
       },
       {
@@ -118,7 +118,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#array-find-from-last",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Array.prototype.findLast` in `core-js`"
       },
       {
@@ -134,7 +134,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-array",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Array.prototype.flatMap` in `core-js`"
       },
       {
@@ -156,7 +156,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-array",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Array.from` in `core-js`"
       },
       {
@@ -168,7 +168,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-typed-arrays",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `TypedArray.from` in `core-js`"
       }
     ]
@@ -178,7 +178,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#arrayfromasync",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Array.fromAsync` in `core-js`"
       }
     ]
@@ -188,7 +188,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#array-grouping",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Object.groupBy` in `core-js`"
       },
       {
@@ -210,7 +210,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-array",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Array.prototype.includes` in `core-js`"
       },
       {
@@ -222,7 +222,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-typed-arrays",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `TypedArray.prototype.includes` in `core-js`"
       }
     ]
@@ -232,7 +232,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-array",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Array.isArray` in `core-js`"
       },
       {
@@ -248,7 +248,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-array",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Array.of` in `core-js`"
       },
       {
@@ -260,7 +260,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-typed-arrays",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `TypedArray.of` in `core-js`"
       }
     ]
@@ -270,13 +270,13 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#base64-utility-methods",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "A polyfill of `btoa` is available in `core-js`"
       },
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "A polyfill of `btoa` is available in `core-js`"
       }
     ]
@@ -286,7 +286,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/mathiasbynens/CSS.escape/blob/master/css.escape.js",
-        "github": "mathiasbynens/CSS.escape",
+        "repository": "mathiasbynens/CSS.escape",
         "description": "A polyfill for the CSS.escape"
       }
     ]
@@ -296,7 +296,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-date",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Date.prototype.setYear` in `core-js`"
       },
       {
@@ -312,7 +312,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `unescape` in `core-js`"
       }
     ]
@@ -322,7 +322,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#explicit-resource-management",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `AsyncDisposableStack` in `core-js`"
       }
     ]
@@ -332,7 +332,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#map-upsert",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `WeakMap.prototype.getOrInsertComputed` in `core-js`"
       },
       {
@@ -366,7 +366,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-globalthis",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `globalThis` in `core-js`"
       },
       {
@@ -382,7 +382,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `String.prototype.sup` in `core-js`"
       },
       {
@@ -404,7 +404,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/w3c/IntersectionObserver",
-        "github": "w3c/IntersectionObserver",
+        "repository": "w3c/IntersectionObserver",
         "description": "Intersection Observer polyfill"
       },
       {
@@ -500,7 +500,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#erroriserror",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Error.isError` in `core-js`"
       },
       {
@@ -516,7 +516,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#iterator-helpers",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Iterator` in `core-js`"
       },
       {
@@ -532,7 +532,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#iterator-helpers",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Iterator` in `core-js`"
       },
       {
@@ -548,13 +548,13 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-json",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of modern `JSON.stringify` behavior (symbol, well-formed unicode, raw JSON) in `core-js`"
       },
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#jsonparse-source-text-access",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `JSON.rawJSON` in `core-js`"
       }
     ]
@@ -564,7 +564,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#map",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill for `Map` in `core-js`"
       },
       {
@@ -580,7 +580,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#mathsumprecise",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Math.sumPrecise` in `core-js`"
       },
       {
@@ -596,7 +596,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/ai/audio-recorder-polyfill",
-        "github": "ai/audio-recorder-polyfill",
+        "repository": "ai/audio-recorder-polyfill",
         "description": "MediaRecorder polyfill for Safari and Edge"
       }
     ]
@@ -606,7 +606,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-number",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of modern `Number` behavior (with support binary and octal literals) in `core-js`"
       }
     ]
@@ -616,7 +616,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-object",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Object.hasOwn` in `core-js`"
       },
       {
@@ -651,7 +651,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-promise",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Promise` in `core-js`"
       }
     ]
@@ -661,7 +661,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-promise",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Promise.allSettled` in `core-js`"
       },
       {
@@ -677,7 +677,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-promise",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Promise.any` in `core-js`"
       },
       {
@@ -693,7 +693,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-promise",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Promise.prototype.finally` in `core-js`"
       },
       {
@@ -709,7 +709,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#promisetry",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Promise.try` in `core-js`"
       },
       {
@@ -725,7 +725,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#promisewithresolvers",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Promise.withResolvers` in `core-js`"
       },
       {
@@ -741,7 +741,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#queuemicrotask",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `queueMicrotask()` in `core-js`"
       }
     ]
@@ -751,7 +751,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of many modern `RegExp` features (`dotAll`, `sticky` flags, named capture groups, etc.) in `core-js`"
       }
     ]
@@ -761,7 +761,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#regexp-escaping",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `RegExp.escape` in `core-js`"
       },
       {
@@ -777,19 +777,19 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#structuredclone",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "A polyfill of `structuredClone` is available in `core-js`"
       },
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "A polyfill of `structuredClone` is available in `core-js`"
       },
       {
         "type": "polyfill",
         "url": "https://github.com/ungap/structured-clone",
-        "github": "ungap/structured-clone",
+        "repository": "ungap/structured-clone",
         "description": "Structured clone polyfill"
       }
     ]
@@ -799,19 +799,19 @@
       {
         "type": "polyfill",
         "url": "https://github.com/EventSource/eventsource",
-        "github": "EventSource/eventsource",
+        "repository": "EventSource/eventsource",
         "description": "EventSource polyfill for Node.js"
       },
       {
         "type": "polyfill",
         "url": "https://github.com/remy/polyfills/blob/master/EventSource.js",
-        "github": "remy/polyfills",
+        "repository": "remy/polyfills",
         "description": "Remy Sharp's EventSource polyfill"
       },
       {
         "type": "polyfill",
         "url": "https://github.com/Yaffle/EventSource",
-        "github": "Yaffle/EventSource",
+        "repository": "Yaffle/EventSource",
         "description": "Yaffle's EventSource polyfill"
       }
     ]
@@ -821,7 +821,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#set",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Set` in `core-js`"
       },
       {
@@ -837,7 +837,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#new-set-methods",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Set.prototype.union` in `core-js`"
       },
       {
@@ -889,7 +889,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#settimeout-and-setinterval",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `setInterval` which allows passing arguments to the callback in `core-js`"
       }
     ]
@@ -899,7 +899,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#settimeout-and-setinterval",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `setTimeout` which allows passing arguments to the callback in `core-js`"
       }
     ]
@@ -909,7 +909,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-array",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Array.prototype.sort` with modern behavior like stable sort in `core-js`"
       }
     ]
@@ -919,7 +919,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `String.prototype.at` in `core-js`"
       },
       {
@@ -935,7 +935,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `String.fromCodePoint` in `core-js`"
       },
       {
@@ -957,7 +957,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `String.prototype.includes` in `core-js`"
       },
       {
@@ -973,7 +973,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `String.prototype.matchAll` in `core-js`"
       },
       {
@@ -989,7 +989,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `String.prototype.padStart` in `core-js`"
       },
       {
@@ -1011,7 +1011,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `String.raw` in `core-js`"
       },
       {
@@ -1027,7 +1027,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `String.prototype.repeat` in `core-js`"
       },
       {
@@ -1043,7 +1043,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `String.prototype.replaceAll` in `core-js`"
       },
       {
@@ -1059,7 +1059,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `String.prototype.startsWith` in `core-js`"
       },
       {
@@ -1081,7 +1081,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-string-and-regexp",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `String.prototype.trimStart` in `core-js`"
       },
       {
@@ -1103,7 +1103,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#well-formed-unicode-strings",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `String.prototype.toWellFormed` in `core-js`"
       },
       {
@@ -1125,19 +1125,19 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#structuredclone",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "A polyfill of `structuredClone` is available in `core-js`"
       },
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "A polyfill of `structuredClone` is available in `core-js`"
       },
       {
         "type": "polyfill",
         "url": "https://github.com/ungap/structured-clone",
-        "github": "ungap/structured-clone",
+        "repository": "ungap/structured-clone",
         "description": "Structured clone polyfill"
       }
     ]
@@ -1147,7 +1147,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-symbol",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Symbol` in `core-js`"
       }
     ]
@@ -1173,7 +1173,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#arraybufferprototypetransfer-and-friends",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `ArrayBuffer.prototype.transferToFixedLength` in `core-js`"
       },
       {
@@ -1195,7 +1195,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/w3c/trusted-types#polyfill",
-        "github": "w3c/trusted-types",
+        "repository": "w3c/trusted-types",
         "description": "Trusted Types polyfill (also available as an npm package)"
       },
       {
@@ -1211,7 +1211,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-typed-arrays",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `TypedArray.prototype.some` in `core-js`"
       }
     ]
@@ -1221,7 +1221,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#ecmascript-typed-arrays",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `TypedArray.prototype.values` in `core-js`"
       }
     ]
@@ -1231,7 +1231,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#uint8array-to--from-base64-and-hex",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `Uint8Array.prototype.setFromBase64` in `core-js`"
       },
       {
@@ -1247,13 +1247,13 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#url-and-urlsearchparams",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "A polyfill of `URL.canParse()` is available in `core-js`"
       },
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "A polyfill of `URL.canParse()` is available in `core-js`"
       }
     ]
@@ -1263,7 +1263,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/kenchris/urlpattern-polyfill",
-        "github": "kenchris/urlpattern-polyfill",
+        "repository": "kenchris/urlpattern-polyfill",
         "description": "A polyfill of `URLPattern` is available on GitHub"
       }
     ]
@@ -1273,7 +1273,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#weakmap",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `WeakMap` in `core-js`"
       }
     ]
@@ -1283,7 +1283,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/zloirock/core-js#weakset",
-        "github": "zloirock/core-js",
+        "repository": "zloirock/core-js",
         "description": "Polyfill of `WeakSet` in `core-js`"
       }
     ]
@@ -1293,7 +1293,7 @@
       {
         "type": "polyfill",
         "url": "https://github.com/immersive-web/webvr-polyfill",
-        "github": "immersive-web/webvr-polyfill",
+        "repository": "immersive-web/webvr-polyfill",
         "description": "Web VR polyfill — JavaScript implementation of WebVR."
       }
     ]
@@ -1304,7 +1304,7 @@
         "type": "postcss-plugin",
         "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-cascade-layers",
         "description": "PostCSS Plugin for CSS Cascade Layers",
-        "github": "csstools/postcss-plugins"
+        "repository": "csstools/postcss-plugins"
       }
     ]
   },
@@ -1314,7 +1314,7 @@
         "type": "postcss-plugin",
         "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-color-function",
         "description": "PostCSS Plugin for `color()` Function",
-        "github": "csstools/postcss-plugins"
+        "repository": "csstools/postcss-plugins"
       }
     ]
   },
@@ -1324,7 +1324,7 @@
         "type": "postcss-plugin",
         "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-color-mix-function",
         "description": "PostCSS Plugin for `color-mix()` Function",
-        "github": "csstools/postcss-plugins"
+        "repository": "csstools/postcss-plugins"
       }
     ]
   },
@@ -1344,7 +1344,7 @@
         "type": "postcss-plugin",
         "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-custom-properties",
         "description": "PostCSS Plugin for Custom Properties",
-        "github": "csstools/postcss-plugins"
+        "repository": "csstools/postcss-plugins"
       }
     ]
   },
@@ -1354,13 +1354,13 @@
         "type": "polyfill",
         "url": "https://github.com/WICG/focus-visible",
         "description": "JavaScript Library for `:focus-visible` Focus-Indicated Pseudo-Class",
-        "github": "WICG/focus-visible"
+        "repository": "WICG/focus-visible"
       },
       {
         "type": "postcss-plugin",
         "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-focus-visible",
         "description": "PostCSS Plugin for `:focus-visible` Focus-Indicated Pseudo-Class",
-        "github": "csstools/postcss-plugins"
+        "repository": "csstools/postcss-plugins"
       }
     ]
   },
@@ -1370,13 +1370,13 @@
         "type": "polyfill",
         "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/css-has-pseudo",
         "description": "JavaScript Library for `:has()` Relational Pseudo-Class",
-        "github": "csstools/postcss-plugins"
+        "repository": "csstools/postcss-plugins"
       },
       {
         "type": "postcss-plugin",
         "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/css-has-pseudo",
         "description": "PostCSS Plugin for `:has()` Relational Pseudo-Class",
-        "github": "csstools/postcss-plugins"
+        "repository": "csstools/postcss-plugins"
       }
     ]
   },
@@ -1386,7 +1386,7 @@
         "type": "postcss-plugin",
         "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-ic-unit",
         "description": "PostCSS Plugin for `ic` length unit",
-        "github": "csstools/postcss-plugins"
+        "repository": "csstools/postcss-plugins"
       }
     ]
   },
@@ -1396,7 +1396,7 @@
         "type": "postcss-plugin",
         "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-is-pseudo-class",
         "description": "PostCSS Plugin for `:is()` Matches-Any Pseudo-Class",
-        "github": "csstools/postcss-plugins"
+        "repository": "csstools/postcss-plugins"
       }
     ]
   },
@@ -1406,7 +1406,7 @@
         "type": "postcss-plugin",
         "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-lab-function",
         "description": "PostCSS Plugin for `lch()` Function",
-        "github": "csstools/postcss-plugins"
+        "repository": "csstools/postcss-plugins"
       }
     ]
   },
@@ -1416,7 +1416,7 @@
         "type": "postcss-plugin",
         "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-logical-viewport-units",
         "description": "PostCSS Plugin for Logical Viewport Units",
-        "github": "csstools/postcss-plugins"
+        "repository": "csstools/postcss-plugins"
       }
     ]
   },
@@ -1426,7 +1426,7 @@
         "type": "postcss-plugin",
         "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-media-minmax",
         "description": "PostCSS Plugin for Media Query Ranges",
-        "github": "csstools/postcss-plugins"
+        "repository": "csstools/postcss-plugins"
       }
     ]
   },
@@ -1436,7 +1436,7 @@
         "type": "postcss-plugin",
         "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting",
         "description": "PostCSS Plugin for Nesting Rules",
-        "github": "csstools/postcss-plugins"
+        "repository": "csstools/postcss-plugins"
       }
     ]
   },
@@ -1446,7 +1446,7 @@
         "type": "postcss-plugin",
         "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-oklab-function",
         "description": "PostCSS Plugin for `oklab` and `oklch` color functions",
-        "github": "csstools/postcss-plugins"
+        "repository": "csstools/postcss-plugins"
       }
     ]
   },
@@ -1456,7 +1456,7 @@
         "type": "postcss-plugin",
         "url": "https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-relative-color-syntax",
         "description": "PostCSS Plugin for Relative Colors",
-        "github": "csstools/postcss-plugins"
+        "repository": "csstools/postcss-plugins"
       }
     ]
   },

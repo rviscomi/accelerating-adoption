@@ -152,8 +152,8 @@ function extractNpmPackage(url) {
   return null;
 }
 
-// Extract GitHub repo from URL
-function extractGithubRepo(url) {
+// Extract repository from URL
+function extractRepository(url) {
   const match = url.match(/github\.com\/([^\/]+\/[^\/\?#]+)/);
   return match ? match[1].replace(/\.git$/, '') : null;
 }
@@ -205,8 +205,8 @@ async function generateMappings(mdnDocsMapping) {
       const npm = extractNpmPackage(link.url);
       if (npm) fallback.npm = npm;
       
-      const github = extractGithubRepo(link.url);
-      if (github) fallback.github = github;
+      const repository = extractRepository(link.url);
+      if (repository) fallback.repository = repository;
       
       if (link.text) fallback.description = link.text;
       
@@ -255,16 +255,16 @@ function generateCSSDBMappings() {
         description: `${polyfill.type} for ${title}`
       }));
       
-      // Try to extract npm/github from URL
+      // Try to extract npm/repository from URL
       fallbacks.forEach(fallback => {
         const npmMatch = fallback.url.match(/npmjs\.com\/package\/(@?[^\/\?#]+(?:\/[^\/\?#]+)?)/);
         if (npmMatch) {
           fallback.npm = npmMatch[1];
         }
         
-        const githubMatch = fallback.url.match(/github\.com\/([^\/]+\/[^\/\?#]+)/);
-        if (githubMatch) {
-          fallback.github = githubMatch[1].replace(/\.git$/, '');
+        const repositoryMatch = fallback.url.match(/github\.com\/([^\/]+\/[^\/\?#]+)/);
+        if (repositoryMatch) {
+          fallback.repository = repositoryMatch[1].replace(/\.git$/, '');
         }
       });
       
