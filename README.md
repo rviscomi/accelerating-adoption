@@ -2,6 +2,8 @@
 
 Breakout session at TPAC 2025
 
+**Session notes:** https://docs.google.com/document/d/1AftgpF7308IhkVZTIt13uMP8YldmAjoQwKyPQtynRe4/edit?usp=sharing
+
 **Context:** https://www.w3.org/events/meetings/95b89f3d-1494-4f0e-9968-53fdf15945dc/
 
 **One-line summary:** Proposal to create a dataset that will help developers (and their coding agents!) start using new stuff sooner, and migrate from the old stuff more quickly
