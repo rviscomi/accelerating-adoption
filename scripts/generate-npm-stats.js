@@ -16,7 +16,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const NPM_API_BASE = "https://api.npmjs.org/downloads/point/last-week";
-const DELAY_MS = 500; // Delay between API requests to avoid rate limiting
+const DELAY_MS = 750; // Delay between API requests to avoid rate limiting
 const MAX_RETRIES = 2; // Retry on rate limit errors
 
 // Load polyfill mappings

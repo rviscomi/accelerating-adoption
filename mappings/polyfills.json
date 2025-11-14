@@ -1289,5 +1289,15 @@
         "description": "Web VR polyfill — JavaScript implementation of WebVR."
       }
     ]
+  },
+  "scheduler": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/scheduler-polyfill",
+        "npm": "scheduler-polyfill",
+        "description": "Polyfill for the Scheduler API"
+      }
+    ]
   }
 }

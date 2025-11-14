@@ -19,5 +19,16 @@
   "intersection-observer-v2": {
     "_comment": "There are no known polyfills for Intersection Observer v2",
     "exclude": true
+  },
+  
+  "scheduler": {
+    "fallbacks": [
+      {
+        "type": "polyfill",
+        "url": "https://www.npmjs.com/package/scheduler-polyfill",
+        "npm": "scheduler-polyfill",
+        "description": "Polyfill for the Scheduler API"
+      }
+    ]
   }
 }
