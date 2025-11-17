@@ -118,8 +118,11 @@ function generatePolyfillHtml(polyfill, npmStats) {
   const meta = [];
   if (polyfill.npm) {
     meta.push(`Package: <code>${escapeHtml(polyfill.npm)}</code>`);
-    if (npmStats[polyfill.npm] !== undefined) {
-      meta.push(`${npmStats[polyfill.npm].toLocaleString()} downloads/week`);
+    if (npmStats[polyfill.npm]) {
+      const downloads = npmStats[polyfill.npm].downloads;
+      if (downloads !== null && downloads !== undefined) {
+        meta.push(`${downloads.toLocaleString()} downloads/week`);
+      }
     }
   }
   if (polyfill.repository) {

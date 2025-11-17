@@ -6,8 +6,15 @@
  * Reads polyfills.json, extracts npm packages, queries the npm API
  * for weekly download counts, and saves to npm-stats.json
  * 
+ * By default, only refreshes packages that are older than 1 week or
+ * have never been queried. Use --force to refresh all packages.
+ * 
  * Input: mappings/polyfills.json
  * Output: mappings/npm-stats.json
+ * 
+ * Usage:
+ *   node generate-npm-stats.js          # Refresh only stale packages
+ *   node generate-npm-stats.js --force  # Refresh all packages
  */
 
 import fs from "fs/promises";
@@ -18,6 +25,47 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const NPM_API_BASE = "https://api.npmjs.org/downloads/point/last-week";
 const DELAY_MS = 750; // Delay between API requests to avoid rate limiting
 const MAX_RETRIES = 2; // Retry on rate limit errors
+const ONE_WEEK_MS = 7 * 24 * 60 * 60 * 1000; // 1 week in milliseconds
+
+// Parse command line arguments
+const FORCE_REFRESH = process.argv.includes('--force') || process.argv.includes('-f');
+
+// Load existing npm stats
+async function loadExistingStats() {
+  try {
+    const statsPath = path.join(__dirname, "../mappings/npm-stats.json");
+    const content = await fs.readFile(statsPath, "utf-8");
+    return JSON.parse(content);
+  } catch (error) {
+    // File doesn't exist or is invalid, start fresh
+    return {};
+  }
+}
+
+// Check if a package needs to be refreshed
+function needsRefresh(packageName, existingStats) {
+  // Force refresh all packages if --force flag is set
+  if (FORCE_REFRESH) {
+    return true;
+  }
+  
+  // Package has never been queried
+  if (!existingStats[packageName]) {
+    return true;
+  }
+  
+  // Package stats are missing timestamp (legacy format)
+  if (!existingStats[packageName].lastModified) {
+    return true;
+  }
+  
+  // Check if stats are older than 1 week
+  const lastModified = new Date(existingStats[packageName].lastModified);
+  const now = new Date();
+  const timeDiff = now - lastModified;
+  
+  return timeDiff > ONE_WEEK_MS;
+}
 
 // Load polyfill mappings
 async function loadPolyfillMappings() {
@@ -80,27 +128,46 @@ function delay(ms) {
 }
 
 // Fetch stats for all packages
-async function fetchAllStats(packages) {
-  const stats = {};
+async function fetchAllStats(packages, existingStats) {
+  const stats = { ...existingStats }; // Start with existing stats
+  const packagesToRefresh = packages.filter(pkg => needsRefresh(pkg, existingStats));
   let processed = 0;
   
-  console.log(`\nFetching stats for ${packages.length} npm packages...\n`);
+  console.log(`\nTotal packages: ${packages.length}`);
+  console.log(`Packages needing refresh: ${packagesToRefresh.length}`);
+  console.log(`Packages up-to-date: ${packages.length - packagesToRefresh.length}\n`);
   
-  for (const packageName of packages) {
+  if (packagesToRefresh.length === 0) {
+    console.log("All packages are up-to-date! No API requests needed.\n");
+    return stats;
+  }
+  
+  console.log(`Fetching stats for ${packagesToRefresh.length} packages...\n`);
+  
+  for (const packageName of packagesToRefresh) {
     const downloads = await fetchPackageStats(packageName);
     
     if (downloads !== null) {
-      stats[packageName] = downloads;
+      stats[packageName] = {
+        downloads: downloads,
+        lastModified: new Date().toISOString()
+      };
       console.log(`✓ ${packageName}: ${downloads.toLocaleString()} downloads/week`);
+    } else if (!stats[packageName]) {
+      // Package not found, but we should track that we tried
+      stats[packageName] = {
+        downloads: null,
+        lastModified: new Date().toISOString()
+      };
     }
     
     processed++;
     if (processed % 10 === 0) {
-      console.log(`\nProgress: ${processed}/${packages.length}\n`);
+      console.log(`\nProgress: ${processed}/${packagesToRefresh.length}\n`);
     }
     
     // Add delay to avoid rate limiting
-    if (processed < packages.length) {
+    if (processed < packagesToRefresh.length) {
       await delay(DELAY_MS);
     }
   }
@@ -117,12 +184,21 @@ async function main() {
   const packages = extractNpmPackages(polyfillMappings);
   console.log(`Found ${packages.length} unique npm packages`);
   
-  const stats = await fetchAllStats(packages);
+  console.log("\nLoading existing stats...");
+  const existingStats = await loadExistingStats();
+  
+  if (FORCE_REFRESH) {
+    console.log("Force refresh enabled - all packages will be updated");
+  }
+  
+  const stats = await fetchAllStats(packages, existingStats);
   
   const outputPath = path.join(__dirname, "../mappings/npm-stats.json");
   await fs.writeFile(outputPath, JSON.stringify(stats, null, 2));
   
-  console.log(`\n✓ Generated npm stats for ${Object.keys(stats).length} packages`);
+  const refreshedCount = packages.filter(pkg => needsRefresh(pkg, existingStats)).length;
+  console.log(`\n✓ Refreshed stats for ${refreshedCount} packages`);
+  console.log(`✓ Total packages tracked: ${Object.keys(stats).length}`);
   console.log(`✓ Output: ${outputPath}`);
 }
 

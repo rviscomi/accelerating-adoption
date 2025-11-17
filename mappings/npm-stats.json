@@ -1,77 +1,302 @@
 {
-  "@formatjs/intl-displaynames": 1435438,
-  "@formatjs/intl-durationformat": 135559,
-  "@formatjs/intl-listformat": 1485705,
-  "@formatjs/intl-locale": 494976,
-  "@formatjs/intl-pluralrules": 490083,
-  "@formatjs/intl-relativetimeformat": 439946,
-  "@formatjs/intl-segmenter": 23788,
-  "@js-temporal/polyfill": 359748,
-  "array-includes": 37840126,
-  "array.from": 5406,
-  "array.isarray": 1,
-  "array.of": 255,
-  "array.prototype.at": 59088,
-  "array.prototype.copywithin": 1,
-  "array.prototype.find": 1596886,
-  "array.prototype.findlast": 20895396,
-  "array.prototype.flat": 35769942,
-  "array.prototype.flatmap": 34664545,
-  "array.prototype.toreversed": 1346714,
-  "array.prototype.tosorted": 23625915,
-  "array.prototype.tospliced": 4565,
-  "array.prototype.with": 273,
-  "arraybuffer.prototype.transfer": 1,
-  "arraybuffer.prototype.transfertofixedlength": 3,
-  "container-query-polyfill": 87347,
-  "date.prototype.getyear": 3,
-  "error.iserror": 142,
-  "es-arraybuffer-base64": 1077,
-  "es-iterator-helpers": 22883498,
-  "es-map": 25366,
-  "es-set": 23549,
-  "es-string-html-methods": 406,
-  "globalthis": 41125456,
-  "intersection-observer": 2157266,
-  "map.groupby": 1385,
-  "map.prototype.getorinsert": 2,
-  "map.prototype.getorinsertcomputed": 0,
-  "math.sumprecise": 0,
-  "object.groupby": 25279358,
-  "object.hasown": 5850772,
-  "promise.allsettled": 1828211,
-  "promise.any": 129383,
-  "promise.prototype.finally": 1199754,
-  "promise.try": 209,
-  "promise.withresolvers": 6321,
-  "regexp.escape": 220721,
-  "scheduler-polyfill": 10617,
-  "set.prototype.difference": 17445,
-  "set.prototype.intersection": 7520,
-  "set.prototype.isdisjointfrom": 560,
-  "set.prototype.issubsetof": 929,
-  "set.prototype.issupersetof": 650,
-  "set.prototype.symmetricdifference": 4182,
-  "set.prototype.union": 6093,
-  "string.fromcodepoint": 1199303,
-  "string.prototype.at": 8219,
-  "string.prototype.codepointat": 886420,
-  "string.prototype.endswith": 29030,
-  "string.prototype.includes": 14470828,
-  "string.prototype.iswellformed": 158,
-  "string.prototype.matchall": 27626064,
-  "string.prototype.padend": 4818890,
-  "string.prototype.padstart": 1229841,
-  "string.prototype.repeat": 20273315,
-  "string.prototype.replaceall": 139053,
-  "string.prototype.startswith": 73040,
-  "string.prototype.substr": 14,
-  "string.prototype.towellformed": 2462,
-  "string.prototype.trimend": 45314589,
-  "string.prototype.trimstart": 44260218,
-  "string.raw": 5,
-  "temporal-polyfill": 587075,
-  "trusted-types": 16940,
-  "weakmap.prototype.getorinsert": 2,
-  "weakmap.prototype.getorinsertcomputed": 2
+  "@formatjs/intl-displaynames": {
+    "downloads": 1435438,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "@formatjs/intl-durationformat": {
+    "downloads": 135559,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "@formatjs/intl-listformat": {
+    "downloads": 1485705,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "@formatjs/intl-locale": {
+    "downloads": 494976,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "@formatjs/intl-pluralrules": {
+    "downloads": 490083,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "@formatjs/intl-relativetimeformat": {
+    "downloads": 439946,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "@formatjs/intl-segmenter": {
+    "downloads": 23788,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "@js-temporal/polyfill": {
+    "downloads": 359748,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "array-includes": {
+    "downloads": 37840126,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "array.from": {
+    "downloads": 5601,
+    "lastModified": "2025-11-17T16:59:36.632Z"
+  },
+  "array.isarray": {
+    "downloads": 1,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "array.of": {
+    "downloads": 255,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "array.prototype.at": {
+    "downloads": 59088,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "array.prototype.copywithin": {
+    "downloads": 1,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "array.prototype.find": {
+    "downloads": 1596886,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "array.prototype.findlast": {
+    "downloads": 20895396,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "array.prototype.flat": {
+    "downloads": 35769942,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "array.prototype.flatmap": {
+    "downloads": 34664545,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "array.prototype.toreversed": {
+    "downloads": 1346714,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "array.prototype.tosorted": {
+    "downloads": 23625915,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "array.prototype.tospliced": {
+    "downloads": 4565,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "array.prototype.with": {
+    "downloads": 273,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "arraybuffer.prototype.transfer": {
+    "downloads": 1,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "arraybuffer.prototype.transfertofixedlength": {
+    "downloads": 3,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "container-query-polyfill": {
+    "downloads": 87347,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "date.prototype.getyear": {
+    "downloads": 3,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "error.iserror": {
+    "downloads": 142,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "es-arraybuffer-base64": {
+    "downloads": 1077,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "es-iterator-helpers": {
+    "downloads": 22883498,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "es-map": {
+    "downloads": 25366,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "es-set": {
+    "downloads": 23549,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "es-string-html-methods": {
+    "downloads": 406,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "globalthis": {
+    "downloads": 41125456,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "intersection-observer": {
+    "downloads": 2157266,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "map.groupby": {
+    "downloads": 1385,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "map.prototype.getorinsert": {
+    "downloads": 2,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "map.prototype.getorinsertcomputed": {
+    "downloads": 0,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "math.sumprecise": {
+    "downloads": 0,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "object.groupby": {
+    "downloads": 25279358,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "object.hasown": {
+    "downloads": 5850772,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "promise.allsettled": {
+    "downloads": 1828211,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "promise.any": {
+    "downloads": 129383,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "promise.prototype.finally": {
+    "downloads": 1199754,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "promise.try": {
+    "downloads": 209,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "promise.withresolvers": {
+    "downloads": 6321,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "regexp.escape": {
+    "downloads": 220721,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "scheduler-polyfill": {
+    "downloads": 10617,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "set.prototype.difference": {
+    "downloads": 17445,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "set.prototype.intersection": {
+    "downloads": 7520,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "set.prototype.isdisjointfrom": {
+    "downloads": 560,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "set.prototype.issubsetof": {
+    "downloads": 929,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "set.prototype.issupersetof": {
+    "downloads": 650,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "set.prototype.symmetricdifference": {
+    "downloads": 4182,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "set.prototype.union": {
+    "downloads": 6093,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "string.fromcodepoint": {
+    "downloads": 1199303,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "string.prototype.at": {
+    "downloads": 8219,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "string.prototype.codepointat": {
+    "downloads": 886420,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "string.prototype.endswith": {
+    "downloads": 29030,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "string.prototype.includes": {
+    "downloads": 14470828,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "string.prototype.iswellformed": {
+    "downloads": 158,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "string.prototype.matchall": {
+    "downloads": 27626064,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "string.prototype.padend": {
+    "downloads": 4818890,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "string.prototype.padstart": {
+    "downloads": 1229841,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "string.prototype.repeat": {
+    "downloads": 20273315,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "string.prototype.replaceall": {
+    "downloads": 139053,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "string.prototype.startswith": {
+    "downloads": 73040,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "string.prototype.substr": {
+    "downloads": 14,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "string.prototype.towellformed": {
+    "downloads": 2462,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "string.prototype.trimend": {
+    "downloads": 45314589,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "string.prototype.trimstart": {
+    "downloads": 44260218,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "string.raw": {
+    "downloads": 5,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "temporal-polyfill": {
+    "downloads": 587075,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "trusted-types": {
+    "downloads": 16940,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "weakmap.prototype.getorinsert": {
+    "downloads": 2,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  },
+  "weakmap.prototype.getorinsertcomputed": {
+    "downloads": 2,
+    "lastModified": "2025-11-17T00:00:00.000Z"
+  }
 }
